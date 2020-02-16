@@ -80,25 +80,6 @@ const ferryLandSet = [
 let currentState = history.state;
 let page = 'landing';
 
-function loadHTMLtoDOM(html, toDOMelement) {
-  let xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function () {
-    loading = true;
-    if (this.readyState == 4 && this.status == 200) {
-      toDOMelement.innerHTML = this.responseText;
-    }
-  };
-
-  xhttp.open("GET", html, false);
-  xhttp.send();
-}
-
-
-function setURL(page, title) {
-  const state = { 'page': page }
-  history.pushState(state, `BALAZS Turós | ${title.toUpperCase()}`, '')
-}
-
 
 function init() {
 
@@ -106,12 +87,30 @@ function init() {
   html.main = document.querySelector('main');
   html.left = document.querySelector('.left');
   html.title = document.querySelector('.title');
+  html.menu = document.querySelector('.menu');
+  html.menu.works = {};
+  html.menu.works.main = document.querySelector('.nav--works')
+  html.menu.works.reflection = document.querySelector('.nav-reflection')
+  html.menu.works.epitome = document.querySelector('.nav-epitome')
+  html.menu.works.closer = document.querySelector('.nav-closer')
+  html.menu.works.contemplation = document.querySelector('.nav-contemplation')
+  html.menu.works.oneness = document.querySelector('.nav-oneness')
+  html.menu.works.ferryLand = document.querySelector('.nav-ferry—land')
+  html.menu.about = document.querySelector('.nav-about')
+  html.menu.contact = document.querySelector('.nav-contact')
   html.right = document.querySelector('.right');
 
-  html.title.addEventListener('click', () => {
-    navigation('gallery')
-});
-navigation('landing');
+  html.title.addEventListener('click', () => { navigation('gallery') });
+  html.menu.works.main.addEventListener('click', () => { gallery(mainSet) })
+  html.menu.works.reflection.addEventListener('click', () => { gallery(reflectionSet) })
+  html.menu.works.epitome.addEventListener('click', () => { gallery(epitomeSet) })
+  html.menu.works.closer.addEventListener('click', () => { gallery(closerSet) })
+  html.menu.works.contemplation.addEventListener('click', () => { gallery(contemplationSet) })
+  html.menu.works.oneness.addEventListener('click', () => { gallery(onenessSet) })
+  html.menu.works.ferryLand.addEventListener('click', () => { gallery(ferryLandSet) })
+  html.menu.about.addEventListener('click', () => { about()})
+  html.menu.contact.addEventListener('click', () => { })
+  navigation('landing');
 }
 
 function navigation(toPage) {
@@ -123,6 +122,7 @@ function navigation(toPage) {
     case 'gallery':
       gallery(mainSet);
       setURL(page, 'works')
+      html.menu.classList.remove('hidden');
       break;
     case 'single-gallery':
 
@@ -138,7 +138,6 @@ function landing() {
 
   landing = document.querySelector('.landing')
 
-
   landing.addEventListener('click', () => {
     landing.classList.add('fade');
     setTimeout(() => {
@@ -148,13 +147,19 @@ function landing() {
 }
 
 function gallery(set) {
-
+  console.log(set)
   let gallery = '';
   gallery = generateGalleryElements(set);
   html.right.innerHTML = '<div class="gallery">' + gallery + '</div>';
   generateNavToSet(set);
 }
 
+function sidenav(active) {
+}
+
+function about(){
+  loadHTMLtoDOM(components.bio, html.right)
+}
 
 function generateGalleryElements(set) {
   let gallery = '';
@@ -174,7 +179,6 @@ function generateGalleryElements(set) {
 function generateNavToSet(set) {
   set.map(e => {
     if (e.id) {
-
     }
     if (e.title) {
       document.getElementById(e.title).addEventListener('click', () => {
@@ -204,6 +208,26 @@ function generateNavToSet(set) {
       })
     }
   })
+  sidenav('works')
+
+}
+
+function loadHTMLtoDOM(html, toDOMelement) {
+  let xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    loading = true;
+    if (this.readyState == 4 && this.status == 200) {
+      toDOMelement.innerHTML = this.responseText;
+    }
+  };
+
+  xhttp.open("GET", html, false);
+  xhttp.send();
+}
+
+function setURL(page, title) {
+  const state = { 'page': page }
+  history.pushState(state, `BALAZS Turós | ${title.toUpperCase()}`, '')
 }
 
 window.onload = () => { init() };

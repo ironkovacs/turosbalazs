@@ -87,7 +87,7 @@ main .left .menu li:hover {
   color: #000;
 }
 
-main .left .menu .works .works-list {
+main .left .menu .nav-works .works-list {
   margin: 20px 0;
   width: 183px;
   font-family: AkzidenzGroteskPro;
@@ -97,12 +97,16 @@ main .left .menu .works .works-list {
   color: #828282;
 }
 
-main .left .menu .works .works-list .active {
+main .left .menu .nav-works .works-list .active {
   background-image: url(../assets/elements/works-line.png);
   background-repeat: no-repeat;
   background-position: center left;
   cursor: default;
   color: #828282 !important;
+}
+
+main .left .menu.hidden {
+  display: none;
 }
 
 main .right .landing {
@@ -295,7 +299,7 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
     padding-left: 55px;
     width: 14vw;
     height: calc(100vh - 87px);
-    max-height: 960px;
+    max-height: 810px;
   }
   main .right {
     width: 84vw;
@@ -321,13 +325,14 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    gap: 40px;
   }
   main .right .gallery .gallery-element {
     cursor: pointer;
     width: 30%;
     max-width: 500px;
-    margin: 0 2vw 2vw 0;
+    max-height: 400px;
+    margin: 0;
     position: relative;
   }
   main .right .gallery .gallery-element:hover .gallery-title {
@@ -335,7 +340,8 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
     opacity: 1;
   }
   main .right .gallery .gallery-element .gallery-img {
-    width: 26vw;
+    width: 100%;
+    height: 100%;
     max-width: 500px;
     max-height: 400px;
   }
@@ -344,7 +350,7 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
     bottom: 1em;
     left: 1em;
     color: white;
-    font-family: "PlayfairDisplay";
+    font-family: "AkzidenzGroteskPro";
     font-size: 24px;
     text-transform: uppercase;
     transition: opacity 2s ease-in-out;
