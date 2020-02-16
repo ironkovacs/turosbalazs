@@ -12,6 +12,71 @@ const components = {
   'contact': './components/contact/contact.html',
   'bio': './components/bio/bio.html'
 }
+
+const mainSet = [
+  { img: './img/01/perceptions_001', title: 'reflection', id: null },
+  { img: './img/02/epitome_001', title: 'epitome', id: null },
+  { img: './img/03/CLOSER_002', title: 'closer', id: null },
+  { img: './img/04/roncs_001', title: 'contemplation', id: null },
+  { img: './img/05/oneness_002', title: 'oneness', id: null },
+  { img: './img/06/videk_001', title: 'ferry—land', id: null }
+];
+const reflectionSet = [
+  { img: './img/01/perceptions_001', title: '', id: 1 },
+  { img: './img/01/perceptions_002', title: '', id: 2 },
+  { img: './img/01/perceptions_003', title: '', id: 3 },
+  { img: './img/01/perceptions_004', title: '', id: 4 },
+  { img: './img/01/perceptions_005', title: '', id: 5 },
+  { img: './img/01/perceptions_006', title: '', id: 6 },
+  { img: './img/01/perceptions_007', title: '', id: 7 },
+  { img: './img/01/perceptions_008', title: '', id: 8 },
+];
+const epitomeSet = [
+  { img: './img/02/epitome_001', title: '', id: 1 },
+  { img: './img/02/epitome_002', title: '', id: 2 },
+  { img: './img/02/epitome_003', title: '', id: 3 },
+  { img: './img/02/epitome_004', title: '', id: 4 },
+];
+const closerSet = [
+  { img: './img/03/CLOSER_001', title: '', id: 1 },
+  { img: './img/03/CLOSER_002', title: '', id: 2 },
+  { img: './img/03/CLOSER_003', title: '', id: 3 },
+  { img: './img/03/CLOSER_004', title: '', id: 4 },
+  { img: './img/03/CLOSER_005', title: '', id: 5 },
+  { img: './img/03/CLOSER_006', title: '', id: 6 },
+  { img: './img/03/CLOSER_007', title: '', id: 7 },
+  { img: './img/03/CLOSER_008', title: '', id: 8 },
+  { img: './img/03/CLOSER_009', title: '', id: 9 },
+  { img: './img/03/CLOSER_010', title: '', id: 10 },
+  { img: './img/03/CLOSER_011', title: '', id: 11 },
+  { img: './img/03/CLOSER_012', title: '', id: 12 },
+  { img: './img/03/CLOSER_013', title: '', id: 13 },
+  { img: './img/03/CLOSER_014', title: '', id: 14 },
+  { img: './img/03/CLOSER_015', title: '', id: 15 },
+];
+const contemplationSet = [
+  { img: './img/04/roncs_001', title: '', id: 1 },
+  { img: './img/04/roncs_002', title: '', id: 2 },
+  { img: './img/04/roncs_003', title: '', id: 3 },
+  { img: './img/04/roncs_004', title: '', id: 4 },
+];
+const onenessSet = [
+  { img: './img/05/oneness_001', title: '', id: 1 },
+  { img: './img/05/oneness_002', title: '', id: 2 },
+  { img: './img/05/oneness_003', title: '', id: 3 },
+  { img: './img/05/oneness_004', title: '', id: 4 },
+  { img: './img/05/oneness_005', title: '', id: 5 },
+  { img: './img/05/oneness_006', title: '', id: 6 },
+];
+const ferryLandSet = [
+  { img: './img/06/videk_001', title: '', id: 1 },
+  { img: './img/06/videk_002', title: '', id: 2 },
+  { img: './img/06/videk_003', title: '', id: 3 },
+  { img: './img/06/videk_004', title: '', id: 4 },
+  { img: './img/06/videk_005', title: '', id: 5 },
+  { img: './img/06/videk_006', title: '', id: 6 },
+];
+
 let currentState = history.state;
 let page = 'landing';
 
@@ -43,7 +108,10 @@ function init() {
   html.title = document.querySelector('.title');
   html.right = document.querySelector('.right');
 
-  navigation('landing');
+  html.title.addEventListener('click', () => {
+    navigation('gallery')
+});
+navigation('landing');
 }
 
 function navigation(toPage) {
@@ -53,7 +121,7 @@ function navigation(toPage) {
       setURL(page, 'welcome')
       break;
     case 'gallery':
-      gallery();
+      gallery(mainSet);
       setURL(page, 'works')
       break;
     case 'single-gallery':
@@ -79,103 +147,18 @@ function landing() {
   })
 }
 
-function gallery(section) {
-  console.log(`loading ${section} gallery`);
-  const main = [
-    { img: './img/01/perceptions_001', title: 'reflection' },
-    { img: './img/02/epitome_001', title: 'epitome' },
-    { img: './img/03/CLOSER_002', title: 'closer' },
-    { img: './img/04/roncs_001', title: 'contemplation' },
-    { img: './img/05/oneness_002', title: 'oneness' },
-    { img: './img/06/videk_001', title: 'ferry—land' }
-  ];
-  const reflection = [
-    { img: './img/01/perceptions_001', title: '' },
-    { img: './img/01/perceptions_002', title: '' },
-    { img: './img/01/perceptions_003', title: '' },
-    { img: './img/01/perceptions_004', title: '' },
-    { img: './img/01/perceptions_005', title: '' },
-    { img: './img/01/perceptions_006', title: '' },
-    { img: './img/01/perceptions_007', title: '' },
-    { img: './img/01/perceptions_008', title: '' },
-  ];
-  const epitome = [
-    { img: './img/02/epitome_001', title: '' },
-    { img: './img/02/epitome_002', title: '' },
-    { img: './img/02/epitome_003', title: '' },
-    { img: './img/02/epitome_004', title: '' },
-  ];
-  const closer = [
-    { img: './img/03/CLOSER_001', title: '' },
-    { img: './img/03/CLOSER_002', title: '' },
-    { img: './img/03/CLOSER_003', title: '' },
-    { img: './img/03/CLOSER_004', title: '' },
-    { img: './img/03/CLOSER_005', title: '' },
-    { img: './img/03/CLOSER_006', title: '' },
-    { img: './img/03/CLOSER_007', title: '' },
-    { img: './img/03/CLOSER_008', title: '' },
-    { img: './img/03/CLOSER_009', title: '' },
-    { img: './img/03/CLOSER_010', title: '' },
-    { img: './img/03/CLOSER_011', title: '' },
-    { img: './img/03/CLOSER_012', title: '' },
-    { img: './img/03/CLOSER_013', title: '' },
-    { img: './img/03/CLOSER_014', title: '' },
-    { img: './img/03/CLOSER_015', title: '' },
-  ];
-  const contemplation = [
-    { img: './img/04/roncs_001', title: '' },
-    { img: './img/04/roncs_002', title: '' },
-    { img: './img/04/roncs_003', title: '' },
-    { img: './img/04/roncs_004', title: '' },
-  ];
-  const oneness = [
-    { img: './img/05/oneness_001', title: '' },
-    { img: './img/05/oneness_002', title: '' },
-    { img: './img/05/oneness_003', title: '' },
-    { img: './img/05/oneness_004', title: '' },
-    { img: './img/05/oneness_005', title: '' },
-    { img: './img/05/oneness_006', title: '' },
-  ];
-  const ferryLand = [
-    { img: './img/06/videk_001', title: '' },
-    { img: './img/06/videk_002', title: '' },
-    { img: './img/06/videk_003', title: '' },
-    { img: './img/06/videk_004', title: '' },
-    { img: './img/06/videk_005', title: '' },
-    { img: './img/06/videk_006', title: '' },
-  ];
+function gallery(set) {
 
   let gallery = '';
-  switch (section) {
-    case 'reflection':
-      gallery = generateGalleryElements(category)
-      break;
-    case 'epitome':
-      gallery = generateGalleryElements(category)
-      break;
-    case 'closer':
-      gallery = generateGalleryElements(category)
-      break;
-    case 'contemplation':
-      gallery = generateGalleryElements(category)
-      break;
-    case 'oneness':
-      gallery = generateGalleryElements(category)
-      break;
-    case 'ferry—land':
-      gallery = generateGalleryElements(category)
-      break;
-    default:
-      gallery = generateGalleryElements(main)
-      break;
-  }
+  gallery = generateGalleryElements(set);
   html.right.innerHTML = '<div class="gallery">' + gallery + '</div>';
-
+  generateNavToSet(set);
 }
 
-function generateGalleryElements(category) {
+
+function generateGalleryElements(set) {
   let gallery = '';
-  category.forEach(e => {
+  set.map(e => {
     gallery += `
     <div class="gallery-element" id="${e.title}">
     <img src="${e.img}_index.jpg" alt="${e.title}" class="gallery-img">
@@ -188,5 +171,39 @@ function generateGalleryElements(category) {
   return gallery;
 }
 
-window.onload = () => { init() };
+function generateNavToSet(set) {
+  set.map(e => {
+    if (e.id) {
 
+    }
+    if (e.title) {
+      document.getElementById(e.title).addEventListener('click', () => {
+        console.log(e.title)
+        switch (e.title) {
+          case 'reflection':
+            gallery(reflectionSet)
+            break;
+          case 'epitome':
+            gallery(epitomeSet)
+            break;
+          case 'closer':
+            gallery(closerSet)
+            break;
+          case 'contemplation':
+            gallery(contemplationSet)
+            break;
+          case 'oneness':
+            gallery(onenessSet)
+            break;
+          case 'ferry—land':
+            gallery(ferryLandSet)
+            break;
+          default:
+            break;
+        }
+      })
+    }
+  })
+}
+
+window.onload = () => { init() };
