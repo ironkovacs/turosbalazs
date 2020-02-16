@@ -73,24 +73,24 @@ main {
       ul {
         list-style: none;
       }
-      
+
       ul,
       li {
         &:hover {
-        
           cursor: pointer;
           color: #000;
         }
       }
       .works {
         .works-list {
-          margin: 20px 0;  width: 183px;
+          margin: 20px 0;
+          width: 183px;
           font-family: AkzidenzGroteskPro;
           font-size: 22px;
           line-height: 28px;
           text-align: left;
           color: #828282;
-          
+
           .active {
             background-image: url(../assets/elements/works-line.png);
             background-repeat: no-repeat;
@@ -118,7 +118,7 @@ main {
       opacity: 1;
       transition: opacity 1s ease-out;
       cursor: pointer;
-      &.fade{
+      &.fade {
         opacity: 0;
       }
     }
@@ -291,6 +291,9 @@ main {
     .right {
       width: 84vw;
       max-width: 1600px;
+      height: calc(100vh - 120px);
+      max-height: 960px;
+      overflow-y: auto;
       .landing {
         position: absolute;
         top: 0;

@@ -300,6 +300,9 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
   main .right {
     width: 84vw;
     max-width: 1600px;
+    height: calc(100vh - 120px);
+    max-height: 960px;
+    overflow-y: auto;
   }
   main .right .landing {
     position: absolute;
