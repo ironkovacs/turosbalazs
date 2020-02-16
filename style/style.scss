@@ -115,7 +115,12 @@ main {
       background-repeat: no-repeat;
       background-size: contain;
       background-position: top right;
+      opacity: 1;
+      transition: opacity 1s ease-out;
       cursor: pointer;
+      &.fade{
+        opacity: 0;
+      }
     }
     &.portrait {
       .gallery-element {

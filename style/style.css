@@ -116,7 +116,13 @@ main .right .landing {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: top right;
+  opacity: 1;
+  transition: opacity 1s ease-out;
   cursor: pointer;
+}
+
+main .right .landing.fade {
+  opacity: 0;
 }
 
 main .right.portrait .gallery-element {
