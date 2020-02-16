@@ -272,7 +272,6 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    background-color: tomato;
   }
   main .right .gallery .gallery-element {
     width: 45%;
@@ -317,7 +316,6 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
   }
   main .right .gallery {
     overflow-x: auto;
-    background-color: green;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -347,7 +345,7 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
     font-family: "PlayfairDisplay";
     font-size: 24px;
     text-transform: uppercase;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 2s ease-in-out;
     opacity: 0;
   }
   main .right .gallery .gallery-element:hover .gallery-title {

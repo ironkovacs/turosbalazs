@@ -2,6 +2,7 @@
 // elements
 let html = {}
 
+let loading = false;
 
 const components = {
   'landing': './components/landing/landing.html',
@@ -15,11 +16,13 @@ let currentState = history.state;
 console.log(currentState);
 let page = 'landing';
 
-async function loadHTMLtoDOM(html, DOMelement) {
-  var xhttp = new XMLHttpRequest();
+async function loadHTMLtoDOM(html, toDOMelement, element) {
+  let xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
+    loading = true;
     if (this.readyState == 4 && this.status == 200) {
-      DOMelement.innerHTML = this.responseText;
+      toDOMelement.innerHTML = this.responseText;
+      html[element] = document.querySelector(`${element}`)
     }
   };
 
@@ -33,25 +36,37 @@ function setURL(page, title) {
   history.pushState(state, `BALAZS Turós | ${title.toUpperCase()}`, '')
 }
 
-function setElements(toPage) {
-  page = toPage ? toPage : 'landing';
-  loadHTMLtoDOM(components[toPage], html.right);
-}
 
 async function init() {
 
   // fixed on index
-  html.main = document.querySelector('main'),
-    html.left = document.querySelector('.left'),
-    html.title = document.querySelector('.title'),
-    html.right = document.querySelector('.right'),
+  html.main = document.querySelector('main');
+  html.left = document.querySelector('.left');
+  html.title = document.querySelector('.title');
+  html.right = document.querySelector('.right');
 
+  navigation('landing');
+}
 
-
-    await loadHTMLtoDOM(components.landing, html.right)
-      .then(() => {
-        landing = document.querySelector('.landing')
-      });
+async function navigation(toPage) {
+  switch (toPage) {
+    case 'landing':
+      landing();
+      setURL(page, 'welcome')
+      break;
+    case 'gallery':
+      gallery();
+      setURL(page, 'works')
+    default:
+      setURL(page, 'welcome')
+      break;
+  }
+};
+async function landing() {
+  await loadHTMLtoDOM(components.landing, html.right)
+    .then(() => {
+      landing = document.querySelector('.landing')
+    });
 
   landing.addEventListener('click', () => {
     landing.classList.add('fade');
@@ -61,22 +76,29 @@ async function init() {
   })
 }
 
-function navigation(toPage) {
-  switch (toPage) {
-    case 'landing':
-      setElements(toPage)
-      setURL(page, 'welcome')
-      break;
-    case 'gallery':
-
-      setElements(toPage)
-      setURL(page, 'works')
-    default:
-      setElements(toPage)
-      setURL(page, 'welcome')
-      break;
-  }
-};
+async function gallery() {
+  
+  const galleryElements = [
+    { img: './img/01/perceptions_001_index.jpg', title: 'reflection' },
+    { img: './img/02/epitome_001_index.jpg', title: 'epitome' },
+    { img: './img/03/CLOSER_002_index.jpg', title: 'closer' },
+    { img: './img/04/roncs_001_index.jpg', title: 'contemplation' },
+    { img: './img/05/oneness_002_index.jpg', title: 'oneness' },
+    { img: './img/06/videk_001_index.jpg', title: 'ferry—land' }
+  ];
+  let gallery = ''
+  galleryElements.forEach(e => {
+    gallery += `
+    <div class="gallery-element">
+    <img src="${e.img}" alt="${e.title}" class="gallery-img">
+    <div class="gallery-title">
+      <span>${e.title}</span>
+    </div>
+  </div>
+  `
+  })
+  html.right.innerHTML = '<div class="gallery">'+gallery+'</div>';
+}
 
 
 window.onload = () => { init() };
