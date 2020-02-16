@@ -294,13 +294,13 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
   main .left {
     padding-left: 55px;
     width: 14vw;
-    height: calc(100vh - 120px);
+    height: calc(100vh - 87px);
     max-height: 960px;
   }
   main .right {
     width: 84vw;
     max-width: 1600px;
-    height: calc(100vh - 120px);
+    height: calc(100vh - 87px);
     max-height: 960px;
     overflow-y: auto;
   }
@@ -318,7 +318,6 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
     cursor: pointer;
   }
   main .right .gallery {
-    overflow-x: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
