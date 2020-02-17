@@ -33,6 +33,7 @@ body {
   height: 100vh;
   overflow: hidden;
   color: #010101;
+  background-color: #fcfbf9;
 }
 
 main {
@@ -406,6 +407,12 @@ main {
                 cursor: pointer;
                 fill: #010101;
               }
+              &.disabled{
+                fill:#fcfbf9;
+                &:hover{
+                  cursor: default;
+                }
+              }
             }
             .next {
               margin: 0 10px;
@@ -415,6 +422,12 @@ main {
               &:hover {
                 cursor: pointer;
                 fill: #010101;
+              }
+              &.disabled{
+                fill:#fcfbf9;
+                &:hover{
+                  cursor: default;
+                }
               }
             }
             .gallery-btn {

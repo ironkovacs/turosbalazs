@@ -5,12 +5,32 @@ let html = {}
 let loading = false;
 
 const components = {
-  'landing': './components/landing/landing.html',
-  'sidenav': './components/sidenav/sidenav.html',
-  'gallery': './components/gallery/gallery.html',
-  'singleGallery': './components/single-gallery/gallery.html',
-  'contact': './components/contact/contact.html',
-  'bio': './components/bio/bio.html'
+  landing: './components/landing/landing.html',
+  sidenav: './components/sidenav/sidenav.html',
+  gallery: './components/gallery/gallery.html',
+  singleGallery: `
+    <div class="single-gallery-wrapper">
+      <div class="caroussel">
+        
+      </div>
+      <div class="gallery-side">
+        <div class="pager"></div>
+        <div class="gallery-nav">
+          <svg xmlns="http://www.w3.org/2000/svg" class="prev">
+            <path d="M1.878 8.71v-.382l5.387-5.893L6.576.409.467 7.78v1.445l6.109 7.371.689-2.059L1.878 8.71z" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="next">
+            <path d="M7.363 7.78L1.254.409.565 2.435l5.404 5.86v.382l-5.404 5.86.689 2.059 6.109-7.371V7.78z" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="gallery-btn">
+            <path d="M22 17v-7h8v7h-8zm0-17h8v7h-8V0zM11 10h8v7h-8v-7zm0-10h8v7h-8V0zM0 10h8v7H0v-7zM0 0h8v7H0V0z" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  `,
+  contact: './components/contact/contact.html',
+  bio: './components/bio/bio.html'
 }
 
 const mainSet = [
@@ -18,7 +38,7 @@ const mainSet = [
   { img: './img/02/epitome_001', title: 'epitome', id: null },
   { img: './img/03/CLOSER_002', title: 'closer', id: null },
   { img: './img/04/roncs_001', title: 'contemplation', id: null },
-  { img: './img/05/oneness_002', title: 'oneness', id: null },
+  { img: './img/05/oneness_003', title: 'oneness', id: null },
   { img: './img/06/videk_001', title: 'ferry—land', id: null }
 ];
 const reflectionSet = [
@@ -108,7 +128,7 @@ function init() {
   html.menu.works.contemplation.addEventListener('click', () => { gallery(contemplationSet) })
   html.menu.works.oneness.addEventListener('click', () => { gallery(onenessSet) })
   html.menu.works.ferryLand.addEventListener('click', () => { gallery(ferryLandSet) })
-  html.menu.about.addEventListener('click', () => { about()})
+  html.menu.about.addEventListener('click', () => { about() })
   html.menu.contact.addEventListener('click', () => { })
   navigation('landing');
 }
@@ -157,7 +177,7 @@ function gallery(set) {
 function sidenav(active) {
 }
 
-function about(){
+function about() {
   loadHTMLtoDOM(components.bio, html.right)
 }
 
@@ -165,8 +185,8 @@ function generateGalleryElements(set) {
   let gallery = '';
   set.map(e => {
     gallery += `
-    <div class="gallery-element" id="${e.title}">
-    <img src="${e.img}_index.jpg" alt="${e.title}" class="gallery-img">
+    <div class="gallery-element" id="${e.title ? e.title : e.id}">
+    <img src="${e.img}_index.jpg" alt="${e.title ? e.title : e.id}" class="gallery-img">
     <div class="gallery-title">
       ${e.title ? '<span>' + e.title + '</span>' : ''}
     </div>
@@ -179,6 +199,7 @@ function generateGalleryElements(set) {
 function generateNavToSet(set) {
   set.map(e => {
     if (e.id) {
+      document.getElementById(e.id).addEventListener('click', () => { singleGallery(set, e.id) })
     }
     if (e.title) {
       document.getElementById(e.title).addEventListener('click', () => {
@@ -225,9 +246,43 @@ function loadHTMLtoDOM(html, toDOMelement) {
   xhttp.send();
 }
 
-function setURL(page, title) {
-  const state = { 'page': page }
-  history.pushState(state, `BALAZS Turós | ${title.toUpperCase()}`, '')
-}
+function singleGallery(set, id) {
+  console.log(set, id)
+  html.right.innerHTML = components.singleGallery;
+  html.right.caroussel = document.querySelector('.caroussel');
+  html.right.pager = document.querySelector('.pager');
+  html.right.galleryNavNext = document.querySelector('svg.next');
+  html.right.galleryNavPrev = document.querySelector('svg.prev');
+  html.right.galleryView = document.querySelector('svg.gallery-btn');
+  let element = set[id - 1];
 
-window.onload = () => { init() };
+
+  html.right.caroussel.innerHTML = showGalleryElement(element);
+  html.right.pager.innerHTML = `${id}/${set.length}`
+
+  html.right.galleryView.addEventListener('click', () => { gallery(set) })
+
+  if (id > 1) {
+    html.right.galleryNavPrev.addEventListener('click', () => { singleGallery(set, id - 1) })
+  } else {
+    html.right.galleryNavPrev.classList.add('disabled');
+  }
+
+  if (id < set.length) {
+    html.right.galleryNavNext.addEventListener('click', () => { singleGallery(set, id + 1) })
+  } else {
+    html.right.galleryNavPrev.classList.add('disabled');
+  }
+}
+  function showGalleryElement(element) {
+    return `<img class="single-img" src="${element.img}_nagy.jpg">`
+  }
+
+
+
+  function setURL(page, title) {
+    const state = { 'page': page }
+    history.pushState(state, `BALAZS Turós | ${title.toUpperCase()}`, '')
+  }
+
+  window.onload = () => { init() };
