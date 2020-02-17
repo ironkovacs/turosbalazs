@@ -271,6 +271,7 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
   }
   main .left {
     width: 14vw;
+    min-width: 185px;
   }
   main .right .gallery {
     display: flex;
@@ -301,6 +302,7 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
     width: 14vw;
     height: calc(100vh - 87px);
     max-height: 810px;
+    min-width: 185px;
   }
   main .right {
     width: 84vw;
@@ -490,6 +492,19 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
   }
   main .right .bio-wrapper .bio-img img {
     width: 100%;
+  }
+  main .right .contact {
+    font-family: AkzidenzGroteskPro;
+  }
+  main .right .contact .link {
+    display: flex;
+    flex-direction: row;
+  }
+  main .right .contact .link a {
+    font-family: AkzidenzGroteskPro;
+    font-size: 20px;
+    text-decoration: none;
+    color: #010101;
   }
   main .hamburger {
     display: none;

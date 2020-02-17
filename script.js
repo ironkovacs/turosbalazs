@@ -2,7 +2,7 @@
 // elements
 let html = {}
 
-let loading = false;
+let currentHash = '';
 
 const components = {
   landing: './components/landing/landing.html',
@@ -98,8 +98,6 @@ const ferryLandSet = [
 ];
 
 let currentState = history.state;
-let page = 'landing';
-
 
 function init() {
 
@@ -120,38 +118,22 @@ function init() {
   html.menu.contact = document.querySelector('.nav-contact')
   html.right = document.querySelector('.right');
 
-  html.title.addEventListener('click', () => { navigation('gallery') });
-  html.menu.works.main.addEventListener('click', () => { gallery(mainSet) })
-  html.menu.works.reflection.addEventListener('click', () => { gallery(reflectionSet) })
-  html.menu.works.epitome.addEventListener('click', () => { gallery(epitomeSet) })
-  html.menu.works.closer.addEventListener('click', () => { gallery(closerSet) })
-  html.menu.works.contemplation.addEventListener('click', () => { gallery(contemplationSet) })
-  html.menu.works.oneness.addEventListener('click', () => { gallery(onenessSet) })
-  html.menu.works.ferryLand.addEventListener('click', () => { gallery(ferryLandSet) })
-  html.menu.about.addEventListener('click', () => { about() })
-  html.menu.contact.addEventListener('click', () => { })
+  html.title.addEventListener('click', () => { navigation('works') });
+  html.menu.works.main.addEventListener('click', () => { navigation('works') })
+  html.menu.works.reflection.addEventListener('click', () => { navigation('reflection') })
+  html.menu.works.epitome.addEventListener('click', () => { navigation('epitome') })
+  html.menu.works.closer.addEventListener('click', () => { navigation('closer') })
+  html.menu.works.contemplation.addEventListener('click', () => { navigation('contemplation') })
+  html.menu.works.oneness.addEventListener('click', () => { navigation('oneness') })
+  html.menu.works.ferryLand.addEventListener('click', () => { navigation('ferry—land') })
+  html.menu.about.addEventListener('click', () => { navigation('about') })
+  html.menu.contact.addEventListener('click', () => { navigation('contact') })
+
   navigation('landing');
+
+
 }
 
-function navigation(toPage) {
-  switch (toPage) {
-    case 'landing':
-      landing();
-      setURL(page, 'welcome')
-      break;
-    case 'gallery':
-      gallery(mainSet);
-      setURL(page, 'works')
-      html.menu.classList.remove('hidden');
-      break;
-    case 'single-gallery':
-
-      break;
-    default:
-      setURL(page, 'welcome')
-      break;
-  }
-};
 
 function landing() {
   loadHTMLtoDOM(components.landing, html.right)
@@ -161,13 +143,12 @@ function landing() {
   landing.addEventListener('click', () => {
     landing.classList.add('fade');
     setTimeout(() => {
-      navigation('gallery')
+      navigation('works')
     }, 1000);
   })
 }
 
 function gallery(set) {
-  console.log(set)
   let gallery = '';
   gallery = generateGalleryElements(set);
   html.right.innerHTML = '<div class="gallery">' + gallery + '</div>';
@@ -179,6 +160,10 @@ function sidenav(active) {
 
 function about() {
   loadHTMLtoDOM(components.bio, html.right)
+}
+
+function contact() {
+  loadHTMLtoDOM(components.contact, html.right)
 }
 
 function generateGalleryElements(set) {
@@ -203,29 +188,8 @@ function generateNavToSet(set) {
     }
     if (e.title) {
       document.getElementById(e.title).addEventListener('click', () => {
-        console.log(e.title)
-        switch (e.title) {
-          case 'reflection':
-            gallery(reflectionSet)
-            break;
-          case 'epitome':
-            gallery(epitomeSet)
-            break;
-          case 'closer':
-            gallery(closerSet)
-            break;
-          case 'contemplation':
-            gallery(contemplationSet)
-            break;
-          case 'oneness':
-            gallery(onenessSet)
-            break;
-          case 'ferry—land':
-            gallery(ferryLandSet)
-            break;
-          default:
-            break;
-        }
+        navigation(e.title)
+        navigation(e.title)
       })
     }
   })
@@ -247,7 +211,6 @@ function loadHTMLtoDOM(html, toDOMelement) {
 }
 
 function singleGallery(set, id) {
-  console.log(set, id)
   html.right.innerHTML = components.singleGallery;
   html.right.caroussel = document.querySelector('.caroussel');
   html.right.pager = document.querySelector('.pager');
@@ -271,18 +234,58 @@ function singleGallery(set, id) {
   if (id < set.length) {
     html.right.galleryNavNext.addEventListener('click', () => { singleGallery(set, id + 1) })
   } else {
-    html.right.galleryNavPrev.classList.add('disabled');
+    html.right.galleryNavNext.classList.add('disabled');
   }
 }
-  function showGalleryElement(element) {
-    return `<img class="single-img" src="${element.img}_nagy.jpg">`
+
+function showGalleryElement(element) {
+  return `<img class="single-img" src="${element.img}_nagy.jpg">`
+}
+
+
+function navigation(toPage) {
+  switch (toPage) {
+    case 'landing':
+      landing();
+      break;
+    case 'works':
+      gallery(mainSet);
+      html.menu.classList.remove('hidden');
+      break;
+    case 'reflection':
+      gallery(reflectionSet)
+      break;
+    case 'epitome':
+      gallery(epitomeSet)
+      break;
+    case 'closer':
+      gallery(closerSet)
+      break;
+    case 'contemplation':
+      gallery(contemplationSet)
+      break;
+    case 'oneness':
+      gallery(onenessSet)
+      break;
+    case 'ferry—land':
+      gallery(ferryLandSet)
+      break;
+    case 'about':
+      about()
+      break;
+    case 'contact':
+      contact()
+      break;
+    default:
+      navigation(toPage)
+      break;
   }
+};
 
+function locationHashChanged() {
+    console.log(location.hash)
+}
 
+window.addEventListener('hashchange', locationHashChanged);
 
-  function setURL(page, title) {
-    const state = { 'page': page }
-    history.pushState(state, `BALAZS Turós | ${title.toUpperCase()}`, '')
-  }
-
-  window.onload = () => { init() };
+window.onload = () => { init() };
