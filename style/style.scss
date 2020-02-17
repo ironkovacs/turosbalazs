@@ -71,6 +71,7 @@ main {
       font-family: PlayfairDisplay;
       font-size: 26px;
       line-height: 36px;
+      transition: all .2s linear;
       ul {
         list-style: none;
       }
@@ -79,6 +80,7 @@ main {
         &:hover {
           cursor: pointer;
           color: #000;
+          transition: all .2s linear;
         }
       }
       .nav-works {
@@ -493,16 +495,26 @@ main {
         }
       }
       .contact {
-        font-family: AkzidenzGroteskPro;
         .link {
           display: flex;
-          flex-direction: row;
+          flex-direction: column;
+          padding-bottom: 1em;
+
           a {
             font-family: AkzidenzGroteskPro;
-            font-size: 20px;
+            font-size: 16px;
             text-decoration: none;
             color: #010101;
+            transition: all .2s linear;
+            &:hover{
+              color: #828282;
+              transition: all .2s linear;
+            }
           }
+        }
+        img{
+          height: 80vh;
+          max-height: 727px;
         }
       }
     }

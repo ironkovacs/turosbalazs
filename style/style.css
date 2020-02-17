@@ -76,6 +76,7 @@ main .left .menu {
   font-family: PlayfairDisplay;
   font-size: 26px;
   line-height: 36px;
+  transition: all .2s linear;
 }
 
 main .left .menu ul {
@@ -86,6 +87,7 @@ main .left .menu ul:hover,
 main .left .menu li:hover {
   cursor: pointer;
   color: #000;
+  transition: all .2s linear;
 }
 
 main .left .menu .nav-works .works-list {
@@ -493,18 +495,25 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
   main .right .bio-wrapper .bio-img img {
     width: 100%;
   }
-  main .right .contact {
-    font-family: AkzidenzGroteskPro;
-  }
   main .right .contact .link {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    padding-bottom: 1em;
   }
   main .right .contact .link a {
     font-family: AkzidenzGroteskPro;
-    font-size: 20px;
+    font-size: 16px;
     text-decoration: none;
     color: #010101;
+    transition: all .2s linear;
+  }
+  main .right .contact .link a:hover {
+    color: #828282;
+    transition: all .2s linear;
+  }
+  main .right .contact img {
+    height: 80vh;
+    max-height: 727px;
   }
   main .hamburger {
     display: none;
