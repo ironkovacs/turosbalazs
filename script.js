@@ -79,8 +79,8 @@ const untitledSet = [
   { img: './img/04/roncs_002', title: '', id: 2 },
   { img: './img/04/roncs_003', title: '', id: 3 },
   { img: './img/04/roncs_004', title: '', id: 4 },
-  { img: './img/04/roncs_005', title: '', id: 4 },
-  { img: './img/04/roncs_006', title: '', id: 4 },
+  { img: './img/04/roncs_005', title: '', id: 5 },
+  { img: './img/04/roncs_006', title: '', id: 6 },
 ];
 const onenessSet = [
   { img: './img/05/oneness_001', title: '', id: 1 },
@@ -97,8 +97,8 @@ const ferryLandSet = [
   { img: './img/06/videk_004', title: '', id: 4 },
   { img: './img/06/videk_005', title: '', id: 5 },
   { img: './img/06/videk_006', title: '', id: 6 },
-  { img: './img/06/videk_007', title: '', id: 6 },
-  { img: './img/06/videk_008', title: '', id: 6 },
+  { img: './img/06/videk_007', title: '', id: 7 },
+  { img: './img/06/videk_008', title: '', id: 8 },
 ];
 
 const texts = {
@@ -232,7 +232,6 @@ function generateNavToSet(set) {
     }
     if (e.title) {
       document.getElementById(e.title).addEventListener('click', () => {
-        navigation(e.title)
         navigation(e.title)
       })
     }
