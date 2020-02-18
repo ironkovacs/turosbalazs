@@ -220,8 +220,8 @@ function generateGalleryElements(set) {
         </div>
       </div>
   `
-  const setText = 
   })
+  const setText = '';
   return gallery;
 }
 
