@@ -37,7 +37,7 @@ const mainSet = [
   { img: './img/01/perceptions_001', title: 'reflection', id: null },
   { img: './img/02/epitome_001', title: 'epitome', id: null },
   { img: './img/03/CLOSER_002', title: 'closer', id: null },
-  { img: './img/04/roncs_001', title: 'contemplation', id: null },
+  { img: './img/04/roncs_001', title: 'untitled', id: null },
   { img: './img/05/oneness_003', title: 'oneness', id: null },
   { img: './img/06/videk_001', title: 'ferry—land', id: null }
 ];
@@ -74,7 +74,7 @@ const closerSet = [
   { img: './img/03/CLOSER_014', title: '', id: 14 },
   { img: './img/03/CLOSER_015', title: '', id: 15 },
 ];
-const contemplationSet = [
+const untitledSet = [
   { img: './img/04/roncs_001', title: '', id: 1 },
   { img: './img/04/roncs_002', title: '', id: 2 },
   { img: './img/04/roncs_003', title: '', id: 3 },
@@ -111,7 +111,7 @@ function init() {
   html.menu.works.reflection = document.querySelector('.nav-reflection')
   html.menu.works.epitome = document.querySelector('.nav-epitome')
   html.menu.works.closer = document.querySelector('.nav-closer')
-  html.menu.works.contemplation = document.querySelector('.nav-contemplation')
+  html.menu.works.untitled = document.querySelector('.nav-untitled')
   html.menu.works.oneness = document.querySelector('.nav-oneness')
   html.menu.works.ferryLand = document.querySelector('.nav-ferry—land')
   html.menu.about = document.querySelector('.nav-about')
@@ -123,7 +123,7 @@ function init() {
   html.menu.works.reflection.addEventListener('click', () => { navigation('reflection') })
   html.menu.works.epitome.addEventListener('click', () => { navigation('epitome') })
   html.menu.works.closer.addEventListener('click', () => { navigation('closer') })
-  html.menu.works.contemplation.addEventListener('click', () => { navigation('contemplation') })
+  html.menu.works.untitled.addEventListener('click', () => { navigation('untitled') })
   html.menu.works.oneness.addEventListener('click', () => { navigation('oneness') })
   html.menu.works.ferryLand.addEventListener('click', () => { navigation('ferry—land') })
   html.menu.about.addEventListener('click', () => { navigation('about') })
@@ -261,8 +261,8 @@ function navigation(toPage) {
     case 'closer':
       gallery(closerSet)
       break;
-    case 'contemplation':
-      gallery(contemplationSet)
+    case 'untitled':
+      gallery(untitledSet)
       break;
     case 'oneness':
       gallery(onenessSet)

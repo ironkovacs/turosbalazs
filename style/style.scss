@@ -12,8 +12,14 @@
 }
 @font-face {
   font-family: "AkzidenzGroteskPro";
-  font-style: bold;
+  font-style: normal;
   font-weight: 800;
+  src: url("./../assets/fonts/AkzidenzGroteskPro-Super.otf") format("opentype");
+}
+@font-face {
+  font-family: "AkzidenzGroteskPro";
+  font-style: normal;
+  font-weight: bold;
   src: url("./../assets/fonts/AkzidenzGroteskPro-Super.otf") format("opentype");
 }
 @font-face {
@@ -280,8 +286,7 @@ main {
       min-width: 185px;
     }
     .right {
-      margin: 88px 0 0 0; 
-      width: 84vw;
+      margin: 88px 32px 0 0; 
       max-width: 1600px;
       max-height: 960px;
       overflow-y: auto;
