@@ -83,8 +83,8 @@ main .left .menu {
   font-family: "PlayfairDisplay";
   text-transform: uppercase;
   font-family: PlayfairDisplay;
-  font-size: 26px;
-  line-height: 36px;
+  font-size: 22px;
+  line-height: 28px;
   transition: all 0.2s linear;
 }
 
@@ -100,11 +100,11 @@ main .left .menu li:hover {
 }
 
 main .left .menu .nav-works .works-list {
-  margin: 20px 0;
+  margin: 6px 0;
   width: 183px;
   font-family: AkzidenzGroteskPro;
-  font-size: 22px;
-  line-height: 28px;
+  font-size: 18px;
+  line-height: 22px;
   text-align: left;
   color: #828282;
 }
@@ -263,7 +263,7 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
   }
   main .right .gallery {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 24vw 24vw;
     gap: 20px;
   }
   main .right .gallery .gallery-element {
@@ -288,8 +288,6 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
     min-width: 185px;
   }
   main .right {
-    margin: 88px 0 0 0;
-    max-width: 1600px;
     max-height: 960px;
     overflow-y: auto;
   }
@@ -308,26 +306,28 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
   }
   main .right .gallery-wrapper {
     height: 100%;
-    margin: 0 100px 0 0;
+    margin: 0 100px 40px 0;
   }
-  main .right .gallery {
+  main .right .gallery-wrapper .gallery {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 24vw 24vw 24vw;
     gap: 40px;
   }
-  main .right .gallery._2col {
-    grid-template-columns: 1fr 1fr;
+  main .right .gallery-wrapper .gallery._2col {
+    grid-template-columns: 22vw 22vw;
+    gap: 1.46vw;
   }
-  main .right .gallery._3col {
-    grid-template-columns: 1fr 1fr 1fr;
+  main .right .gallery-wrapper .gallery._3col {
+    grid-template-columns: 23vw 23vw 23vw;
   }
-  main .right .gallery._4col {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+  main .right .gallery-wrapper .gallery._4col {
+    grid-template-columns: 17vw 17vw 17vw 17vw;
+    gap: 1.2vw;
   }
-  main .right .gallery._5col {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  main .right .gallery-wrapper .gallery._5col {
+    grid-template-columns: 16vw 16vw 16vw 16vw 16vw;
   }
-  main .right .gallery .gallery-element {
+  main .right .gallery-wrapper .gallery .gallery-element {
     cursor: pointer;
     width: 100%;
     max-width: 500px;
@@ -335,27 +335,50 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
     margin: 0;
     position: relative;
   }
-  main .right .gallery .gallery-element:hover .gallery-title {
+  main .right .gallery-wrapper .gallery .gallery-element:hover .gallery-title {
     transition: opacity 0.1s linear;
     opacity: 1;
   }
-  main .right .gallery .gallery-element .gallery-img {
+  main .right .gallery-wrapper .gallery .gallery-element .gallery-img {
     max-width: 500px;
     max-height: 400px;
   }
-  main .right .gallery .gallery-element .gallery-title {
+  main .right .gallery-wrapper .gallery .gallery-element .gallery-title {
     position: absolute;
-    bottom: 1em;
-    left: 1em;
+    bottom: 7px;
+    left: 6px;
     color: white;
     font-family: "AkzidenzGroteskPro";
-    font-size: 24px;
+    font-size: 56px;
     text-transform: uppercase;
     transition: opacity 2s ease-in-out;
     opacity: 0;
+    line-height: 1.1em;
   }
-  main .right .gallery .gallery-element:hover .gallery-title {
+  main .right .gallery-wrapper .gallery .gallery-element:hover .gallery-title {
     display: block;
+  }
+  main .right .gallery-wrapper .gallery-text {
+    display: grid;
+    grid-template-columns: 24vw 24vw 24vw 24vw 24vw 24vw 24vw 24vw 24vw;
+    grid-template-rows: 24vw 24vw;
+    grid-template-areas: "title title . text-en text-en text-en text-en text-en ." ". . text-hu text-hu text-hu text-hu text-hu text-hu .";
+    gap: 40px;
+    margin-top: 40px;
+  }
+  main .right .gallery-wrapper .gallery-text .gallery-title {
+    grid-area: title;
+    display: flex;
+    flex-direction: column;
+    font-size: 28px;
+    font-family: AkzidenzGroteskPro;
+    color: #010101;
+  }
+  main .right .gallery-wrapper .text-hu {
+    grid-area: text-hu;
+  }
+  main .right .gallery-wrapper .text-en {
+    grid-area: text-en;
   }
   main .right .single-gallery-wrapper {
     position: relative;
@@ -387,7 +410,7 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
   }
   main .right .single-gallery-wrapper .gallery-side .pager {
     font-family: AkzidenzGroteskPro;
-    font-size: 22px;
+    font-size: 19px;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;

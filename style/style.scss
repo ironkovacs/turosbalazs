@@ -76,8 +76,8 @@ main {
       font-family: "PlayfairDisplay";
       text-transform: uppercase;
       font-family: PlayfairDisplay;
-      font-size: 26px;
-      line-height: 36px;
+      font-size: 22px;
+      line-height: 28px;
       transition: all 0.2s linear;
       ul {
         list-style: none;
@@ -92,11 +92,11 @@ main {
       }
       .nav-works {
         .works-list {
-          margin: 20px 0;
+          margin: 6px 0;
           width: 183px;
           font-family: AkzidenzGroteskPro;
-          font-size: 22px;
-          line-height: 28px;
+          font-size: 18px;
+          line-height: 22px;
           text-align: left;
           color: #828282;
 
@@ -259,7 +259,7 @@ main {
     .right {
       .gallery {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 24vw 24vw;
         gap: 20px;
         .gallery-element {
           cursor: pointer;
@@ -286,8 +286,7 @@ main {
       min-width: 185px;
     }
     .right {
-      margin: 88px 0 0 0;
-      max-width: 1600px;
+      // max-width: 1600px;
       max-height: 960px;
       overflow-y: auto;
       .landing {
@@ -306,57 +305,89 @@ main {
       .gallery-wrapper {
         height: 100%;
         margin: 0 100px 40px 0;
-      }
-      .gallery {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 40px;
-        &._2col {
-          grid-template-columns: 1fr 1fr;
-        }
-        &._3col {
-          grid-template-columns: 1fr 1fr 1fr;
-        }
-        &._4col {
-          grid-template-columns: 1fr 1fr 1fr 1fr;
-        }
-        &._5col {
-          grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        }
 
-        .gallery-element {
-          cursor: pointer;
-          width: 100%;
-          max-width: 500px;
-          max-height: 400px;
-          margin: 0;
-          position: relative;
-          &:hover {
-            .gallery-title {
-              transition: opacity 0.1s linear;
-              opacity: 1;
-            }
+        .gallery {
+          display: grid;
+          grid-template-columns: 24vw 24vw 24vw;
+          gap: 40px;
+          &._2col {
+            grid-template-columns: 22vw 22vw;
+            gap: 1.46vw;
           }
-          .gallery-img {
+          &._3col {
+            grid-template-columns: 23vw 23vw 23vw;
+          }
+          &._4col {
+            grid-template-columns: 17vw 17vw 17vw 17vw;
+            gap: 1.2vw;
+          }
+          &._5col {
+            grid-template-columns: 16vw 16vw 16vw 16vw 16vw;
+          }
+
+          .gallery-element {
+            cursor: pointer;
+            width: 100%;
             max-width: 500px;
             max-height: 400px;
-          }
-          .gallery-title {
-            position: absolute;
-            bottom: 1em;
-            left: 1em;
-            color: white;
-            font-family: "AkzidenzGroteskPro";
-            font-size: 24px;
-            text-transform: uppercase;
-            transition: opacity 2s ease-in-out;
-            opacity: 0;
-          }
-          &:hover {
+            margin: 0;
+            position: relative;
+            &:hover {
+              .gallery-title {
+                transition: opacity 0.1s linear;
+                opacity: 1;
+              }
+            }
+            .gallery-img {
+              max-width: 500px;
+              max-height: 400px;
+            }
             .gallery-title {
-              display: block;
+              position: absolute;
+              bottom: 7px;
+              left: 6px;
+              color: white;
+              font-family: "AkzidenzGroteskPro";
+              font-size: 56px;
+              text-transform: uppercase;
+              transition: opacity 2s ease-in-out;
+              opacity: 0;
+              line-height: 1.1em;
+            }
+            &:hover {
+              .gallery-title {
+                display: block;
+              }
             }
           }
+        }
+        .gallery-text {
+          display: grid;
+          grid-template-columns: 24vw 24vw 24vw 24vw 24vw 24vw 24vw 24vw 24vw;
+          grid-template-rows: 24vw 24vw;
+          grid-template-areas: "title title . text-en text-en text-en text-en text-en ." ". . text-hu text-hu text-hu text-hu text-hu text-hu .";
+          gap: 40px;
+          margin-top: 40px;
+
+          .gallery-title {
+            grid-area: title;
+            display: flex;
+            flex-direction: column;
+            font-size: 28px;
+            font-family: AkzidenzGroteskPro;
+            color: #010101;
+            .title {
+            }
+            .date {
+            }
+          }
+        }
+        .text-hu {
+          grid-area: text-hu;
+        }
+
+        .text-en {
+          grid-area: text-en;
         }
       }
 
@@ -390,7 +421,7 @@ main {
           align-items: end;
           .pager {
             font-family: AkzidenzGroteskPro;
-            font-size: 22px;
+            font-size: 19px;
             font-weight: normal;
             font-stretch: normal;
             font-style: normal;
