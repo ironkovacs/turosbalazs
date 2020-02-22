@@ -311,8 +311,8 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
   }
   main .right .gallery-wrapper .gallery {
     display: grid;
-    grid-template-columns: 24vw 24vw 24vw;
-    gap: 40px;
+    grid-template-columns: 23vw 23vw 23vw;
+    gap: 2.1vw;
   }
   main .right .gallery-wrapper .gallery._2col {
     grid-template-columns: 22vw 22vw;
@@ -320,13 +320,15 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
   }
   main .right .gallery-wrapper .gallery._3col {
     grid-template-columns: 23vw 23vw 23vw;
+    gap: 2.1vw;
   }
   main .right .gallery-wrapper .gallery._4col {
     grid-template-columns: 17vw 17vw 17vw 17vw;
     gap: 1.2vw;
   }
   main .right .gallery-wrapper .gallery._5col {
-    grid-template-columns: 16vw 16vw 16vw 16vw 16vw;
+    grid-template-columns: 14vw 14vw 14vw 14vw 14vw;
+    gap: 1.35vw;
   }
   main .right .gallery-wrapper .gallery .gallery-element {
     cursor: pointer;
@@ -350,7 +352,7 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
     left: 6px;
     color: white;
     font-family: "AkzidenzGroteskPro";
-    font-size: 56px;
+    font-size: 2.9vw;
     text-transform: uppercase;
     transition: opacity 2s ease-in-out;
     opacity: 0;
