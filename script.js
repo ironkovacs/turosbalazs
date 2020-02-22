@@ -194,8 +194,10 @@ function landing() {
 function gallery(set, col) {
   let gallery = '';
   gallery = generateGalleryElements(set);
-  col = col ? `.col${col}` : '';
-  html.right.innerHTML = `<div class="gallery${col}">` + gallery + '</div>';
+  col = col ? ` _${col}col` : '';
+  html.right.innerHTML = col
+    ? `<div class="gallery-wrapper"><div class="gallery${col}">` + gallery + '</div></div>'
+    : '<div class="gallery-wrapper"><div class="gallery">' + gallery + '</div></div>';
   generateNavToSet(set);
 }
 
@@ -293,7 +295,7 @@ function navigation(toPage) {
       landing();
       break;
     case 'works':
-      gallery(mainSet, 3);
+      gallery(mainSet);
       html.menu.classList.remove('hidden');
       break;
     case 'reflection':
