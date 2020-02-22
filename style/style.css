@@ -288,6 +288,8 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
     min-width: 185px;
   }
   main .right {
+    margin: 88px 0 0 0;
+    max-width: 1600px;
     max-height: 960px;
     overflow-y: auto;
   }
@@ -306,7 +308,6 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
   }
   main .right .gallery-wrapper {
     height: 100%;
-    margin: 0 100px 40px 0;
   }
   main .right .gallery-wrapper .gallery {
     display: grid;
