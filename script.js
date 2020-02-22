@@ -208,12 +208,8 @@ function gallery(set, col = 3, text = true) {
   let gallery = '';
   gallery = generateGalleryElements(set);
 
-   let _text = text ? grnerateGalleryTextElements(set) : '';
-  
-  col = col ? ` _${col}col` : '';
-  html.right.innerHTML = col
-    ? `<div class="gallery-wrapper"><div class="gallery${col}">${gallery}</div>${_text}</div>`
-    : `<div class="gallery-wrapper"><div class="gallery">${gallery}</div>${_text}</div>`;
+  let _text = text ? grnerateGalleryTextElements(set, col) : '';
+  html.right.innerHTML = `<div class="gallery-wrapper"><div class="gallery _${col}col">${gallery}</div>${_text}</div>`
   generateNavToSet(set);
 }
 
@@ -243,10 +239,10 @@ function generateGalleryElements(set) {
 
   return gallery;
 }
-function grnerateGalleryTextElements(set) {
+function grnerateGalleryTextElements(set, col) {
   e = set.text;
   return `
-  <div class="gallery-text">
+  <div class="gallery-text _${col}col">
     <div class="gallery-title"> 
       <span class="title">${e.title}</span>
       <span class="date">${e.date}</span>
