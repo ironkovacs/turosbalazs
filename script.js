@@ -191,10 +191,11 @@ function landing() {
   })
 }
 
-function gallery(set) {
+function gallery(set, col) {
   let gallery = '';
   gallery = generateGalleryElements(set);
-  html.right.innerHTML = '<div class="gallery">' + gallery + '</div>';
+  col = col ? `.col${col}` : '';
+  html.right.innerHTML = `<div class="gallery${col}">` + gallery + '</div>';
   generateNavToSet(set);
 }
 
@@ -292,26 +293,26 @@ function navigation(toPage) {
       landing();
       break;
     case 'works':
-      gallery(mainSet);
+      gallery(mainSet, 3);
       html.menu.classList.remove('hidden');
       break;
     case 'reflection':
-      gallery(reflectionSet)
+      gallery(reflectionSet, 4)
       break;
     case 'epitome':
-      gallery(epitomeSet)
+      gallery(epitomeSet, 2)
       break;
     case 'closer':
-      gallery(closerSet)
+      gallery(closerSet, 5)
       break;
     case 'untitled':
-      gallery(untitledSet)
+      gallery(untitledSet, 3)
       break;
     case 'oneness':
-      gallery(onenessSet)
+      gallery(onenessSet, 3)
       break;
     case 'ferry—land':
-      gallery(ferryLandSet)
+      gallery(ferryLandSet, 4)
       break;
     case 'about':
       about()

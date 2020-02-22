@@ -78,7 +78,7 @@ main {
       font-family: PlayfairDisplay;
       font-size: 26px;
       line-height: 36px;
-      transition: all .2s linear;
+      transition: all 0.2s linear;
       ul {
         list-style: none;
       }
@@ -87,7 +87,7 @@ main {
         &:hover {
           cursor: pointer;
           color: #000;
-          transition: all .2s linear;
+          transition: all 0.2s linear;
         }
       }
       .nav-works {
@@ -136,7 +136,6 @@ main {
     }
     &.portrait {
       .gallery-element {
-
       }
     }
     &.landscape {
@@ -250,7 +249,8 @@ main {
   width: 100%;
 }
 
-@media only screen and (min-width: 768px) { // TABLET PORTRAIT
+@media only screen and (min-width: 768px) {
+  // TABLET PORTRAIT
   main {
     .left {
       width: 14vw;
@@ -286,7 +286,7 @@ main {
       min-width: 185px;
     }
     .right {
-      margin: 88px 32px 0 0; 
+      margin: 88px 32px 0 0;
       max-width: 1600px;
       max-height: 960px;
       overflow-y: auto;
@@ -305,9 +305,27 @@ main {
       }
 
       .gallery {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 40px;
+        
+          &.col-2 {
+            display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 40px;
+        }
+        &.col-3 {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          gap: 35px;
+        }
+        &.col-4 {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          gap: 30px;
+        }
+        &.col-5 {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+          gap: 20px;
+        }
         .gallery-element {
           cursor: pointer;
           width: 100%;
@@ -488,14 +506,14 @@ main {
             font-size: 16px;
             text-decoration: none;
             color: #010101;
-            transition: all .2s linear;
-            &:hover{
+            transition: all 0.2s linear;
+            &:hover {
               color: #828282;
-              transition: all .2s linear;
+              transition: all 0.2s linear;
             }
           }
         }
-        img{
+        img {
           height: 80vh;
           max-height: 727px;
         }

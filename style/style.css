@@ -85,7 +85,7 @@ main .left .menu {
   font-family: PlayfairDisplay;
   font-size: 26px;
   line-height: 36px;
-  transition: all .2s linear;
+  transition: all 0.2s linear;
 }
 
 main .left .menu ul {
@@ -96,7 +96,7 @@ main .left .menu ul:hover,
 main .left .menu li:hover {
   cursor: pointer;
   color: #000;
-  transition: all .2s linear;
+  transition: all 0.2s linear;
 }
 
 main .left .menu .nav-works .works-list {
@@ -306,10 +306,25 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
     background-position: top right;
     cursor: pointer;
   }
-  main .right .gallery {
+  main .right .gallery.col-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  main .right .gallery.col-3 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 40px;
+    gap: 35px;
+  }
+  main .right .gallery.col-4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+  }
+  main .right .gallery.col-5 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px;
   }
   main .right .gallery .gallery-element {
     cursor: pointer;
@@ -481,11 +496,11 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
     font-size: 16px;
     text-decoration: none;
     color: #010101;
-    transition: all .2s linear;
+    transition: all 0.2s linear;
   }
   main .right .contact .link a:hover {
     color: #828282;
-    transition: all .2s linear;
+    transition: all 0.2s linear;
   }
   main .right .contact img {
     height: 80vh;
