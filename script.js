@@ -111,9 +111,9 @@ const knotSet = {
   ], text: {
     title: `Ephemeral Knot`,
     date: '2012-2014',
-    en: ``,
-    hu: ``,
-    embeded: null
+    en: `<iframe src="https://player.vimeo.com/video/81264915" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`,
+    hu: `<a href="https://vimeo.com/81264915">MAKING OF</a> Ephemeral Knot from <a href="https://vimeo.com/user23286965">Balazs Turos</a>.`,
+    embeded: ``
   }
 };
 const onenessSet = {
@@ -176,10 +176,10 @@ function init() {
 
   html.title.addEventListener('click', () => { navigation('works') });
   html.menu.works.main.addEventListener('click', () => { navigation('works') })
-  html.menu.works.reflection.addEventListener('click', () => { navigation('reflection') })
+  html.menu.works.reflection.addEventListener('click', () => { navigation('perceptions') })
   html.menu.works.epitome.addEventListener('click', () => { navigation('epitome') })
   html.menu.works.closer.addEventListener('click', () => { navigation('closer') })
-  html.menu.works.knot.addEventListener('click', () => { navigation('knot') })
+  html.menu.works.knot.addEventListener('click', () => { navigation('ephemeral knot') })
   html.menu.works.oneness.addEventListener('click', () => { navigation('oneness') })
   html.menu.works.ferryLand.addEventListener('click', () => { navigation('ferry—land') })
   html.menu.about.addEventListener('click', () => { navigation('about') })
@@ -257,7 +257,7 @@ function grnerateGalleryTextElements(set, col) {
       ${e.hu}
       </p>
     </div>
-    ${e.emeded ? e.embeded : ''}
+    ${e.embeded ? e.embeded : ''}
   </div>
   `
 }
@@ -265,11 +265,13 @@ function grnerateGalleryTextElements(set, col) {
 function generateNavToSet(set) {
   set.img.map(e => {
     if (e.id) {
-      document.getElementById(e.id).addEventListener('click', () => { singleGallery(set, e.id) })
+      document.getElementById(e.id).addEventListener('click', () => {
+        singleGallery(set, e.id)
+      })
     }
     if (e.title) {
       document.getElementById(e.title).addEventListener('click', () => {
-        navigation(e.title)
+        navigation(`${e.title}`)
       })
     }
   })
@@ -316,6 +318,16 @@ function singleGallery(set, id) {
   } else {
     html.right.galleryNavNext.classList.add('disabled');
   }
+
+  document.onkeydown = function (e) {
+    switch (e.key) {
+      case 'ArrowLeft':
+        if (id > 1) { singleGallery(set, id - 1) }
+        break;
+      case 'ArrowRight':
+        if (id < set.img.length) { singleGallery(set, id + 1) }
+    }
+  };
 }
 
 function showGalleryElement(element) {
@@ -324,6 +336,7 @@ function showGalleryElement(element) {
 
 
 function navigation(toPage) {
+  console.log(toPage)
   switch (toPage) {
     case 'landing':
       landing();
@@ -332,7 +345,7 @@ function navigation(toPage) {
       gallery(mainSet, 3, false);
       html.menu.classList.remove('hidden');
       break;
-    case 'reflection':
+    case 'perceptions':
       gallery(reflectionSet, 4)
       break;
     case 'epitome':
@@ -341,7 +354,7 @@ function navigation(toPage) {
     case 'closer':
       gallery(closerSet, 5)
       break;
-    case 'knot':
+    case 'ephemeral knot':
       gallery(knotSet, 3)
       break;
     case 'oneness':
@@ -356,9 +369,9 @@ function navigation(toPage) {
     case 'contact':
       contact()
       break;
-    default:
-      navigation(toPage)
-      break;
+    // default:
+    //   navigation(toPage)
+    //   break;
   }
 };
 
