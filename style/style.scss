@@ -349,8 +349,7 @@ main {
         }
         .gallery-text {
           display: grid;
-          grid-template-rows: 1fr 1fr;
-          margin-top: 1.5vw;
+          margin: 1.5vw 0;
           &._2col {
             grid-template-columns: repeat(9, calc(26vw / 3));
             grid-template-areas:

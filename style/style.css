@@ -350,8 +350,7 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
   }
   main .right .gallery-wrapper .gallery-text {
     display: grid;
-    grid-template-rows: 1fr 1fr;
-    margin-top: 1.5vw;
+    margin: 1.5vw 0;
   }
   main .right .gallery-wrapper .gallery-text._2col {
     grid-template-columns: repeat(9, calc(26vw / 3));
