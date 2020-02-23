@@ -270,9 +270,10 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
 
 @media only screen and (min-width: 1024px) and (orientation: landscape) {
   main .left {
-    padding: 88px 16px 56px 56px;
+    padding: 88px 16px 0 56px;
     width: 14vw;
-    max-height: 810px;
+    height: 43vw;
+    max-height: 850px;
     min-width: 185px;
   }
   main .right {
