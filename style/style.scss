@@ -81,6 +81,7 @@ main {
       transition: all 0.2s linear;
       ul {
         list-style: none;
+        width: max-content;
       }
       ul,
       li {
@@ -88,10 +89,12 @@ main {
           cursor: pointer;
           color: #000;
           transition: all 0.2s linear;
+          width: max-content;
         }
       }
       .nav-works {
         .works-list {
+          width: max-content;
           margin: 6px 0;
           width: 183px;
           font-family: AkzidenzGroteskPro;
@@ -99,18 +102,16 @@ main {
           line-height: 22px;
           text-align: left;
           color: #828282;
-
-          .active {
-            background-image: url(../assets/elements/works-line.png);
-            background-repeat: no-repeat;
-            background-position: center left;
-            cursor: default;
-            color: #828282 !important;
-          }
         }
       }
-      &.hidden {
-        display: none;
+      & .active {
+        background-image: url(../assets/elements/works-line.png);
+        background-repeat: no-repeat;
+        background-position: center left;
+        cursor: default;
+        &:hover{
+          color: inherit;
+        }
       }
     }
   }
@@ -292,14 +293,14 @@ main {
 
         .gallery {
           display: grid;
-          grid-template-columns: repeat(3, 23vw);
+          grid-template-columns: repeat(3, 25vw);
           gap: 2.1vw;
           &._2col {
             grid-template-columns: repeat(2, 26vw);
             gap: 1.5vw;
           }
           &._3col {
-            grid-template-columns: repeat(3, 23vw);
+            grid-template-columns: repeat(3, 25vw);
             gap: 2.1vw;
           }
           &._4col {
@@ -367,9 +368,9 @@ main {
               "title title . text-en text-en text-en text-en text-en ."
               ". . text-hu text-hu text-hu text-hu text-hu text-hu .";
 
-            grid-template-columns: repeat(9, 7.6666vw);
-            gap: 2.1vw 0;
-            .text-hu {
+            grid-template-columns: repeat(9, calc(25vw / 3));
+            gap: 2.1vw calc(2.1vw / 3);
+            .text-en {
               margin-left: -2.1vw;
             }
           }
@@ -591,4 +592,8 @@ main {
       display: none;
     }
   }
+}
+
+.hidden {
+  display: none;
 }

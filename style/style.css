@@ -90,6 +90,7 @@ main .left .menu {
 
 main .left .menu ul {
   list-style: none;
+  width: max-content;
 }
 
 main .left .menu ul:hover,
@@ -97,9 +98,11 @@ main .left .menu li:hover {
   cursor: pointer;
   color: #000;
   transition: all 0.2s linear;
+  width: max-content;
 }
 
 main .left .menu .nav-works .works-list {
+  width: max-content;
   margin: 6px 0;
   width: 183px;
   font-family: AkzidenzGroteskPro;
@@ -109,16 +112,15 @@ main .left .menu .nav-works .works-list {
   color: #828282;
 }
 
-main .left .menu .nav-works .works-list .active {
+main .left .menu .active {
   background-image: url(../assets/elements/works-line.png);
   background-repeat: no-repeat;
   background-position: center left;
   cursor: default;
-  color: #828282 !important;
 }
 
-main .left .menu.hidden {
-  display: none;
+main .left .menu .active:hover {
+  color: inherit;
 }
 
 main .right .landing {
@@ -298,7 +300,7 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
   }
   main .right .gallery-wrapper .gallery {
     display: grid;
-    grid-template-columns: repeat(3, 23vw);
+    grid-template-columns: repeat(3, 25vw);
     gap: 2.1vw;
   }
   main .right .gallery-wrapper .gallery._2col {
@@ -306,7 +308,7 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
     gap: 1.5vw;
   }
   main .right .gallery-wrapper .gallery._3col {
-    grid-template-columns: repeat(3, 23vw);
+    grid-template-columns: repeat(3, 25vw);
     gap: 2.1vw;
   }
   main .right .gallery-wrapper .gallery._4col {
@@ -363,10 +365,10 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
   }
   main .right .gallery-wrapper .gallery-text._3col {
     grid-template-areas: "title title . text-en text-en text-en text-en text-en ." ". . text-hu text-hu text-hu text-hu text-hu text-hu .";
-    grid-template-columns: repeat(9, 7.6666vw);
-    gap: 2.1vw 0;
+    grid-template-columns: repeat(9, calc(25vw / 3));
+    gap: 2.1vw calc(2.1vw / 3);
   }
-  main .right .gallery-wrapper .gallery-text._3col .text-hu {
+  main .right .gallery-wrapper .gallery-text._3col .text-en {
     margin-left: -2.1vw;
   }
   main .right .gallery-wrapper .gallery-text._4col {
@@ -569,4 +571,8 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
   main .hamburger {
     display: none;
   }
+}
+
+.hidden {
+  display: none;
 }

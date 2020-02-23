@@ -186,8 +186,6 @@ function init() {
   html.menu.contact.addEventListener('click', () => { navigation('contact') })
 
   navigation('landing');
-
-
 }
 
 
@@ -211,10 +209,9 @@ function gallery(set, col = 3, text = true) {
   let _text = text ? grnerateGalleryTextElements(set, col) : '';
   html.right.innerHTML = `<div class="gallery-wrapper"><div class="gallery _${col}col">${gallery}</div>${_text}</div>`
   generateNavToSet(set);
+  removeHidden()
 }
 
-function sidenav(active) {
-}
 
 function about() {
   loadHTMLtoDOM(components.bio, html.right)
@@ -239,6 +236,7 @@ function generateGalleryElements(set) {
 
   return gallery;
 }
+
 function grnerateGalleryTextElements(set, col) {
   e = set.text;
   return `
@@ -275,8 +273,6 @@ function generateNavToSet(set) {
       })
     }
   })
-  sidenav('works')
-
 }
 
 function loadHTMLtoDOM(html, toDOMelement) {
@@ -336,7 +332,7 @@ function showGalleryElement(element) {
 
 
 function navigation(toPage) {
-  console.log(toPage)
+  if (document.querySelector('.active')) document.querySelector('.active').classList.remove('active')
   switch (toPage) {
     case 'landing':
       landing();
@@ -344,30 +340,40 @@ function navigation(toPage) {
     case 'works':
       gallery(mainSet, 3, false);
       html.menu.classList.remove('hidden');
+      document.querySelector('span.nav--works').classList.add('active')
+      document.querySelector('ul.works-list').classList.add('hidden')
       break;
     case 'perceptions':
       gallery(reflectionSet, 4)
+      html.menu.works.reflection.classList.add('active')
       break;
     case 'epitome':
       gallery(epitomeSet, 2)
+      html.menu.works.epitome.classList.add('active')
       break;
     case 'closer':
       gallery(closerSet, 5)
+      html.menu.works.closer.classList.add('active')
       break;
     case 'ephemeral knot':
       gallery(knotSet, 3)
+      html.menu.works.knot.classList.add('active')
       break;
     case 'oneness':
       gallery(onenessSet, 3)
+      html.menu.works.oneness.classList.add('active')
       break;
     case 'ferry—land':
       gallery(ferryLandSet, 4)
+      html.menu.works.ferryLand.classList.add('active')
       break;
     case 'about':
       about()
+      html.menu.about.classList.add('active')
       break;
     case 'contact':
       contact()
+      html.menu.contact.classList.add('active')
       break;
     // default:
     //   navigation(toPage)
@@ -377,6 +383,12 @@ function navigation(toPage) {
 
 function locationHashChanged() {
   console.log(location.hash)
+}
+
+function removeHidden() {
+  const hidden = !!document.querySelector('.hidden') && document.querySelector('.hidden');
+  if (hidden) hidden.classList.remove('hidden');
+
 }
 
 window.addEventListener('hashchange', locationHashChanged);
