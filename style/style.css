@@ -162,6 +162,8 @@ main .right .single-gallery-wrapper .caroussel img.single-img {
   position: absolute;
   left: 0;
   bottom: 0;
+  height: 43vw;
+  width: 62.5vw;
   max-width: 1062px;
   max-height: 850px;
 }
@@ -462,7 +464,7 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
     fill: #828282;
   }
   main .right .single-gallery-wrapper .gallery-side .gallery-nav .prev {
-    margin: 0 10px;
+    margin: 0 5px;
     width: 8px;
     height: 17px;
     object-fit: contain;
@@ -478,7 +480,7 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
     cursor: default;
   }
   main .right .single-gallery-wrapper .gallery-side .gallery-nav .next {
-    margin: 0 10px;
+    margin: 0 15px 0 9px;
     width: 8px;
     height: 17px;
     object-fit: contain;
@@ -515,7 +517,7 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
   main .right .bio-wrapper .bio-en {
     order: 1;
     font-family: PlayfairDisplay;
-    font-size: 28px;
+    font-size: 27px;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
@@ -523,11 +525,13 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
     letter-spacing: -0.3px;
     text-align: left;
     color: #000000;
+    margin-bottom: 1em;
   }
   main .right .bio-wrapper .bio-hu {
     order: 3;
     width: 40vw;
     max-width: 763px;
+    margin-bottom: 2em;
   }
   main .right .bio-wrapper .bio-hu .bio-hu-text {
     font-family: PlayfairDisplay;
@@ -542,8 +546,8 @@ main .right .single-gallery-wrapper .gallery-side .gallery-nav .gallery-btn:hove
   }
   main .right .bio-wrapper .bio-img {
     order: 2;
-    width: 26.46vw;
-    max-width: 500px;
+    width: 28.125vw;
+    max-width: 540px;
   }
   main .right .bio-wrapper .bio-img img {
     width: 100%;

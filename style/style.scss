@@ -155,6 +155,8 @@ main {
           position: absolute;
           left: 0;
           bottom: 0;
+          height: 43vw;
+          width: 62.5vw;
           max-width: 1062px;
           max-height: 850px;
         }
@@ -472,7 +474,7 @@ main {
             display: flex;
             fill: #828282;
             .prev {
-              margin: 0 10px;
+              margin: 0 5px;
               width: 8px;
               height: 17px;
               object-fit: contain;
@@ -488,7 +490,7 @@ main {
               }
             }
             .next {
-              margin: 0 10px;
+              margin: 0 15px 0 9px;
               width: 8px;
               height: 17px;
               object-fit: contain;
@@ -528,7 +530,7 @@ main {
         .bio-en {
           order: 1;
           font-family: PlayfairDisplay;
-          font-size: 28px;
+          font-size: 27px;
           font-weight: bold;
           font-stretch: normal;
           font-style: normal;
@@ -536,11 +538,13 @@ main {
           letter-spacing: -0.3px;
           text-align: left;
           color: #000000;
+          margin-bottom: 1em;
         }
         .bio-hu {
           order: 3;
           width: 40vw;
           max-width: 763px;
+          margin-bottom: 2em;
           .bio-hu-text {
             font-family: PlayfairDisplay;
             font-size: 20px;
@@ -556,8 +560,8 @@ main {
 
         .bio-img {
           order: 2;
-          width: 26.46vw;
-          max-width: 500px;
+          width: 28.125vw;
+          max-width: 540px;
           img {
             width: 100%;
           }
