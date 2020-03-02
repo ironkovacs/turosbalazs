@@ -141,82 +141,82 @@ main {
         cursor: pointer;
       }
     }
-    .single-gallery-wrapper {
-      position: relative;
-      height: 43vw;
-      width: 62.5vw;
-      max-width: 1200px;
-      max-height: 850px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      .caroussel {
-        img.single-img {
-          position: absolute;
-          left: 0;
-          bottom: 0;
-          height: 43vw;
-          width: 62.5vw;
-          max-width: 1062px;
-          max-height: 850px;
-        }
-      }
-      .gallery-side {
-        width: 6.7vw;
-        height: 21vw;
-        max-width: 130px;
-        max-height: 425px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: end;
-        .pager {
-          font-family: AkzidenzGroteskPro;
-          font-size: 22px;
-          font-weight: normal;
-          font-stretch: normal;
-          font-style: normal;
-          line-height: 28px;
-          letter-spacing: normal;
-          text-align: right;
-          color: #828282;
-        }
-        .gallery-nav {
-          display: flex;
-          fill: #828282;
-          .prev {
-            margin: 0 10px;
-            width: 8px;
-            height: 17px;
-            object-fit: contain;
-            &:hover {
-              cursor: pointer;
-              fill: #010101;
-            }
-          }
-          .next {
-            margin: 0 10px;
-            width: 8px;
-            height: 17px;
-            object-fit: contain;
-            &:hover {
-              cursor: pointer;
-              fill: #010101;
-            }
-          }
-          .gallery-btn {
-            margin: 0;
-            width: 30px;
-            height: 17px;
-            object-fit: contain;
-            &:hover {
-              cursor: pointer;
-              fill: #010101;
-            }
-          }
-        }
-      }
-    }
+    // .single-gallery-wrapper {
+    //   position: relative;
+    //   height: 43vw;
+    //   width: 62.5vw;
+    //   max-width: 1200px;
+    //   max-height: 850px;
+    //   display: flex;
+    //   align-items: flex-end;
+    //   justify-content: space-between;
+    //   .caroussel {
+    //     img.single-img {
+    //       position: absolute;
+    //       left: 0;
+    //       bottom: 0;
+    //       height: 43vw;
+    //       width: 62.5vw;
+    //       max-width: 1062px;
+    //       max-height: 850px;
+    //     }
+    //   }
+    //   .gallery-side {
+    //     width: 6.7vw;
+    //     height: 21vw;
+    //     max-width: 130px;
+    //     max-height: 425px;
+    //     display: flex;
+    //     flex-direction: column;
+    //     justify-content: space-between;
+    //     align-items: end;
+    //     .pager {
+    //       font-family: AkzidenzGroteskPro;
+    //       font-size: 22px;
+    //       font-weight: normal;
+    //       font-stretch: normal;
+    //       font-style: normal;
+    //       line-height: 28px;
+    //       letter-spacing: normal;
+    //       text-align: right;
+    //       color: #828282;
+    //     }
+    //     .gallery-nav {
+    //       display: flex;
+    //       fill: #828282;
+    //       .prev {
+    //         margin: 0 10px;
+    //         width: 8px;
+    //         height: 17px;
+    //         object-fit: contain;
+    //         &:hover {
+    //           cursor: pointer;
+    //           fill: #010101;
+    //         }
+    //       }
+    //       .next {
+    //         margin: 0 10px;
+    //         width: 8px;
+    //         height: 17px;
+    //         object-fit: contain;
+    //         &:hover {
+    //           cursor: pointer;
+    //           fill: #010101;
+    //         }
+    //       }
+    //       .gallery-btn {
+    //         margin: 0;
+    //         width: 30px;
+    //         height: 17px;
+    //         object-fit: contain;
+    //         &:hover {
+    //           cursor: pointer;
+    //           fill: #010101;
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
   }
 }
 
