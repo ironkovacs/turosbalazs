@@ -175,7 +175,10 @@ const ferryLandSet = {
 //   embeded: ``}
 // }
 
-
+const currentNavPaths = {
+  title: '',
+  id: 0
+}
 
 let currentState = history.state;
 
@@ -287,11 +290,22 @@ function grnerateGalleryTextElements(set, col) {
   `
 }
 
+function generatePath(input) {
+  if (isNaN(input)) {
+    currentNavPaths.title = input;
+    delete currentNavPaths.id;
+  } else {
+    currentNavPaths.id = input;
+  }
+  console.log(currentNavPaths)
+}
+
 function generateNavToSet(set) {
   set.img.map(e => {
     if (e.id) {
       document.getElementById(e.id).addEventListener('click', () => {
         singleGallery(set, e.id)
+        generatePath(e.id)
       })
     }
     if (e.title) {
@@ -359,6 +373,7 @@ function showGalleryElement(element) {
 
 
 function navigation(toPage) {
+  generatePath(toPage)
   if (document.querySelector('.active')) document.querySelector('.active').classList.remove('active')
   switch (toPage) {
     case 'landing':
