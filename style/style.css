@@ -62,20 +62,8 @@ main .left {
   justify-content: space-between;
 }
 
-main .left .title {
-  font-family: AkzidenzGroteskPro;
-  font-size: 36px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 0.95;
-  letter-spacing: normal;
-  text-align: left;
-  color: #010101;
-}
-
-main .left .title .last-name {
-  text-transform: uppercase;
+main .left .title .title-svg {
+  height: 64px;
 }
 
 main .left .menu {

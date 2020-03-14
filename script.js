@@ -152,28 +152,28 @@ const ferryLandSet = {
   }
 }
 
-const testSet = {
-  img: [
-    {img: './img/test/01_01', title:'', id: 1},
-    {img: './img/test/01_02', title:'', id: 2},
-    {img: './img/test/01_03', title:'', id: 3},
-    {img: './img/test/02_01', title:'', id: 4},
-    {img: './img/test/02_02', title:'', id: 5},
-    {img: './img/test/02_03', title:'', id: 6},
-    {img: './img/test/03_01', title:'', id: 7},
-    {img: './img/test/03_02', title:'', id: 8},
-    {img: './img/test/03_03', title:'', id: 9},
-    {img: './img/test/04_01', title:'', id: 10},
-    {img: './img/test/04_02', title:'', id: 11},
-    {img: './img/test/04_03', title:'', id: 12},
-    {img: './img/test/04_04', title:'', id: 13},
-  ],
-  text:{title: `Test`,
-  date: '2012-2014',
-  en: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, vero aspernatur? Enim, assumenda! Eius pariatur optio ullam asperiores dignissimos. Voluptates, libero est provident veniam ut corrupti et ab repellat magni!',
-  hu: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, vero aspernatur? Enim, assumenda! Eius pariatur optio ullam asperiores dignissimos. Voluptates, libero est provident veniam ut corrupti et ab repellat magnit',
-  embeded: ``}
-}
+// const testSet = {
+//   img: [
+//     {img: './img/test/01_01', title:'', id: 1},
+//     {img: './img/test/01_02', title:'', id: 2},
+//     {img: './img/test/01_03', title:'', id: 3},
+//     {img: './img/test/02_01', title:'', id: 4},
+//     {img: './img/test/02_02', title:'', id: 5},
+//     {img: './img/test/02_03', title:'', id: 6},
+//     {img: './img/test/03_01', title:'', id: 7},
+//     {img: './img/test/03_02', title:'', id: 8},
+//     {img: './img/test/03_03', title:'', id: 9},
+//     {img: './img/test/04_01', title:'', id: 10},
+//     {img: './img/test/04_02', title:'', id: 11},
+//     {img: './img/test/04_03', title:'', id: 12},
+//     {img: './img/test/04_04', title:'', id: 13},
+//   ],
+//   text:{title: `Test`,
+//   date: '2012-2014',
+//   en: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, vero aspernatur? Enim, assumenda! Eius pariatur optio ullam asperiores dignissimos. Voluptates, libero est provident veniam ut corrupti et ab repellat magni!',
+//   hu: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, vero aspernatur? Enim, assumenda! Eius pariatur optio ullam asperiores dignissimos. Voluptates, libero est provident veniam ut corrupti et ab repellat magnit',
+//   embeded: ``}
+// }
 
 
 
@@ -194,7 +194,7 @@ function init() {
   html.menu.works.knot = document.querySelector('.nav-knot')
   html.menu.works.oneness = document.querySelector('.nav-oneness')
   html.menu.works.ferryLand = document.querySelector('.nav-ferry—land')
-  html.menu.works.test = document.querySelector('.nav-test')
+  // html.menu.works.test = document.querySelector('.nav-test')
 
   html.menu.about = document.querySelector('.nav-about')
   html.menu.contact = document.querySelector('.nav-contact')
@@ -208,7 +208,7 @@ function init() {
   html.menu.works.knot.addEventListener('click', () => { navigation('ephemeral knot') })
   html.menu.works.oneness.addEventListener('click', () => { navigation('oneness') })
   html.menu.works.ferryLand.addEventListener('click', () => { navigation('ferry—land') })
-  html.menu.works.test.addEventListener('click', () => { navigation('test') })
+  // html.menu.works.test.addEventListener('click', () => { navigation('test') })
   html.menu.about.addEventListener('click', () => { navigation('about') })
   html.menu.contact.addEventListener('click', () => { navigation('contact') })
 
@@ -399,10 +399,10 @@ function navigation(toPage) {
       gallery(ferryLandSet, 4)
       html.menu.works.ferryLand.classList.add('active')
       break;
-    case 'test':
-      gallery(testSet, 3)
-      html.menu.works.ferryLand.classList.add('active')
-      break;
+    // case 'test':
+    //   gallery(testSet, 3)
+    //   html.menu.works.test.classList.add('active')
+    //   break;
     case 'about':
       about()
       html.menu.about.classList.add('active')
