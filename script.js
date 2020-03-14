@@ -41,7 +41,7 @@ const mainSet = {
     { img: './img/04/roncs_001', title: 'ephemeral knot', id: null },
     { img: './img/05/oneness_003', title: 'oneness', id: null },
     { img: './img/06/videk_001', title: 'ferry—land', id: null },
-    { img: './img/placeholder', title: 'test', id: null }
+    // { img: './img/placeholder', title: 'test', id: null }
   ], text: null
 }
 const reflectionSet = {
@@ -217,11 +217,6 @@ function init() {
 
 
 function landing() {
-  landingImgs = [
-
-  ];
-  let rndLandingImg = 
-
 
   html.right.innerHTML= '<div class="landing"></div>'
   landing = document.querySelector('.landing')

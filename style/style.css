@@ -67,13 +67,14 @@ main .left .title .title-svg {
 }
 
 main .left .menu {
-  color: #111111;
+  color: green;
   font-family: "PlayfairDisplay";
   text-transform: uppercase;
   font-family: PlayfairDisplay;
   font-size: 22px;
   line-height: 28px;
   transition: all 0.2s linear;
+  padding: 0 0 3vh 0;
 }
 
 main .left .menu ul {
@@ -118,7 +119,7 @@ main .right .landing {
   height: 100vh;
   width: 125vh;
   max-width: 80vw;
-  background-image: url("../img/index.jpg");
+  background-image: url("../img/index_1.jpg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: top right;
