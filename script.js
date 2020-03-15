@@ -36,6 +36,7 @@ const components = {
 
 const mainSet = {
   img: [
+
     { img: './img/01/perceptions_001', title: 'perceptions', setName: 'perceptions', id: null },
     { img: './img/02/epitome_001', title: 'epitome', setName: 'epitome', id: null },
     { img: './img/03/CLOSER_002', title: 'closer', setName: 'closer', id: null },
@@ -43,6 +44,7 @@ const mainSet = {
     { img: './img/05/oneness_003', title: 'oneness', setName: 'oneness', id: null },
     { img: './img/06/videk_001', title: 'ferry—land', setName: 'ferry-land', id: null },
     // { img: './img/placeholder', title: 'test', setName: '', id: null }
+
   ], text: null
 }
 const reflectionSet = {
@@ -224,9 +226,11 @@ function init() {
 }
 
 function landing() {
+
   html.right.innerHTML = '<div class="landing"></div>'
   landing = document.querySelector('.landing');
   landing.style.backgroundImage = `url('./img/index_${rngMinMax(1, 3)}.jpg')`
+
 
   landing.addEventListener('click', () => {
     landing.classList.add('fade');
