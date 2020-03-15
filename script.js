@@ -8,6 +8,7 @@ const components = {
   landing: './components/landing/landing.html',
   sidenav: './components/sidenav/sidenav.html',
   gallery: './components/gallery/gallery.html',
+  makingOf: './components/makingOf/making-of.html',
   singleGallery: `
  <div class="single-gallery-wrapper">
    <div class="caroussel">
@@ -35,16 +36,19 @@ const components = {
 
 const mainSet = {
   img: [
-    { img: './img/01/perceptions_001', title: 'perceptions', id: null },
-    { img: './img/02/epitome_001', title: 'epitome', id: null },
-    { img: './img/03/CLOSER_002', title: 'closer', id: null },
-    { img: './img/04/roncs_001', title: 'ephemeral knot', id: null },
-    { img: './img/05/oneness_003', title: 'oneness', id: null },
-    { img: './img/06/videk_001', title: 'ferry—land', id: null },
-    // { img: './img/placeholder', title: 'test', id: null }
+
+    { img: './img/01/perceptions_001', title: 'perceptions', setName: 'perceptions', id: null },
+    { img: './img/02/epitome_001', title: 'epitome', setName: 'epitome', id: null },
+    { img: './img/03/CLOSER_002', title: 'closer', setName: 'closer', id: null },
+    { img: './img/04/roncs_001', title: 'ephemeral knot', setName: 'ephemeral-knot', id: null },
+    { img: './img/05/oneness_003', title: 'oneness', setName: 'oneness', id: null },
+    { img: './img/06/videk_001', title: 'ferry—land', setName: 'ferry-land', id: null },
+    // { img: './img/placeholder', title: 'test', setName: '', id: null }
+
   ], text: null
 }
 const reflectionSet = {
+  setName:'perceptions',
   img: [
     { img: './img/01/perceptions_001', title: '', id: 1 },
     { img: './img/01/perceptions_002', title: '', id: 2 },
@@ -63,6 +67,7 @@ const reflectionSet = {
   }
 };
 const epitomeSet = {
+  setName: 'epitome',
   img: [
     { img: './img/02/epitome_001', title: '', id: 1 },
     { img: './img/02/epitome_002', title: '', id: 2 },
@@ -77,6 +82,7 @@ const epitomeSet = {
   }
 };
 const closerSet = {
+  setName: 'closer',
   img: [
     { img: './img/03/CLOSER_001', title: '', id: 1 },
     { img: './img/03/CLOSER_002', title: '', id: 2 },
@@ -102,6 +108,7 @@ const closerSet = {
   }
 };
 const knotSet = {
+  setName:'ephemeral-knot',
   img: [
     { img: './img/04/roncs_001', title: '', id: 1 },
     { img: './img/04/roncs_002', title: '', id: 2 },
@@ -112,12 +119,13 @@ const knotSet = {
   ], text: {
     title: `Ephemeral Knot`,
     date: '2012-2014',
-    en: `<iframe src="https://player.vimeo.com/video/81264915" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`,
-    hu: `<a href="https://vimeo.com/81264915">MAKING OF</a> Ephemeral Knot from <a href="https://vimeo.com/user23286965">Balazs Turos</a>.`,
-    embeded: ``
+    // en: `<iframe src="https://player.vimeo.com/video/81264915" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`,
+    // hu: `<a href="https://vimeo.com/81264915">MAKING OF</a> Ephemeral Knot from <a href="https://vimeo.com/user23286965">Balazs Turos</a>.`,
+    // embeded: ``
   }
 };
 const onenessSet = {
+  setName: 'oneness',
   img: [
     { img: './img/05/oneness_001', title: '', id: 1 },
     { img: './img/05/oneness_002', title: '', id: 2 },
@@ -134,6 +142,7 @@ const onenessSet = {
   }
 };
 const ferryLandSet = {
+  setName: 'ferry—land',
   img: [
     { img: './img/06/videk_001', title: '', id: 1 },
     { img: './img/06/videk_002', title: '', id: 2 },
@@ -175,70 +184,71 @@ const ferryLandSet = {
 //   embeded: ``}
 // }
 
-
-
-let currentState = history.state;
+const currentNavPaths = {
+  title: '',
+  id: 0
+}
 
 function init() {
-
+  newHashToSet = this.location.hash.substr(1).split('/');
   // fixed on index
   html.main = document.querySelector('main');
   html.left = document.querySelector('.left');
   html.title = document.querySelector('.title');
   html.menu = document.querySelector('.menu');
   html.menu.works = {};
-  html.menu.works.main = document.querySelector('.nav--works')
-  html.menu.works.reflection = document.querySelector('.nav-reflection')
-  html.menu.works.epitome = document.querySelector('.nav-epitome')
-  html.menu.works.closer = document.querySelector('.nav-closer')
-  html.menu.works.knot = document.querySelector('.nav-knot')
-  html.menu.works.oneness = document.querySelector('.nav-oneness')
-  html.menu.works.ferryLand = document.querySelector('.nav-ferry—land')
+  html.menu.works.main = document.querySelector('.nav--works');
+  html.menu.works.reflection = document.querySelector('.nav-reflection');
+  html.menu.works.epitome = document.querySelector('.nav-epitome');
+  html.menu.works.closer = document.querySelector('.nav-closer');
+  html.menu.works.knot = document.querySelector('.nav-knot');
+  html.menu.works.oneness = document.querySelector('.nav-oneness');
+  html.menu.works.ferryLand = document.querySelector('.nav-ferry—land');
   // html.menu.works.test = document.querySelector('.nav-test')
 
-  html.menu.about = document.querySelector('.nav-about')
-  html.menu.contact = document.querySelector('.nav-contact')
+  html.menu.about = document.querySelector('.nav-about');
+  html.menu.contact = document.querySelector('.nav-contact');
   html.right = document.querySelector('.right');
 
-  html.title.addEventListener('click', () => { navigation('works') });
-  html.menu.works.main.addEventListener('click', () => { navigation('works') })
-  html.menu.works.reflection.addEventListener('click', () => { navigation('perceptions') })
-  html.menu.works.epitome.addEventListener('click', () => { navigation('epitome') })
-  html.menu.works.closer.addEventListener('click', () => { navigation('closer') })
-  html.menu.works.knot.addEventListener('click', () => { navigation('ephemeral knot') })
-  html.menu.works.oneness.addEventListener('click', () => { navigation('oneness') })
-  html.menu.works.ferryLand.addEventListener('click', () => { navigation('ferry—land') })
-  // html.menu.works.test.addEventListener('click', () => { navigation('test') })
-  html.menu.about.addEventListener('click', () => { navigation('about') })
-  html.menu.contact.addEventListener('click', () => { navigation('contact') })
+  html.title.addEventListener('click', () => { setHash('works') });
+  html.menu.works.main.addEventListener('click', () => { setHash('works') });
+  html.menu.works.reflection.addEventListener('click', () => { setHash('perceptions') });
+  html.menu.works.epitome.addEventListener('click', () => { setHash('epitome') });
+  html.menu.works.closer.addEventListener('click', () => { setHash('closer') });
+  html.menu.works.knot.addEventListener('click', () => { setHash('ephemeral-knot') });
+  html.menu.works.oneness.addEventListener('click', () => { setHash('oneness') });
+  html.menu.works.ferryLand.addEventListener('click', () => { setHash('ferry—land') });
+  // html.menu.works.test.addEventListener('click', () => { setHash('test') });
+  html.menu.about.addEventListener('click', () => { setHash('about') });
+  html.menu.contact.addEventListener('click', () => { setHash('contact') });
 
-  navigation('landing');
+  if (currentHash !== newHashToSet) navigation(newHashToSet);
 }
-
 
 function landing() {
 
-  html.right.innerHTML= '<div class="landing"></div>'
-  landing = document.querySelector('.landing')
+  html.right.innerHTML = '<div class="landing"></div>'
+  landing = document.querySelector('.landing');
+  landing.style.backgroundImage = `url('./img/index_${rngMinMax(1, 3)}.jpg')`
+
 
   landing.addEventListener('click', () => {
     landing.classList.add('fade');
     setTimeout(() => {
-      navigation('works')
+      setHash('works')
     }, 1000);
   })
 }
 
-function gallery(set, col = 3, text = true) {
+function gallery(toPage, set, col = 3, text = true) {
   let gallery = '';
   gallery = generateGalleryElements(set);
 
   let _text = text ? grnerateGalleryTextElements(set, col) : '';
   html.right.innerHTML = `<div class="gallery-wrapper"><div class="gallery _${col}col">${gallery}</div>${_text}</div>`
-  generateNavToSet(set);
+  generateNavToSet(toPage, set);
   removeHidden()
 }
-
 
 function about() {
   loadHTMLtoDOM(components.bio, html.right)
@@ -287,16 +297,26 @@ function grnerateGalleryTextElements(set, col) {
   `
 }
 
-function generateNavToSet(set) {
+// function generatePath(input) {
+//   if (isNaN(input)) {
+//     currentNavPaths.title = input;
+//     delete currentNavPaths.id;
+//   } else {
+//     currentNavPaths.id = input;
+//   }
+//   console.log(currentNavPaths)
+// }
+
+function generateNavToSet(toPage, set) {
   set.img.map(e => {
     if (e.id) {
       document.getElementById(e.id).addEventListener('click', () => {
-        singleGallery(set, e.id)
+        setHash(toPage, e.id)
       })
     }
     if (e.title) {
       document.getElementById(e.title).addEventListener('click', () => {
-        navigation(`${e.title}`)
+        setHash(`${e.setName}`)
       })
     }
   })
@@ -330,14 +350,16 @@ function singleGallery(set, id) {
 
   html.right.galleryView.addEventListener('click', () => { gallery(set) })
 
+  const navHelper = this.location.hash.substr(1).split('/');
+
   if (id > 1) {
-    html.right.galleryNavPrev.addEventListener('click', () => { singleGallery(set, id - 1) })
+    html.right.galleryNavPrev.addEventListener('click', () => { setHash(navHelper[0], Number(navHelper[1]) - 1) })
   } else {
     html.right.galleryNavPrev.classList.add('disabled');
   }
 
   if (id < set.img.length) {
-    html.right.galleryNavNext.addEventListener('click', () => { singleGallery(set, id + 1) })
+    html.right.galleryNavNext.addEventListener('click', () => { setHash(navHelper[0], Number(navHelper[1]) + 1) })
   } else {
     html.right.galleryNavNext.classList.add('disabled');
   }
@@ -352,50 +374,80 @@ function singleGallery(set, id) {
     }
   };
 }
-
+0
 function showGalleryElement(element) {
   return `<img class="single-img" src="${element.img}_nagy.jpg">`
 }
 
-
-function navigation(toPage) {
+function navigation(hash) {
+  const toPage = hash[0] ? hash[0] : 'landing';
+  // generatePath(toPage)
+  const galleryId = hash[1] ? hash[1] : null;
   if (document.querySelector('.active')) document.querySelector('.active').classList.remove('active')
+  console.log('navigation(hash) toPage: ', toPage);
+
   switch (toPage) {
     case 'landing':
       landing();
       break;
     case 'works':
-      gallery(mainSet, 3, false);
+      gallery(toPage, mainSet, 3, false);
       html.menu.classList.remove('hidden');
       document.querySelector('span.nav--works').classList.add('active')
       document.querySelector('ul.works-list').classList.add('hidden')
       break;
     case 'perceptions':
-      gallery(reflectionSet, 4)
-      html.menu.works.reflection.classList.add('active')
+      if (!galleryId) {
+        gallery(toPage, reflectionSet, 4)
+        html.menu.works.reflection.classList.add('active')
+      } else {
+        singleGallery(reflectionSet, galleryId)
+      }
       break;
     case 'epitome':
-      gallery(epitomeSet, 2)
-      html.menu.works.epitome.classList.add('active')
+      if (galleryId) {
+        gallery(toPage, epitomeSet, 2)
+        html.menu.works.epitome.classList.add('active')
+      }
       break;
     case 'closer':
-      gallery(closerSet, 5)
-      html.menu.works.closer.classList.add('active')
+      if (!galleryId) {
+        gallery(toPage, closerSet, 5)
+        html.menu.works.closer.classList.add('active')
+      } else {
+        singleGallery(closerSet, galleryId)
+      }
       break;
-    case 'ephemeral knot':
-      gallery(knotSet, 3)
-      html.menu.works.knot.classList.add('active')
+    case 'ephemeral-knot':
+      if (!galleryId) {
+        gallery(toPage, knotSet, 3)
+        html.menu.works.knot.classList.add('active')
+      } else {
+        singleGallery(knotSet, galleryId)
+      }
       break;
     case 'oneness':
-      gallery(onenessSet, 3)
-      html.menu.works.oneness.classList.add('active')
+      if (!galleryId) {
+        gallery(toPage, onenessSet, 3)
+        html.menu.works.oneness.classList.add('active')
+      } else {
+        singleGallery(onenessSet, galleryId)
+      }
       break;
-    case 'ferry—land':
-      gallery(ferryLandSet, 4)
-      html.menu.works.ferryLand.classList.add('active')
+    case 'ferry-land':
+      if (!galleryId) {
+        gallery(toPage, ferryLandSet, 4)
+        html.menu.works.ferryLand.classList.add('active')
+      } else {
+        singleGallery(ferryLandSet, galleryId)
+      }
       break;
+      case 'making-of-ephemeral-knot':
+        loadHTMLtoDOM(components.makingOf, html.right);
+        html.menu.classList.remove('hidden');
+      break
     // case 'test':
-    //   gallery(testSet, 3)
+    //   gallery(toPage, testSet, 3)
     //   html.menu.works.test.classList.add('active')
     //   break;
     case 'about':
@@ -406,14 +458,13 @@ function navigation(toPage) {
       contact()
       html.menu.contact.classList.add('active')
       break;
-    // default:
-    //   navigation(toPage)
-    //   break;
   }
-};
+}
 
-function locationHashChanged() {
-  console.log(location.hash)
+function setHash(page, galleryId) {
+  const newHash = galleryId ? page + '/' + galleryId : page;
+  this.location.hash = newHash;
+  // navigation(newHash);
 }
 
 function removeHidden() {
@@ -422,6 +473,15 @@ function removeHidden() {
 
 }
 
-window.addEventListener('hashchange', locationHashChanged);
+function rngMinMax(min, max) {
+  let num = Math.floor(Math.random() * (max - min + 1) + min);
+  if (num <= 2) {
+    return 1;
+  } else {
+    return 2;
+  }
+}
+
+window.addEventListener('hashchange', init);
 
 window.onload = () => { init() };

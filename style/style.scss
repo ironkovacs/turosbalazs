@@ -56,7 +56,7 @@ main {
     justify-content: space-between;
 
     .title {
-      .title-svg{
+      .title-svg {
         height: 64px;
       }
     }
@@ -100,7 +100,7 @@ main {
         background-repeat: no-repeat;
         background-position: center left;
         cursor: default;
-        &:hover{
+        &:hover {
           color: inherit;
         }
       }
@@ -115,7 +115,6 @@ main {
       height: 100vh;
       width: 125vh;
       max-width: 80vw;
-      background-image: url("../img/index_1.jpg");
       background-repeat: no-repeat;
       background-size: contain;
       background-position: top right;
@@ -182,7 +181,6 @@ main {
     .left {
       padding: 88px 16px 0 56px;
       width: 14vw;
-      height: 43vw;
       max-height: 850px;
       min-width: 185px;
     }
@@ -360,9 +358,25 @@ main {
             position: absolute;
             left: 0;
             bottom: 0;
-            height: 43vw;
+            height: 90vh;
             max-width: 1062px;
             max-height: 850px;
+          }
+          .iframe-title{
+            position: absolute;
+            font-size: 28px;
+            font-family: AkzidenzGroteskPro;
+            line-height: 24px;
+
+          }
+          .iframe-wrapper {
+            height: 43vw;
+            width: 62.5vw;
+            max-width: 1200px;
+            max-height: 850px;
+          }
+          iframe {
+            height: 100%;
           }
         }
         .gallery-side {
