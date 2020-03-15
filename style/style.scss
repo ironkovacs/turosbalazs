@@ -152,27 +152,18 @@ main {
 
 @media only screen and (min-width: 768px) {
   // TABLET PORTRAIT
-  main {
-    .left {
-      width: 14vw;
-      min-width: 185px;
-    }
-    .right {
-      .gallery {
-        display: grid;
-        grid-template-columns: 24vw 24vw;
-        gap: 20px;
-        .gallery-element {
-          cursor: pointer;
+  .right {
+    .gallery {
+      display: grid;
+      grid-template-columns: 24vw 24vw;
+      gap: 20px;
+      .gallery-element {
+        cursor: pointer;
+        width: 100%;
+        .gallery-img {
           width: 100%;
-          .gallery-img {
-            width: 100%;
-          }
         }
       }
-    }
-    .hamburger {
-      display: none;
     }
   }
 }
@@ -190,6 +181,7 @@ main {
       max-height: 960px;
       overflow-y: auto;
       overflow-x: hidden;
+
       .landing {
         position: absolute;
         top: 0;
@@ -343,23 +335,24 @@ main {
           }
         }
       }
-
       .single-gallery-wrapper {
         height: 100%;
         width: 62.5vw;
         display: flex;
         flex-direction: row;
-        align-items: end;
+        align-items: flex-end;
         .caroussel {
-          width: calc(62.5vw - 156px);
+          width: calc(62.5vw - 120px);
           margin-bottom: 2em;
+          height: 90vh;
           max-width: 1062px;
+          max-height: 850px;
           .single-img {
+            width: 100%;
             height: 100%;
-            max-width: 1062px;
-            max-height: 850px;
+            object-fit: c;
           }
-          .iframe-title{
+          .iframe-title {
             position: absolute;
             font-size: 28px;
             font-family: AkzidenzGroteskPro;
@@ -381,6 +374,8 @@ main {
           flex-direction: column;
           justify-content: space-between;
           height: 50%;
+          align-items: flex-end;
+          width: 120px;
           .pager {
             font-family: AkzidenzGroteskPro;
             font-size: 19px;
@@ -438,7 +433,6 @@ main {
           }
         }
       }
-
       .bio-wrapper {
         width: 69.8vw;
         max-width: 1340px;
@@ -510,10 +504,6 @@ main {
           max-height: 727px;
         }
       }
-    }
-
-    .hamburger {
-      display: none;
     }
   }
 }

@@ -152,24 +152,17 @@ main .right .gallery .gallery-element {
 }
 
 @media only screen and (min-width: 768px) {
-  main .left {
-    width: 14vw;
-    min-width: 185px;
-  }
-  main .right .gallery {
+  .right .gallery {
     display: grid;
     grid-template-columns: 24vw 24vw;
     gap: 20px;
   }
-  main .right .gallery .gallery-element {
+  .right .gallery .gallery-element {
     cursor: pointer;
     width: 100%;
   }
-  main .right .gallery .gallery-element .gallery-img {
+  .right .gallery .gallery-element .gallery-img {
     width: 100%;
-  }
-  main .hamburger {
-    display: none;
   }
 }
 
@@ -327,17 +320,19 @@ main .right .gallery .gallery-element {
     width: 62.5vw;
     display: flex;
     flex-direction: row;
-    align-items: end;
+    align-items: flex-end;
   }
   main .right .single-gallery-wrapper .caroussel {
-    width: calc(62.5vw - 156px);
+    width: calc(62.5vw - 120px);
     margin-bottom: 2em;
-    max-width: 1062px;
-  }
-  main .right .single-gallery-wrapper .caroussel .single-img {
-    height: 100%;
+    height: 90vh;
     max-width: 1062px;
     max-height: 850px;
+  }
+  main .right .single-gallery-wrapper .caroussel .single-img {
+    width: 100%;
+    height: 100%;
+    object-fit: c;
   }
   main .right .single-gallery-wrapper .caroussel .iframe-title {
     position: absolute;
@@ -360,6 +355,8 @@ main .right .gallery .gallery-element {
     flex-direction: column;
     justify-content: space-between;
     height: 50%;
+    align-items: flex-end;
+    width: 120px;
   }
   main .right .single-gallery-wrapper .gallery-side .pager {
     font-family: AkzidenzGroteskPro;
@@ -482,9 +479,6 @@ main .right .gallery .gallery-element {
   main .right .contact img {
     height: 80vh;
     max-height: 727px;
-  }
-  main .hamburger {
-    display: none;
   }
 }
 

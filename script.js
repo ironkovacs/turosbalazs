@@ -405,7 +405,7 @@ function navigation(hash) {
       html.menu.works.reflection.classList.add('active')
       break;
     case 'epitome':
-      if (galleryId) {
+      if (!galleryId) {
         gallery(toPage, epitomeSet, 2)
       } else {
         singleGallery(epitomeSet, galleryId)
