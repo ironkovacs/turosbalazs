@@ -56,8 +56,12 @@ main {
     justify-content: space-between;
 
     .title {
-      .title-svg {
-        height: 64px;
+      svg {
+        transition: fill 1s;
+        &:hover{
+          fill: #828282;
+          cursor: pointer;
+        }
       }
     }
 

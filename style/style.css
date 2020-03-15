@@ -62,8 +62,13 @@ main .left {
   justify-content: space-between;
 }
 
-main .left .title .title-svg {
-  height: 64px;
+main .left .title svg {
+  transition: fill 1s;
+}
+
+main .left .title svg:hover {
+  fill: #828282;
+  cursor: pointer;
 }
 
 main .left .menu {
