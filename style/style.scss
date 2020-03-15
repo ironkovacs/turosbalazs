@@ -56,7 +56,7 @@ main {
     justify-content: space-between;
 
     .title {
-      .title-svg{
+      .title-svg {
         height: 64px;
       }
     }
@@ -99,7 +99,7 @@ main {
         background-repeat: no-repeat;
         background-position: center left;
         cursor: default;
-        &:hover{
+        &:hover {
           color: inherit;
         }
       }
@@ -257,7 +257,6 @@ main {
     .left {
       padding: 88px 16px 0 56px;
       width: 14vw;
-      height: 43vw;
       max-height: 850px;
       min-width: 185px;
     }
@@ -438,6 +437,22 @@ main {
             height: 43vw;
             max-width: 1062px;
             max-height: 850px;
+          }
+          .iframe-title{
+            position: absolute;
+            font-size: 28px;
+            font-family: AkzidenzGroteskPro;
+            line-height: 24px;
+
+          }
+          .iframe-wrapper {
+            height: 43vw;
+            width: 62.5vw;
+            max-width: 1200px;
+            max-height: 850px;
+          }
+          iframe {
+            height: 100%;
           }
         }
         .gallery-side {

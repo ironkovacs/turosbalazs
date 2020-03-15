@@ -176,7 +176,6 @@ main .right .gallery .gallery-element {
   main .left {
     padding: 88px 16px 0 56px;
     width: 14vw;
-    height: 43vw;
     max-height: 850px;
     min-width: 185px;
   }
@@ -339,6 +338,21 @@ main .right .gallery .gallery-element {
     height: 43vw;
     max-width: 1062px;
     max-height: 850px;
+  }
+  main .right .single-gallery-wrapper .caroussel .iframe-title {
+    position: absolute;
+    font-size: 28px;
+    font-family: AkzidenzGroteskPro;
+    line-height: 24px;
+  }
+  main .right .single-gallery-wrapper .caroussel .iframe-wrapper {
+    height: 43vw;
+    width: 62.5vw;
+    max-width: 1200px;
+    max-height: 850px;
+  }
+  main .right .single-gallery-wrapper .caroussel iframe {
+    height: 100%;
   }
   main .right .single-gallery-wrapper .gallery-side {
     width: 6.7vw;
