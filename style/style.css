@@ -67,7 +67,7 @@ main .left .title .title-svg {
 }
 
 main .left .menu {
-  color: green;
+  color: #010101;
   font-family: "PlayfairDisplay";
   text-transform: uppercase;
   font-family: PlayfairDisplay;
@@ -258,8 +258,7 @@ main .right .gallery .gallery-element {
   }
   main .right .gallery-wrapper .gallery-text._2col {
     grid-template-columns: repeat(9, calc(26vw / 3));
-    grid-template-areas: "title title . text-en text-en text-en text-en text-en  ."
- ". . text-hu text-hu text-hu text-hu text-hu text-hu .";
+    grid-template-areas: "title title . text-en text-en text-en text-en text-en  ." ". . text-hu text-hu text-hu text-hu text-hu text-hu .";
     gap: 1.5vw 0.5vw;
   }
   main .right .gallery-wrapper .gallery-text._2col .text-en {
@@ -269,8 +268,7 @@ main .right .gallery .gallery-element {
     margin-left: -1.2vw;
   }
   main .right .gallery-wrapper .gallery-text._3col {
-    grid-template-areas: "title title . text-en text-en text-en text-en text-en ."
- ". . text-hu text-hu text-hu text-hu text-hu text-hu .";
+    grid-template-areas: "title title . text-en text-en text-en text-en text-en ." ". . text-hu text-hu text-hu text-hu text-hu text-hu .";
     grid-template-columns: repeat(9, calc(25vw / 3));
     gap: 2.1vw calc(2.1vw / 3);
   }
@@ -279,8 +277,7 @@ main .right .gallery .gallery-element {
   }
   main .right .gallery-wrapper .gallery-text._4col {
     grid-template-columns: repeat(12, 6vw);
-    grid-template-areas: "title title title . text-en text-en text-en text-en text-en text-en text-en ."
- ". . . text-hu text-hu text-hu text-hu text-hu text-hu text-hu text-hu .";
+    grid-template-areas: "title title title . text-en text-en text-en text-en text-en text-en text-en ." ". . . text-hu text-hu text-hu text-hu text-hu text-hu text-hu text-hu .";
     gap: 1.2vw 0.327vw;
   }
   main .right .gallery-wrapper .gallery-text._4col .text-hu {
@@ -288,8 +285,7 @@ main .right .gallery .gallery-element {
   }
   main .right .gallery-wrapper .gallery-text._5col {
     grid-template-columns: repeat(15, calc(14vw / 3));
-    grid-template-areas: "title title . . text-en text-en text-en text-en text-en text-en text-en text-en . . ."
- ". . . text-hu text-hu text-hu text-hu text-hu text-hu text-hu text-hu text-hu . . .";
+    grid-template-areas: "title title . . text-en text-en text-en text-en text-en text-en text-en text-en . . ." ". . . text-hu text-hu text-hu text-hu text-hu text-hu text-hu text-hu text-hu . . .";
     gap: 1.35vw calc(1.35vw / 3);
   }
   main .right .gallery-wrapper .gallery-text._5col .text-hu {
@@ -327,20 +323,19 @@ main .right .gallery .gallery-element {
     font-size: 24px;
   }
   main .right .single-gallery-wrapper {
-    position: relative;
-    height: 43vw;
+    height: 100%;
     width: 62.5vw;
-    max-width: 1200px;
-    max-height: 850px;
     display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
+    flex-direction: row;
+    align-items: end;
   }
-  main .right .single-gallery-wrapper .caroussel img.single-img {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 90vh;
+  main .right .single-gallery-wrapper .caroussel {
+    width: calc(62.5vw - 156px);
+    margin-bottom: 2em;
+    max-width: 1062px;
+  }
+  main .right .single-gallery-wrapper .caroussel .single-img {
+    height: 100%;
     max-width: 1062px;
     max-height: 850px;
   }
@@ -360,14 +355,11 @@ main .right .gallery .gallery-element {
     height: 100%;
   }
   main .right .single-gallery-wrapper .gallery-side {
-    width: 6.7vw;
-    height: 21vw;
-    max-width: 130px;
-    max-height: 425px;
+    margin-bottom: 2em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: end;
+    height: 50%;
   }
   main .right .single-gallery-wrapper .gallery-side .pager {
     font-family: AkzidenzGroteskPro;
@@ -376,12 +368,10 @@ main .right .gallery .gallery-element {
     font-stretch: normal;
     font-style: normal;
     line-height: 28px;
-    letter-spacing: normal;
-    text-align: right;
     color: #828282;
+    text-align: left;
   }
   main .right .single-gallery-wrapper .gallery-side .gallery-nav {
-    display: flex;
     fill: #828282;
   }
   main .right .single-gallery-wrapper .gallery-side .gallery-nav .prev {

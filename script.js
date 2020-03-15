@@ -399,51 +399,59 @@ function navigation(hash) {
     case 'perceptions':
       if (!galleryId) {
         gallery(toPage, reflectionSet, 4)
-        html.menu.works.reflection.classList.add('active')
       } else {
         singleGallery(reflectionSet, galleryId)
       }
+      html.menu.works.reflection.classList.add('active')
       break;
     case 'epitome':
       if (galleryId) {
         gallery(toPage, epitomeSet, 2)
-        html.menu.works.epitome.classList.add('active')
+      } else {
+        singleGallery(epitomeSet, galleryId)
       }
+      html.menu.works.epitome.classList.add('active')
       break;
     case 'closer':
       if (!galleryId) {
         gallery(toPage, closerSet, 5)
-        html.menu.works.closer.classList.add('active')
+
       } else {
         singleGallery(closerSet, galleryId)
       }
+      html.menu.classList.remove('hidden');
+      html.menu.works.closer.classList.add('active')
       break;
     case 'ephemeral-knot':
       if (!galleryId) {
         gallery(toPage, knotSet, 3)
-        html.menu.works.knot.classList.add('active')
       } else {
         singleGallery(knotSet, galleryId)
       }
+      html.menu.classList.remove('hidden');
+      html.menu.works.knot.classList.add('active')
       break;
     case 'oneness':
       if (!galleryId) {
         gallery(toPage, onenessSet, 3)
-        html.menu.works.oneness.classList.add('active')
       } else {
         singleGallery(onenessSet, galleryId)
       }
+      html.menu.classList.remove('hidden');
+      html.menu.works.oneness.classList.add('active')
       break;
     case 'ferry-land':
       if (!galleryId) {
         gallery(toPage, ferryLandSet, 4)
-        html.menu.works.ferryLand.classList.add('active')
       } else {
         singleGallery(ferryLandSet, galleryId)
       }
+      html.menu.classList.remove('hidden');
+      html.menu.works.ferryLand.classList.add('active')
       break;
       case 'making-of-ephemeral-knot':
         loadHTMLtoDOM(components.makingOf, html.right);
+        html.menu.works.knot.classList.add('active')
         html.menu.classList.remove('hidden');
       break
     // case 'test':
@@ -452,10 +460,12 @@ function navigation(hash) {
     //   break;
     case 'about':
       about()
+      html.menu.classList.remove('hidden');
       html.menu.about.classList.add('active')
       break;
     case 'contact':
       contact()
+      html.menu.classList.remove('hidden');
       html.menu.contact.classList.add('active')
       break;
   }
