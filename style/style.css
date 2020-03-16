@@ -338,6 +338,7 @@ main .right .gallery .gallery-element {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    object-position: top left;
   }
   main .right .single-gallery-wrapper .caroussel .iframe-title {
     position: absolute;
