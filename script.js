@@ -142,7 +142,7 @@ const onenessSet = {
   }
 };
 const ferryLandSet = {
-  setName: 'ferry—land',
+  setName: 'ferry-land',
   img: [
     { img: './img/06/videk_001', title: '', id: 1 },
     { img: './img/06/videk_002', title: '', id: 2 },
@@ -217,7 +217,7 @@ function init() {
   html.menu.works.closer.addEventListener('click', () => { setHash('closer') });
   html.menu.works.knot.addEventListener('click', () => { setHash('ephemeral-knot') });
   html.menu.works.oneness.addEventListener('click', () => { setHash('oneness') });
-  html.menu.works.ferryLand.addEventListener('click', () => { setHash('ferry—land') });
+  html.menu.works.ferryLand.addEventListener('click', () => { setHash('ferry-land') });
   // html.menu.works.test.addEventListener('click', () => { setHash('test') });
   html.menu.about.addEventListener('click', () => { setHash('about') });
   html.menu.contact.addEventListener('click', () => { setHash('contact') });
