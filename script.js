@@ -119,8 +119,8 @@ const knotSet = {
   ], text: {
     title: `Ephemeral Knot`,
     date: '2012-2014',
-    // en: `<iframe src="https://player.vimeo.com/video/81264915" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`,
-    // hu: `<a href="https://vimeo.com/81264915">MAKING OF</a> Ephemeral Knot from <a href="https://vimeo.com/user23286965">Balazs Turos</a>.`,
+     en: ``,
+     hu: `<a href="/#making-of-ephemeral-knot">MAKING-OF VIDEO</a></a> // <a href="/#making-of-ephemeral-knot">VERK FILM</a> </a>`,
     // embeded: ``
   }
 };
