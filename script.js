@@ -1,7 +1,7 @@
 
 // elements
 let html = {}
-
+let isHamburgerOpen = false;
 let currentHash = '';
 
 const components = {
@@ -161,29 +161,6 @@ const ferryLandSet = {
   }
 }
 
-// const testSet = {
-//   img: [
-//     {img: './img/test/01_01', title:'', id: 1},
-//     {img: './img/test/01_02', title:'', id: 2},
-//     {img: './img/test/01_03', title:'', id: 3},
-//     {img: './img/test/02_01', title:'', id: 4},
-//     {img: './img/test/02_02', title:'', id: 5},
-//     {img: './img/test/02_03', title:'', id: 6},
-//     {img: './img/test/03_01', title:'', id: 7},
-//     {img: './img/test/03_02', title:'', id: 8},
-//     {img: './img/test/03_03', title:'', id: 9},
-//     {img: './img/test/04_01', title:'', id: 10},
-//     {img: './img/test/04_02', title:'', id: 11},
-//     {img: './img/test/04_03', title:'', id: 12},
-//     {img: './img/test/04_04', title:'', id: 13},
-//   ],
-//   text:{title: `Test`,
-//   date: '2012-2014',
-//   en: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, vero aspernatur? Enim, assumenda! Eius pariatur optio ullam asperiores dignissimos. Voluptates, libero est provident veniam ut corrupti et ab repellat magni!',
-//   hu: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, vero aspernatur? Enim, assumenda! Eius pariatur optio ullam asperiores dignissimos. Voluptates, libero est provident veniam ut corrupti et ab repellat magnit',
-//   embeded: ``}
-// }
-
 const currentNavPaths = {
   title: '',
   id: 0
@@ -197,6 +174,7 @@ function init() {
   html.title = document.querySelector('.title');
   html.menu = document.querySelector('.menu');
   html.menu.works = {};
+  html.mobileMenu = {};
   html.menu.works.main = document.querySelector('.nav--works');
   html.menu.works.reflection = document.querySelector('.nav-reflection');
   html.menu.works.epitome = document.querySelector('.nav-epitome');
@@ -204,10 +182,23 @@ function init() {
   html.menu.works.knot = document.querySelector('.nav-knot');
   html.menu.works.oneness = document.querySelector('.nav-oneness');
   html.menu.works.ferryLand = document.querySelector('.nav-ferry—land');
-  // html.menu.works.test = document.querySelector('.nav-test')
 
   html.menu.about = document.querySelector('.nav-about');
   html.menu.contact = document.querySelector('.nav-contact');
+
+  html.mobileMenu.hamburger = document.querySelector('.hamburger')
+  html.mobileMenu.wrapper = document.querySelector('.mobile-menu-wrapper')
+  html.mobileMenu.reflection = document.querySelector('.mobile-reflection');
+  html.mobileMenu.epitome = document.querySelector('.mobile-epitome');
+  html.mobileMenu.closer = document.querySelector('.mobile-closer');
+  html.mobileMenu.knot = document.querySelector('.mobile-knot');
+  html.mobileMenu.oneness = document.querySelector('.mobile-oneness');
+  html.mobileMenu.ferryLand = document.querySelector('.mobile-ferry—land');
+
+  html.mobileMenu.about = document.querySelector('.mobile-about');
+  html.mobileMenu.contact = document.querySelector('.mobile-contact');
+
+
   html.right = document.querySelector('.right');
 
   html.title.addEventListener('click', () => { setHash('works') });
@@ -218,9 +209,20 @@ function init() {
   html.menu.works.knot.addEventListener('click', () => { setHash('ephemeral-knot') });
   html.menu.works.oneness.addEventListener('click', () => { setHash('oneness') });
   html.menu.works.ferryLand.addEventListener('click', () => { setHash('ferry-land') });
-  // html.menu.works.test.addEventListener('click', () => { setHash('test') });
+
   html.menu.about.addEventListener('click', () => { setHash('about') });
   html.menu.contact.addEventListener('click', () => { setHash('contact') });
+
+  html.mobileMenu.hamburger.addEventListener('click', () => { hamburger() });
+  html.mobileMenu.reflection.addEventListener('click', () => { setHash('perceptions') });
+  html.mobileMenu.epitome.addEventListener('click', () => { setHash('epitome') });
+  html.mobileMenu.closer.addEventListener('click', () => { setHash('closer') });
+  html.mobileMenu.knot.addEventListener('click', () => { setHash('ephemeral-knot') });
+  html.mobileMenu.oneness.addEventListener('click', () => { setHash('oneness') });
+  html.mobileMenu.ferryLand.addEventListener('click', () => { setHash('ferry-land') });
+
+  html.mobileMenu.about.addEventListener('click', () => { setHash('about') });
+  html.mobileMenu.contact.addEventListener('click', () => { setHash('contact') });
 
   if (currentHash !== newHashToSet) navigation(newHashToSet);
 }
@@ -348,7 +350,7 @@ function singleGallery(set, id) {
   html.right.caroussel.innerHTML = showGalleryElement(element);
   html.right.pager.innerHTML = `${id}/${set.img.length}`
 
-  html.right.galleryView.addEventListener('click', () => setHash(set.setName) )
+  html.right.galleryView.addEventListener('click', () => setHash(set.setName))
   html.right.galleryNavPrev.addEventListener('click', () => galleryPrev(set));
   html.right.galleryNavNext.addEventListener('click', () => galleryNext(set));
 
@@ -496,6 +498,23 @@ function rngMinMax(min, max) {
     return 1;
   } else {
     return 2;
+  }
+}
+
+function hamburger() {
+  let menu = html.mobileMenu.wrapper;
+  menu.classList.remove('open');
+  menu.classList.remove('closed');
+  html.title.classList.remove('open');
+  html.title.classList.remove('closed');
+  if (isHamburgerOpen) {
+    menu.classList.add('closed')
+    html.title.classList.add('closed')
+    isHamburgerOpen = false
+  } else {
+    menu.classList.add('open')
+    html.title.classList.add('open')
+    isHamburgerOpen = true
   }
 }
 
