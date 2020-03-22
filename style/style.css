@@ -36,6 +36,8 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -63,6 +65,7 @@ main .left {
 }
 
 main .left .title svg {
+  transform: scale(0.95);
   transition: fill 1s;
 }
 
@@ -79,7 +82,7 @@ main .left .menu {
   font-size: 22px;
   line-height: 28px;
   transition: all 0.2s linear;
-  padding: 0 0 3vh 0;
+  padding: 0 0 32px 0;
 }
 
 main .left .menu ul {
@@ -156,6 +159,17 @@ main .right .gallery .gallery-element {
   width: 100%;
 }
 
+/* GLOBALS */
+.relative {
+  position: relative;
+}
+
+.absolute-0 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 @media only screen and (min-width: 768px) {
   .right .gallery {
     display: grid;
@@ -175,8 +189,8 @@ main .right .gallery .gallery-element {
   main .left {
     padding: 88px 16px 0 56px;
     width: 14vw;
-    max-height: 850px;
-    min-width: 185px;
+    max-height: 960px;
+    min-width: 224px;
   }
   main .right {
     margin: 88px 0 0 0;
@@ -299,19 +313,20 @@ main .right .gallery .gallery-element {
     color: #010101;
     text-transform: uppercase;
   }
+  main .right .gallery-wrapper .gallery-text .text-en a {
+    text-decoration: none;
+    color: #010101;
+    font-size: 32px;
+  }
+  main .right .gallery-wrapper .gallery-text .text-en a:hover {
+    color: #828282;
+    cursor: pointer;
+  }
   main .right .gallery-wrapper .gallery-text .text-hu {
     font-family: PlayfairDisplay;
     grid-area: text-hu;
     color: #828282;
     font-size: 24px;
-  }
-  main .right .gallery-wrapper .gallery-text .text-hu a {
-    text-decoration: none;
-    color: #828282;
-  }
-  main .right .gallery-wrapper .gallery-text .text-hu a:hover {
-    cursor: pointer;
-    color: #010101;
   }
   main .right .gallery-wrapper .gallery-text .text-en {
     font-weight: bold;
@@ -328,17 +343,17 @@ main .right .gallery .gallery-element {
     align-items: flex-end;
   }
   main .right .single-gallery-wrapper .caroussel {
-    width: calc(62.5vw - 120px);
+    width: 62.5vw;
     margin-bottom: 2em;
     height: 90vh;
-    max-width: 1062px;
-    max-height: 850px;
+    max-width: 1162px;
+    max-height: 960px;
   }
   main .right .single-gallery-wrapper .caroussel .single-img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    object-position: top left;
+    object-position: bottom left;
   }
   main .right .single-gallery-wrapper .caroussel .iframe-title {
     position: absolute;

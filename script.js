@@ -119,8 +119,8 @@ const knotSet = {
   ], text: {
     title: `Ephemeral Knot`,
     date: '2012-2014',
-    en: ``,
-    hu: `<a href="/#making-of-ephemeral-knot">MAKING-OF VIDEO</a></a> // <a href="/#making-of-ephemeral-knot">VERK FILM</a> </a>`,
+    en: `<a class="knot-vido-link" href="/#making-of-ephemeral-knot">MAKING-OF VIDEO / WERKFILM</a>`,
+    hu: ``,
     // embeded: ``
   }
 };
