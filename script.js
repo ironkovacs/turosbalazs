@@ -48,7 +48,7 @@ const mainSet = {
   ], text: null
 }
 const reflectionSet = {
-  setName:'perceptions',
+  setName: 'perceptions',
   img: [
     { img: './img/01/perceptions_001', title: '', id: 1 },
     { img: './img/01/perceptions_002', title: '', id: 2 },
@@ -108,7 +108,7 @@ const closerSet = {
   }
 };
 const knotSet = {
-  setName:'ephemeral-knot',
+  setName: 'ephemeral-knot',
   img: [
     { img: './img/04/roncs_001', title: '', id: 1 },
     { img: './img/04/roncs_002', title: '', id: 2 },
@@ -119,8 +119,8 @@ const knotSet = {
   ], text: {
     title: `Ephemeral Knot`,
     date: '2012-2014',
-     en: ``,
-     hu: `<a href="/#making-of-ephemeral-knot">MAKING-OF VIDEO</a></a> // <a href="/#making-of-ephemeral-knot">VERK FILM</a> </a>`,
+    en: ``,
+    hu: `<a href="/#making-of-ephemeral-knot">MAKING-OF VIDEO</a></a> // <a href="/#making-of-ephemeral-knot">VERK FILM</a> </a>`,
     // embeded: ``
   }
 };
@@ -348,33 +348,41 @@ function singleGallery(set, id) {
   html.right.caroussel.innerHTML = showGalleryElement(element);
   html.right.pager.innerHTML = `${id}/${set.img.length}`
 
-  html.right.galleryView.addEventListener('click', () => { gallery(set) })
+  html.right.galleryView.addEventListener('click', () => setHash(set.setName) )
+  html.right.galleryNavPrev.addEventListener('click', () => galleryPrev(set));
+  html.right.galleryNavNext.addEventListener('click', () => galleryNext(set));
 
-  const navHelper = this.location.hash.substr(1).split('/');
-
-  if (id > 1) {
-    html.right.galleryNavPrev.addEventListener('click', () => { setHash(navHelper[0], Number(navHelper[1]) - 1) })
-  } else {
-    html.right.galleryNavPrev.classList.add('disabled');
-  }
-
-  if (id < set.img.length) {
-    html.right.galleryNavNext.addEventListener('click', () => { setHash(navHelper[0], Number(navHelper[1]) + 1) })
-  } else {
-    html.right.galleryNavNext.classList.add('disabled');
-  }
 
   document.onkeydown = function (e) {
     switch (e.key) {
       case 'ArrowLeft':
-        if (id > 1) { singleGallery(set, id - 1) }
+        galleryPrev(set)
         break;
       case 'ArrowRight':
-        if (id < set.img.length) { singleGallery(set, id + 1) }
+        galleryNext(set)
     }
   };
 }
-0
+
+function galleryPrev(set) {
+  const navHelper = this.location.hash.substr(1).split('/');
+  const id = navHelper[1];
+  if (id == 1) {
+    setHash(navHelper[0], set.img.length)
+  } else {
+    setHash(navHelper[0], Number(navHelper[1]) - 1)
+  }
+}
+function galleryNext(set) {
+  const navHelper = this.location.hash.substr(1).split('/');
+  const id = navHelper[1]
+  if (id == set.img.length) {
+    setHash(navHelper[0], 1)
+  } else {
+    setHash(navHelper[0], Number(navHelper[1]) + 1)
+  }
+}
+
 function showGalleryElement(element) {
   return `<img class="single-img" src="${element.img}_nagy.jpg">`
 }
@@ -449,10 +457,10 @@ function navigation(hash) {
       html.menu.classList.remove('hidden');
       html.menu.works.ferryLand.classList.add('active')
       break;
-      case 'making-of-ephemeral-knot':
-        loadHTMLtoDOM(components.makingOf, html.right);
-        html.menu.works.knot.classList.add('active')
-        html.menu.classList.remove('hidden');
+    case 'making-of-ephemeral-knot':
+      loadHTMLtoDOM(components.makingOf, html.right);
+      html.menu.works.knot.classList.add('active')
+      html.menu.classList.remove('hidden');
       break
     // case 'test':
     //   gallery(toPage, testSet, 3)
@@ -474,7 +482,6 @@ function navigation(hash) {
 function setHash(page, galleryId) {
   const newHash = galleryId ? page + '/' + galleryId : page;
   this.location.hash = newHash;
-  // navigation(newHash);
 }
 
 function removeHidden() {
