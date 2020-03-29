@@ -38,6 +38,7 @@
   margin: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  border: 1px solid gray;
 }
 
 body {
@@ -47,7 +48,6 @@ body {
   max-height: 1206px;
   overflow: hidden;
   color: #010101;
-  background-color: #fcfbf9;
 }
 
 main {
@@ -119,6 +119,10 @@ main .right .gallery .gallery-title {
   transition: linear 1s;
 }
 
+.hidden {
+  display: none;
+}
+
 .closed {
   height: 0;
   z-index: 0;
@@ -145,7 +149,7 @@ main .right .gallery .gallery-title {
   left: 0;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 768px) and (orientation: portrait) {
   .right .gallery {
     display: grid;
     grid-template-columns: 24vw 24vw;
@@ -160,7 +164,7 @@ main .right .gallery .gallery-title {
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 768px) {
   main {
     margin: 0;
     height: 100vh;
@@ -174,7 +178,6 @@ main .right .gallery .gallery-title {
   main .left {
     padding: 88px 16px 0 56px;
     width: 14vw;
-    max-height: 960px;
     min-width: 224px;
     position: relative;
     display: flex;
@@ -195,7 +198,6 @@ main .right .gallery .gallery-title {
   }
   main .left .menu {
     visibility: visible;
-    display: initial;
     color: #010101;
     font-family: "PlayfairDisplay";
     text-transform: uppercase;

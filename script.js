@@ -186,17 +186,17 @@ function init() {
   html.menu.about = document.querySelector('.nav-about');
   html.menu.contact = document.querySelector('.nav-contact');
 
-  html.mobileMenu.hamburger = document.querySelector('.hamburger')
-  html.mobileMenu.wrapper = document.querySelector('.mobile-menu-wrapper')
-  html.mobileMenu.reflection = document.querySelector('.mobile-reflection');
-  html.mobileMenu.epitome = document.querySelector('.mobile-epitome');
-  html.mobileMenu.closer = document.querySelector('.mobile-closer');
-  html.mobileMenu.knot = document.querySelector('.mobile-knot');
-  html.mobileMenu.oneness = document.querySelector('.mobile-oneness');
-  html.mobileMenu.ferryLand = document.querySelector('.mobile-ferry—land');
+  // html.mobileMenu.hamburger = document.querySelector('.hamburger')
+  // html.mobileMenu.wrapper = document.querySelector('.mobile-menu-wrapper')
+  // html.mobileMenu.reflection = document.querySelector('.mobile-reflection');
+  // html.mobileMenu.epitome = document.querySelector('.mobile-epitome');
+  // html.mobileMenu.closer = document.querySelector('.mobile-closer');
+  // html.mobileMenu.knot = document.querySelector('.mobile-knot');
+  // html.mobileMenu.oneness = document.querySelector('.mobile-oneness');
+  // html.mobileMenu.ferryLand = document.querySelector('.mobile-ferry—land');
 
-  html.mobileMenu.about = document.querySelector('.mobile-about');
-  html.mobileMenu.contact = document.querySelector('.mobile-contact');
+  // html.mobileMenu.about = document.querySelector('.mobile-about');
+  // html.mobileMenu.contact = document.querySelector('.mobile-contact');
 
 
   html.right = document.querySelector('.right');
@@ -213,16 +213,16 @@ function init() {
   html.menu.about.addEventListener('click', () => { setHash('about') });
   html.menu.contact.addEventListener('click', () => { setHash('contact') });
 
-  html.mobileMenu.hamburger.addEventListener('click', () => { hamburger() });
-  html.mobileMenu.reflection.addEventListener('click', () => { setHash('perceptions') });
-  html.mobileMenu.epitome.addEventListener('click', () => { setHash('epitome') });
-  html.mobileMenu.closer.addEventListener('click', () => { setHash('closer') });
-  html.mobileMenu.knot.addEventListener('click', () => { setHash('ephemeral-knot') });
-  html.mobileMenu.oneness.addEventListener('click', () => { setHash('oneness') });
-  html.mobileMenu.ferryLand.addEventListener('click', () => { setHash('ferry-land') });
+  // html.mobileMenu.hamburger.addEventListener('click', () => { hamburger() });
+  // html.mobileMenu.reflection.addEventListener('click', () => { setHash('perceptions') });
+  // html.mobileMenu.epitome.addEventListener('click', () => { setHash('epitome') });
+  // html.mobileMenu.closer.addEventListener('click', () => { setHash('closer') });
+  // html.mobileMenu.knot.addEventListener('click', () => { setHash('ephemeral-knot') });
+  // html.mobileMenu.oneness.addEventListener('click', () => { setHash('oneness') });
+  // html.mobileMenu.ferryLand.addEventListener('click', () => { setHash('ferry-land') });
 
-  html.mobileMenu.about.addEventListener('click', () => { setHash('about') });
-  html.mobileMenu.contact.addEventListener('click', () => { setHash('contact') });
+  // html.mobileMenu.about.addEventListener('click', () => { setHash('about') });
+  // html.mobileMenu.contact.addEventListener('click', () => { setHash('contact') });
 
   if (currentHash !== newHashToSet) navigation(newHashToSet);
 }
@@ -502,7 +502,7 @@ function rngMinMax(min, max) {
 }
 
 function hamburger() {
-  let menu = html.mobileMenu.wrapper;
+  // let menu = html.mobileMenu.wrapper;
   menu.classList.remove('open');
   menu.classList.remove('closed');
   html.title.classList.remove('open');

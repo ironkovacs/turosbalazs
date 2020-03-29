@@ -34,7 +34,7 @@
   margin: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  // border: 1px solid gray;
+  border: 1px solid gray;
 }
 body {
   width: 100vw;
@@ -43,7 +43,7 @@ body {
   max-height: 1206px;
   overflow: hidden;
   color: #010101;
-  background-color: #fcfbf9;
+  // background-color: #fcfbf9;
 }
 
 main {
@@ -178,6 +178,10 @@ main {
   transition: linear 1s;
 }
 
+.hidden {
+  display: none;
+}
+
 .closed {
   height: 0;
   z-index: 0;
@@ -202,7 +206,7 @@ main {
   left: 0;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 768px) and (orientation: portrait) {
   // TABLET PORTRAIT
   .right {
     .gallery {
@@ -219,7 +223,7 @@ main {
     }
   }
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 768px) {
   main {
     margin: 0;
     height: 100vh;
@@ -232,7 +236,7 @@ main {
     .left {
       padding: 88px 16px 0 56px;
       width: 14vw;
-      max-height: 960px;
+      // max-height: 960px;
       min-width: 224px;
       position: relative;
       display: flex;
@@ -255,7 +259,6 @@ main {
       }
       .menu {
         visibility: visible;
-        display: initial;
         color: #010101;
         font-family: "PlayfairDisplay";
         text-transform: uppercase;
