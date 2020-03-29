@@ -292,9 +292,10 @@ main {
           }
         }
         & .active {
-          background-image: url(../assets/elements/works-line.png);
-          background-repeat: no-repeat;
-          background-position: center left;
+          text-decoration: line-through;
+          // background-image: url(../assets/elements/works-line.png);
+          // background-repeat: no-repeat;
+          // background-position: center left;
           cursor: default;
           &:hover {
             color: inherit;
@@ -442,10 +443,10 @@ main {
           .text-en {
             a {
               text-decoration: none;
-              color: #010101;
-              font-size: 32px;
+              color: #828282;
+              font-size: 26px;
               &:hover {
-                color: #828282;
+                color:#010101;
                 cursor: pointer;
               }
             }

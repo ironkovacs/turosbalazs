@@ -227,9 +227,7 @@ main .right .gallery .gallery-title {
     color: #828282;
   }
   main .left .menu .active {
-    background-image: url(../assets/elements/works-line.png);
-    background-repeat: no-repeat;
-    background-position: center left;
+    text-decoration: line-through;
     cursor: default;
   }
   main .left .menu .active:hover {
@@ -358,11 +356,11 @@ main .right .gallery .gallery-title {
   }
   main .right .gallery-wrapper .gallery-text .text-en a {
     text-decoration: none;
-    color: #010101;
-    font-size: 32px;
+    color: #828282;
+    font-size: 26px;
   }
   main .right .gallery-wrapper .gallery-text .text-en a:hover {
-    color: #828282;
+    color: #010101;
     cursor: pointer;
   }
   main .right .gallery-wrapper .gallery-text .text-hu {
