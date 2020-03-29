@@ -32,7 +32,7 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  // box-sizing: border-box;
   scroll-behavior: smooth;
   // border: 1px solid gray;
 }
@@ -236,7 +236,7 @@ main {
     .left {
       padding: 88px 16px 0 56px;
       width: 14vw;
-      // max-height: 960px;
+      max-height: 1020px;
       min-width: 224px;
       position: relative;
       display: flex;
@@ -246,9 +246,8 @@ main {
       .title {
         svg {
           transform: scale(0.95);
-          transition: fill 1s;
+
           &:hover {
-            fill: #828282;
             cursor: pointer;
           }
         }
@@ -483,7 +482,7 @@ main {
             width: 100%;
             height: 100%;
             object-fit: contain;
-            object-position: bottom left;
+            object-position: top left;
           }
           .iframe-title {
             position: absolute;
