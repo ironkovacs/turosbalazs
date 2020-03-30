@@ -232,6 +232,7 @@ main .right .gallery .gallery-title {
   }
   main .left .menu .active:hover {
     color: inherit;
+    cursor: default;
   }
   main .right {
     margin: 88px 0 0 0;
