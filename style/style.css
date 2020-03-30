@@ -398,18 +398,24 @@ main .right .gallery .gallery-title {
   }
   main .right .single-gallery-wrapper .caroussel .iframe-title {
     position: absolute;
+    top: 0;
+    left: 0;
     font-size: 28px;
     font-family: AkzidenzGroteskPro;
     line-height: 24px;
   }
   main .right .single-gallery-wrapper .caroussel .iframe-wrapper {
-    height: 43vw;
-    width: 62.5vw;
-    max-width: 1200px;
-    max-height: 850px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 600px;
+    width: 1080px;
   }
   main .right .single-gallery-wrapper .caroussel iframe {
     height: 100%;
+  }
+  main .right .single-gallery-wrapper .caroussel iframe .vp-center {
+    display: block !important;
   }
   main .right .single-gallery-wrapper .gallery-side {
     margin-bottom: 2em;
