@@ -52,73 +52,6 @@ main {
   width: 100vw;
   display: flex;
   flex-direction: column;
-  //   .left {
-  //     .hamburger {
-  //       z-index: 999;
-  //       position: fixed;
-  //       top:.1em;
-  //       left:.1em;
-  //       font-size: 3em;
-  //       transform: rotate(90);
-  //     }
-  //     width: 100vw;
-  //     position: relative;
-  //     display: flex;
-  //     flex-direction: column;
-  //     justify-content: space-between;
-
-  //     .title {
-  //       margin: 1em auto;
-  //       svg {
-  //         margin: auto;
-  //         height: 78px;
-  //         width: 164px;
-  //         transform: scale(0.95);
-  //         transition: fill 1s;
-  //         &:focus,
-  //         &:hover {
-  //           fill: #828282;
-  //           cursor: pointer;
-  //         }
-  //       }
-  //     }
-
-  //     .menu-mobile {
-  //       .mobile-menu-wrapper {
-  //         transition: all 0.5s;
-  //         color: #010101;
-  //         font-family: "PlayfairDisplay";
-  //         text-transform: uppercase;
-  //         font-family: PlayfairDisplay;
-  //         font-size: 1.5em;
-  //         line-height: 28px;
-  //         transition: all 0.2s linear;
-  //         padding: 0 0 32px 0;
-  //         ul {
-  //           padding-top: 0.5em;
-  //           display: flex;
-  //           flex-wrap: wrap;
-  //           list-style: none;
-  //           justify-content: space-evenly;
-  //           li {
-  //             margin: 0.2em;
-  //             transition: scale 1s;
-  //             &:focus,
-  //             &:hover {
-  //               fill: #828282;
-  //               cursor: pointer;
-  //               transform: scale(1.2);
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-
-  //     .menu {
-  //       visibility: hidden;
-  //       height: 0;
-  //     }
-  //   }
 
   .right {
     overflow-y: auto;
@@ -167,8 +100,10 @@ main {
   }
 }
 
-/* fades  */
+$single-img-w: 62.5vw;
+$single-img-h: 50vw; 
 
+/* fades  */
 .invisible {
   opacity: 0;
   transition: linear 1s;
@@ -265,7 +200,6 @@ main {
         font-size: 22px;
         line-height: 28px;
         transition: all 0.2s linear;
-        padding: 0 0 32px 0;
         ul {
           list-style: none;
           width: max-content;
@@ -291,11 +225,11 @@ main {
             color: #828282;
           }
         }
-        & .active {
-          text-decoration: line-through;
-          // background-image: url(../assets/elements/works-line.png);
-          // background-repeat: no-repeat;
-          // background-position: center left;
+        & img {
+          display: none;
+        }
+        & .active img {
+          display: inline;
           cursor: default;
           &:hover {
             color: inherit;
@@ -316,6 +250,7 @@ main {
         position: absolute;
         top: 0;
         right: 0;
+
         height: 100vh;
         width: 125vh;
         max-width: 80vw;
@@ -469,22 +404,15 @@ main {
         }
       }
       .single-gallery-wrapper {
-        height: 100%;
-        width: 62.5vw;
+        // height: 100%;
+        // width: 62.5vw;
         display: flex;
         flex-direction: row;
-        align-items: flex-end;
+    
         .caroussel {
-          width: 62.5vw;
-          margin-bottom: 2em;
-          height: 90vh;
-          max-width: 1162px;
-          max-height: 960px;
           .single-img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            object-position: top left;
+            max-width: 62.5vw;
+            max-height: calc(100vh - (88px + 2em));
           }
           .iframe-title {
             position: absolute;
@@ -499,8 +427,7 @@ main {
             top: 0;
             left: 0;
             height: 600px;
-            width:1080px;
-     
+            width: 1080px;
           }
           iframe {
             height: 100%;
@@ -514,9 +441,9 @@ main {
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          height: 50%;
-          align-items: flex-end;
+          height: 100%;
           width: 120px;
+          padding-left: 15px;
           .pager {
             font-family: AkzidenzGroteskPro;
             font-size: 19px;
@@ -526,9 +453,11 @@ main {
             line-height: 28px;
             color: #828282;
             text-align: left;
+  
           }
           .gallery-nav {
             fill: #828282;
+
             .prev {
               margin: 0 5px;
               width: 8px;

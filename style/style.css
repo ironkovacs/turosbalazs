@@ -203,7 +203,6 @@ main .right .gallery .gallery-title {
     font-size: 22px;
     line-height: 28px;
     transition: all 0.2s linear;
-    padding: 0 0 32px 0;
   }
   main .left .menu ul {
     list-style: none;
@@ -226,11 +225,14 @@ main .right .gallery .gallery-title {
     text-align: left;
     color: #828282;
   }
-  main .left .menu .active {
-    text-decoration: line-through;
+  main .left .menu img {
+    display: none;
+  }
+  main .left .menu .active img {
+    display: inline;
     cursor: default;
   }
-  main .left .menu .active:hover {
+  main .left .menu .active img:hover {
     color: inherit;
     cursor: default;
   }
@@ -378,24 +380,12 @@ main .right .gallery .gallery-title {
     font-size: 24px;
   }
   main .right .single-gallery-wrapper {
-    height: 100%;
-    width: 62.5vw;
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
-  }
-  main .right .single-gallery-wrapper .caroussel {
-    width: 62.5vw;
-    margin-bottom: 2em;
-    height: 90vh;
-    max-width: 1162px;
-    max-height: 960px;
   }
   main .right .single-gallery-wrapper .caroussel .single-img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: top left;
+    max-width: 62.5vw;
+    max-height: calc(100vh - (88px + 2em));
   }
   main .right .single-gallery-wrapper .caroussel .iframe-title {
     position: absolute;
@@ -423,9 +413,9 @@ main .right .gallery .gallery-title {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 50%;
-    align-items: flex-end;
+    height: 100%;
     width: 120px;
+    padding-left: 15px;
   }
   main .right .single-gallery-wrapper .gallery-side .pager {
     font-family: AkzidenzGroteskPro;
