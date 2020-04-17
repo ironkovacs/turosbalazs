@@ -155,6 +155,9 @@ main .right .gallery .gallery-title {
   .gallery-title {
     font-family: AkzidenzGroteskPro;
   }
+  .menu {
+    display: none;
+  }
   .menu-mobile {
     text-transform: uppercase;
     display: flex;
@@ -172,6 +175,17 @@ main .right .gallery .gallery-title {
 }
 
 @media only screen and (max-width: 768px) and (orientation: portrait) {
+  .menu-mobile {
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+    width: 100vw;
+    flex-direction: row;
+  }
+  .menu-mobile span {
+    padding: 0 8%;
+  }
   .right .gallery {
     display: grid;
     grid-template-columns: 24vw 24vw;

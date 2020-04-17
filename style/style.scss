@@ -147,7 +147,9 @@ $single-img-h: 50vw;
   .gallery-title {
     font-family: AkzidenzGroteskPro;
   }
-
+  .menu {
+    display: none;
+  }
   .menu-mobile {
     text-transform: uppercase;
     display: flex;
@@ -155,7 +157,7 @@ $single-img-h: 50vw;
     align-content: space-between;
     width: 100vw;
     flex-direction: row;
-    span{
+    span {
       padding: 0 8%;
     }
   }
@@ -165,6 +167,17 @@ $single-img-h: 50vw;
 }
 @media only screen and (max-width: 768px) and (orientation: portrait) {
   // TABLET PORTRAIT
+  .menu-mobile {
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+    width: 100vw;
+    flex-direction: row;
+    span {
+      padding: 0 8%;
+    }
+  }
   .right {
     .gallery {
       display: grid;
