@@ -101,7 +101,7 @@ main {
 }
 
 $single-img-w: 62.5vw;
-$single-img-h: 50vw; 
+$single-img-h: 50vw;
 
 /* fades  */
 .invisible {
@@ -140,7 +140,29 @@ $single-img-h: 50vw;
   top: 0;
   left: 0;
 }
+@media only screen and (max-width: 768px) {
+  main {
+    font-family: "PlayfairDisplay";
+  }
+  .gallery-title {
+    font-family: AkzidenzGroteskPro;
+  }
 
+  .menu-mobile {
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+    width: 100vw;
+    flex-direction: row;
+    span{
+      padding: 0 8%;
+    }
+  }
+  img {
+    max-width: 100%;
+  }
+}
 @media only screen and (max-width: 768px) and (orientation: portrait) {
   // TABLET PORTRAIT
   .right {
@@ -158,7 +180,10 @@ $single-img-h: 50vw;
     }
   }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
+  html {
+    min-width: 768px;
+  }
   main {
     margin: 0;
     height: 100vh;
@@ -408,7 +433,7 @@ $single-img-h: 50vw;
         // width: 62.5vw;
         display: flex;
         flex-direction: row;
-    
+
         .caroussel {
           .single-img {
             max-width: 62.5vw;
@@ -444,6 +469,7 @@ $single-img-h: 50vw;
           height: 100%;
           width: 120px;
           padding-left: 15px;
+          align-items: flex-end;
           .pager {
             font-family: AkzidenzGroteskPro;
             font-size: 19px;
@@ -453,7 +479,6 @@ $single-img-h: 50vw;
             line-height: 28px;
             color: #828282;
             text-align: left;
-  
           }
           .gallery-nav {
             fill: #828282;
