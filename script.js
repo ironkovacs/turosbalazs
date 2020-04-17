@@ -398,7 +398,8 @@ function showGalleryElement(element) {
 function navigation(hash) {
   const toPage = hash[0] ? hash[0] : 'landing';
   // generatePath(toPage)
-  const galleryId = hash[1] ? hash[1] : null;
+  let galleryId = hash[1] ? hash[1] : null;
+  if(window.mobileCheck()) galleryId = null;
   if (document.querySelector('.active')) document.querySelector('.active').classList.remove('active')
   console.log('navigation(hash) toPage: ', toPage);
 

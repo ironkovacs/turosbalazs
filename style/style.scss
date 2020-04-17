@@ -164,9 +164,24 @@ $single-img-h: 50vw;
   img {
     max-width: 100%;
   }
+  .gallery-text{
+    .gallery-title{
+      font-size: large;
+    }
+    .text-en{
+      color: #010101;
+      margin:1em 0;
+    }
+    .text-hu{
+      color: #828282;
+    }
+  }
 }
 @media only screen and (max-width: 768px) and (orientation: portrait) {
   // TABLET PORTRAIT
+  .title-mobile{
+    display: none;
+  }
   .menu-mobile {
     text-transform: uppercase;
     display: flex;
@@ -224,6 +239,9 @@ $single-img-h: 50vw;
             cursor: pointer;
           }
         }
+      }
+      .title-mobile{
+        display: none;
       }
       .menu-mobile {
         display: none;

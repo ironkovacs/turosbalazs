@@ -172,9 +172,22 @@ main .right .gallery .gallery-title {
   img {
     max-width: 100%;
   }
+  .gallery-text .gallery-title {
+    font-size: large;
+  }
+  .gallery-text .text-en {
+    color: #010101;
+    margin: 1em 0;
+  }
+  .gallery-text .text-hu {
+    color: #828282;
+  }
 }
 
 @media only screen and (max-width: 768px) and (orientation: portrait) {
+  .title-mobile {
+    display: none;
+  }
   .menu-mobile {
     text-transform: uppercase;
     display: flex;
@@ -229,6 +242,9 @@ main .right .gallery .gallery-title {
   }
   main .left .title svg:hover {
     cursor: pointer;
+  }
+  main .left .title-mobile {
+    display: none;
   }
   main .left .menu-mobile {
     display: none;
