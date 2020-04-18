@@ -229,9 +229,7 @@ $single-img-h: 50vw;
 }
 @media only screen and (min-height: 500px) {
   // TABLET PORTRAIT
-  .title-mobile {
-    display: none;
-  }
+
   .menu-mobile {
     text-transform: uppercase;
     display: flex;

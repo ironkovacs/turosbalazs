@@ -231,9 +231,6 @@ main .right .gallery .gallery-title {
 }
 
 @media only screen and (min-height: 500px) {
-  .title-mobile {
-    display: none;
-  }
   .menu-mobile {
     text-transform: uppercase;
     display: flex;
