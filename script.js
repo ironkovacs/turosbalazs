@@ -495,8 +495,8 @@ function navigation(hash) {
     case 'about':
       about()
       html.menu.classList.remove('hidden');
-      html.mobileMenu.about.classList.add('active')
-      // html.menu.about.classList.add('active')
+      // html.mobileMenu.about.classList.add('active')
+      html.menu.about.classList.add('active')
       break;
     case 'contact':
       contact()

@@ -152,6 +152,11 @@ main .right .gallery .gallery-title {
   main {
     font-family: "PlayfairDisplay";
   }
+  a {
+    text-decoration: none;
+    color: #010101;
+    text-transform: uppercase;
+  }
   .title {
     display: none;
   }
@@ -201,6 +206,20 @@ main .right .gallery .gallery-title {
   }
   .bio-wrapper .bio-hu {
     margin: 1em;
+    color: #828282;
+  }
+  .right {
+    height: 100%;
+  }
+  .right .contact .link {
+    margin: 1em;
+  }
+  .right .contact .link a {
+    text-transform: lowercase;
+  }
+  .right .contact img {
+    position: fixed;
+    bottom: 3em;
   }
 }
 
@@ -218,6 +237,9 @@ main .right .gallery .gallery-title {
   }
   .menu-mobile span {
     padding: 0 8%;
+  }
+  .right {
+    height: 100%;
   }
   .right .gallery {
     display: grid;
@@ -498,7 +520,7 @@ main .right .gallery .gallery-title {
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    width: 120px;
+    width: 112px;
     padding-left: 15px;
     align-items: flex-end;
   }
