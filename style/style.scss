@@ -227,111 +227,110 @@ $single-img-h: 50vw;
     }
   }
 }
-// @media only screen and (min-height: 500px) {
-//   // TABLET PORTRAIT
-//   .menu-mobile {
-//     text-transform: uppercase;
-//     display: flex;
-//     justify-content: center;
-//     align-content: space-between;
-//     width: 100vw;
-//     flex-direction: row;
-//     span {
-//       padding: 0 8%;
-//     }
-//   }
-//   .right {
-//     height: 100%;
-//     .gallery {
-//       display: grid;
-//       grid-template-columns: 24vw 24vw;
-//       gap: 20px;
-//       .gallery-element {
-//         cursor: pointer;
-//         width: 100%;
-//         .gallery-img {
-//           width: 100%;
-//         }
-//       }
-//     }
-//   }
-// }
-// @media only screen and(max-height: 500px) {
-//   main {
-//     font-family: "PlayfairDisplay";
-//   }
-//   a {
-//     text-decoration: none;
-//     color: #010101;
-//     text-transform: uppercase;
-//   }
-//   .title {
-//     display: none;
-//   }
-//   .title-mobile {
-//     svg {
-//       height: 2rem;
-//     }
-//     display: block;
-//     margin: 1em;
-//   }
-//   .right {
-//     height: 100%;
-//     .gallery {
-//       display: grid;
-//       grid-template-columns: 24vw 24vw;
-//       gap: 20px;
-//       .gallery-element {
-//         width: unset;
-//         cursor: pointer;
-//         .gallery-img {
-//           width: 112.5vh;
-//           height: 90vh;
-//           margin: 0 1em;
-//         }
-//       }
-//     }
-//     .gallery-text {
-//       margin: 1em;
-//       .gallery-title {
-//         font-size: large;
-//         .title {
-//           display: block;
-//           font-size: larger;
-//         }
-//       }
-//       .text-en {
-//         margin-top: 1em;
-//       }
-//       .text-hu {
-//         margin-top: 1em;
-//         color: #828282;
-//       }
-//     }
-//   }
-//   .bio-wrapper{
-//     .bio-en{
-//       margin: 1em;
-//     }
-//     .bio-hu{
-//       margin: 0 1em 1em 1em;
-//       color: #828282;
-//     }
-//     img{
-//       height: 90vh;
-//       margin: 1em;
-//     }
-//   }
-//   .menu-mobile {
-//     position: fixed;
-//     top: 0;
-//     right: 0;
-//     margin: 1em;
-//     span {
-//       margin: 0 0.5em;
-//     }
-//   }
-// }
+@media only screen and (min-height: 500px) {
+  // TABLET PORTRAIT
+  .menu-mobile {
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+    width: 100vw;
+    flex-direction: row;
+    span {
+      padding: 0 8%;
+    }
+  }
+  .right {
+    height: 100%;
+    .gallery {
+      display: grid;
+      gap: 20px;
+      .gallery-element {
+        cursor: pointer;
+        width: 100%;
+        .gallery-img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@media only screen and(max-height: 500px) {
+  main {
+    font-family: "PlayfairDisplay";
+  }
+  a {
+    text-decoration: none;
+    color: #010101;
+    text-transform: uppercase;
+  }
+  .title {
+    display: none;
+  }
+  .title-mobile {
+    svg {
+      height: 2rem;
+    }
+    display: block;
+    margin: 1em;
+  }
+  .right {
+    height: 100%;
+    .gallery {
+      display: grid;
+      grid-template-columns: 24vw 24vw;
+      gap: 20px;
+      .gallery-element {
+        width: unset;
+        cursor: pointer;
+        .gallery-img {
+          width: 112.5vh;
+          height: 90vh;
+          margin: 0 1em;
+        }
+      }
+    }
+    .gallery-text {
+      margin: 1em;
+      .gallery-title {
+        font-size: large;
+        .title {
+          display: block;
+          font-size: larger;
+        }
+      }
+      .text-en {
+        margin-top: 1em;
+      }
+      .text-hu {
+        margin-top: 1em;
+        color: #828282;
+      }
+    }
+  }
+  .bio-wrapper{
+    .bio-en{
+      margin: 1em;
+    }
+    .bio-hu{
+      margin: 0 1em 1em 1em;
+      color: #828282;
+    }
+    img{
+      height: 90vh;
+      margin: 1em;
+    }
+  }
+  .menu-mobile {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 1em;
+    span {
+      margin: 0 0.5em;
+    }
+  }
+}
 @media only screen and (min-width: 769px) and(min-height: 501px) {
   html {
     min-width: 768px;
