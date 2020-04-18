@@ -569,14 +569,6 @@ function getImgH() {
   return document.querySelector('.single-img').offsetHeight;
 }
 
-var supportsOrientationChange = "onorientationchange" in window,
-    orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
-
-window.addEventListener(orientationEvent, function() {
-    init();
-    console.log("resized")
-}, false);
-
 // window.addEventListener('resize', setGalleryNavHeight)
 
 function setGalleryNavHeight() {

@@ -144,18 +144,18 @@ $single-img-h: 50vw;
   main {
     font-family: "PlayfairDisplay";
   }
-  a {
+  a{
     text-decoration: none;
     color: #010101;
     text-transform: uppercase;
   }
-  .title {
+  .title{
     display: none;
   }
-  .title-mobile {
-    display: block;
+  .title-mobile{
+    display:block;
     width: 90%;
-    margin: 1em auto;
+margin: 1em auto;
   }
   .gallery-title {
     font-family: AkzidenzGroteskPro;
@@ -174,12 +174,12 @@ $single-img-h: 50vw;
       padding: 1em 0;
     }
     span {
-      text-decoration: none;
-      color: #010101;
-      & .active {
-        color: #828282;
-        font-weight: bold;
-      }
+     text-decoration: none;
+     color: #010101;
+     & .active{
+       color: #828282;
+       font-weight: bold;
+     }
     }
   }
   img {
@@ -188,7 +188,7 @@ $single-img-h: 50vw;
   .gallery-text {
     margin: 0 1em;
     .gallery-title {
-      .title {
+      .title{
         display: block;
         font-size: larger;
       }
@@ -202,33 +202,36 @@ $single-img-h: 50vw;
       color: #828282;
     }
   }
-  .bio-wrapper {
-    .bio-en {
+  .bio-wrapper{
+    .bio-en{
       margin: 0 1em 0 1em;
     }
-    .bio-hu {
+    .bio-hu{
       margin: 1em;
       color: #828282;
     }
   }
-  .right {
+  .right{
     height: 100%;
-    .contact {
-      .link {
+    .contact{
+      .link{
         margin: 1em;
-        a {
+        a{
           text-transform: lowercase;
         }
       }
-      img {
+      img{
         position: fixed;
         bottom: 3em;
       }
     }
   }
 }
-@media only screen and (min-height: 500px) {
+@media only screen and (min-width:501) and (max-width: 768px) {
   // TABLET PORTRAIT
+  .title-mobile {
+    display: none;
+  }
   .menu-mobile {
     text-transform: uppercase;
     display: flex;
@@ -244,6 +247,7 @@ $single-img-h: 50vw;
     height: 100%;
     .gallery {
       display: grid;
+      grid-template-columns: 24vw 24vw;
       gap: 20px;
       .gallery-element {
         cursor: pointer;
@@ -255,83 +259,7 @@ $single-img-h: 50vw;
     }
   }
 }
-@media only screen and(max-height: 500px) {
-  main {
-    font-family: "PlayfairDisplay";
-  }
-  a {
-    text-decoration: none;
-    color: #010101;
-    text-transform: uppercase;
-  }
-  .title {
-    display: none;
-  }
-  .title-mobile {
-    svg {
-      height: 2rem;
-    }
-    display: block;
-    margin: 1em;
-  }
-  .right {
-    height: 100%;
-    .gallery {
-      display: grid;
-      grid-template-columns: 24vw 24vw;
-      gap: 20px;
-      .gallery-element {
-        width: unset;
-        cursor: pointer;
-        .gallery-img {
-          width: 112.5vh;
-          height: 90vh;
-          margin: 0 1em;
-        }
-      }
-    }
-    .gallery-text {
-      margin: 1em;
-      .gallery-title {
-        font-size: large;
-        .title {
-          display: block;
-          font-size: larger;
-        }
-      }
-      .text-en {
-        margin-top: 1em;
-      }
-      .text-hu {
-        margin-top: 1em;
-        color: #828282;
-      }
-    }
-  }
-  .bio-wrapper{
-    .bio-en{
-      margin: 1em;
-    }
-    .bio-hu{
-      margin: 0 1em 1em 1em;
-      color: #828282;
-    }
-    img{
-      height: 90vh;
-      margin: 1em;
-    }
-  }
-  .menu-mobile {
-    position: fixed;
-    top: 0;
-    right: 0;
-    margin: 1em;
-    span {
-      margin: 0 0.5em;
-    }
-  }
-}
-@media only screen and (min-width: 769px) and(min-height: 501px) {
+@media only screen and (min-width: 769px) {
   html {
     min-width: 768px;
   }
@@ -367,10 +295,9 @@ $single-img-h: 50vw;
         display: none;
       }
       .menu-mobile {
-        display: none !important;
-        visibility: hidden !important;
+        display: none;
+        visibility: hidden;
       }
-
       .menu {
         visibility: visible;
         color: #010101;
@@ -417,7 +344,7 @@ $single-img-h: 50vw;
           }
         }
       }
-      .menu-mobile {
+      .menu-mobile{
         display: none;
       }
     }
@@ -597,8 +524,9 @@ $single-img-h: 50vw;
           max-width: 900px;
           .single-img {
             max-width: 900px;
-            max-height: calc(100vh - (140px));
-            // width: 58vw;
+       //     max-height: calc(100vh - (140px));
+            width: 58vw;
+            height: 46.4vw;
           }
           .iframe-title {
             position: absolute;
