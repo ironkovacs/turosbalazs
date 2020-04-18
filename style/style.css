@@ -312,6 +312,9 @@ main .right .gallery .gallery-title {
     color: inherit;
     cursor: default;
   }
+  main .left .menu-mobile {
+    display: none;
+  }
   main .right {
     margin: 88px 0 0 0;
     width: 100%;
@@ -461,12 +464,12 @@ main .right .gallery .gallery-title {
   }
   main .right .single-gallery-wrapper .caroussel {
     width: max-content;
-    max-width: 1000px;
+    max-width: 900px;
   }
   main .right .single-gallery-wrapper .caroussel .single-img {
-    max-width: 1000px;
+    max-width: 900px;
     max-height: calc(100vh - (140px));
-    width: 62.5vw;
+    width: 58vw;
   }
   main .right .single-gallery-wrapper .caroussel .iframe-title {
     position: absolute;
