@@ -498,7 +498,6 @@ main .right .gallery .gallery-title {
   main .right .single-gallery-wrapper .caroussel .single-img {
     max-width: 900px;
     max-height: calc(100vh - (140px));
-    width: 58vw;
   }
   main .right .single-gallery-wrapper .caroussel .iframe-title {
     position: absolute;
