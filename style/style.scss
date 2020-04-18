@@ -272,9 +272,11 @@ $single-img-h: 50vw;
     display: none;
   }
   .title-mobile {
+    svg{
+      height: 2rem;
+    }
     display: block;
-    width: 90%;
-    margin: 1em auto;
+    margin: 1em;
   }
   .right {
     height: 100%;
