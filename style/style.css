@@ -191,8 +191,15 @@ main .right .gallery .gallery-title {
   img {
     max-width: 100%;
   }
+  .gallery-text {
+    margin: 0 1em;
+  }
   .gallery-text .gallery-title {
     font-size: large;
+  }
+  .gallery-text .gallery-title .title {
+    display: block;
+    font-size: larger;
   }
   .gallery-text .text-en {
     color: #010101;
