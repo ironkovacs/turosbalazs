@@ -574,6 +574,7 @@ var supportsOrientationChange = "onorientationchange" in window,
 
 window.addEventListener(orientationEvent, function() {
     init();
+    console.log("resized")
 }, false);
 
 // window.addEventListener('resize', setGalleryNavHeight)

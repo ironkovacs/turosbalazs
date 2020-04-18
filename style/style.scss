@@ -144,18 +144,18 @@ $single-img-h: 50vw;
   main {
     font-family: "PlayfairDisplay";
   }
-  a{
+  a {
     text-decoration: none;
     color: #010101;
     text-transform: uppercase;
   }
-  .title{
+  .title {
     display: none;
   }
-  .title-mobile{
-    display:block;
+  .title-mobile {
+    display: block;
     width: 90%;
-margin: 1em auto;
+    margin: 1em auto;
   }
   .gallery-title {
     font-family: AkzidenzGroteskPro;
@@ -174,12 +174,12 @@ margin: 1em auto;
       padding: 1em 0;
     }
     span {
-     text-decoration: none;
-     color: #010101;
-     & .active{
-       color: #828282;
-       font-weight: bold;
-     }
+      text-decoration: none;
+      color: #010101;
+      & .active {
+        color: #828282;
+        font-weight: bold;
+      }
     }
   }
   img {
@@ -188,7 +188,7 @@ margin: 1em auto;
   .gallery-text {
     margin: 0 1em;
     .gallery-title {
-      .title{
+      .title {
         display: block;
         font-size: larger;
       }
@@ -202,32 +202,32 @@ margin: 1em auto;
       color: #828282;
     }
   }
-  .bio-wrapper{
-    .bio-en{
+  .bio-wrapper {
+    .bio-en {
       margin: 0 1em 0 1em;
     }
-    .bio-hu{
+    .bio-hu {
       margin: 1em;
       color: #828282;
     }
   }
-  .right{
+  .right {
     height: 100%;
-    .contact{
-      .link{
+    .contact {
+      .link {
         margin: 1em;
-        a{
+        a {
           text-transform: lowercase;
         }
       }
-      img{
+      img {
         position: fixed;
         bottom: 3em;
       }
     }
   }
 }
-@media only screen and (min-width:501) and (max-width: 768px) {
+@media only screen and (min-height: 500px) {
   // TABLET PORTRAIT
   .title-mobile {
     display: none;
@@ -259,7 +259,69 @@ margin: 1em auto;
     }
   }
 }
-@media only screen and (min-width: 769px) {
+@media only screen and(max-height: 500px) {
+  main {
+    font-family: "PlayfairDisplay";
+  }
+  a {
+    text-decoration: none;
+    color: #010101;
+    text-transform: uppercase;
+  }
+  .title {
+    display: none;
+  }
+  .title-mobile {
+    display: block;
+    width: 90%;
+    margin: 1em auto;
+  }
+  .right {
+    height: 100%;
+    .gallery {
+      display: grid;
+      grid-template-columns: 24vw 24vw;
+      gap: 20px;
+      .gallery-element {
+        width: unset;
+        cursor: pointer;
+        .gallery-img {
+          width: 112.5vh;
+          height: 90vh;
+          margin: 0 1em;
+        }
+    }
+  }
+  .gallery-text{
+    margin: 1em;
+    .gallery-title{
+      font-size: large;
+      .title{
+        display: block;
+        font-size: larger;
+      }
+
+    }
+    .text-en{
+      margin-top: 1em;
+    }
+    .text-hu{
+      margin-top: 1em;
+      color: #828282;
+    }
+  }
+}
+  .menu-mobile {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 1em;
+    span {
+      margin: 0 0.5em;
+    }
+  }
+}
+@media only screen and (min-width: 769px) and(min-height: 501px) {
   html {
     min-width: 768px;
   }
@@ -344,7 +406,7 @@ margin: 1em auto;
           }
         }
       }
-      .menu-mobile{
+      .menu-mobile {
         display: none;
       }
     }
