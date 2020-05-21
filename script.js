@@ -17,22 +17,26 @@ const components = {
   makingOf: './components/makingOf/making-of.html',
   singleGallery: `
   <div class="single-gallery-wrapper">
-    <div class="caroussel"></div>
-  <div class="gallery-side">
+    <div class="caroussel">
+      <div class="spaceholder">
+      <img src="./assets/elements/color-dot-#FCFBF9.png" width="100%" height="1px"></div>
+      <div class="img-holder"></div>
+    </div>
+    <div class="gallery-side">
  
-    <div class="gallery-nav">
-      <svg xmlns="http://www.w3.org/2000/svg" class="prev">
-        <path d="M1.878 8.71v-.382l5.387-5.893L6.576.409.467 7.78v1.445l6.109 7.371.689-2.059L1.878 8.71z" />
-      </svg>
-      <svg xmlns="http://www.w3.org/2000/svg" class="next">
-        <path d="M7.363 7.78L1.254.409.565 2.435l5.404 5.86v.382l-5.404 5.86.689 2.059 6.109-7.371V7.78z" />
-      </svg>
-      <svg xmlns="http://www.w3.org/2000/svg" class="gallery-btn">
-        <path d="M22 17v-7h8v7h-8zm0-17h8v7h-8V0zM11 10h8v7h-8v-7zm0-10h8v7h-8V0zM0 10h8v7H0v-7zM0 0h8v7H0V0z" />
-      </svg>
+      <div class="gallery-nav">
+        <svg xmlns="http://www.w3.org/2000/svg" class="prev">
+          <path d="M1.878 8.71v-.382l5.387-5.893L6.576.409.467 7.78v1.445l6.109 7.371.689-2.059L1.878 8.71z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="next">
+          <path d="M7.363 7.78L1.254.409.565 2.435l5.404 5.86v.382l-5.404 5.86.689 2.059 6.109-7.371V7.78z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="gallery-btn">
+          <path d="M22 17v-7h8v7h-8zm0-17h8v7h-8V0zM11 10h8v7h-8v-7zm0-10h8v7h-8V0zM0 10h8v7H0v-7zM0 0h8v7H0V0z" />
+        </svg>
+      </div>
     </div>
   </div>
-</div>
   `,
   contact: './components/contact/contact.html',
   bio: './components/bio/bio.html'
@@ -345,7 +349,7 @@ function loadHTMLtoDOM(html, toDOMelement) {
 
 function singleGallery(set, id) {
   html.right.innerHTML = components.singleGallery;
-  html.right.caroussel = document.querySelector('.caroussel');
+  html.right.caroussel = document.querySelector('.caroussel>.img-holder');
   // html.right.pager = document.querySelector('.pager');
   html.right.galleryNavNext = document.querySelector('svg.next');
   html.right.galleryNavPrev = document.querySelector('svg.prev');
@@ -392,7 +396,9 @@ function galleryNext(set) {
 }
 
 function showGalleryElement(element) {
-  return `<img class="single-img" src="${element.img}_nagy.jpg">`
+  return `
+  <img class="single-img" src="${element.img}_nagy.jpg">
+  `
 }
 
 function navigation(hash) {

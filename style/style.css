@@ -90,7 +90,6 @@ main .right .gallery {
 
 main .right .gallery .gallery-element {
   position: relative;
-  width: 100vw;
 }
 
 main .right .gallery .gallery-element img {
@@ -348,6 +347,7 @@ main .right .gallery .gallery-title {
     margin: 88px 0 0 0;
     width: 100%;
     max-height: 960px;
+    max-width: 1920px;
     overflow-y: auto;
     overflow-x: hidden;
   }
@@ -495,10 +495,15 @@ main .right .gallery .gallery-title {
     width: max-content;
     max-width: 900px;
   }
+  main .right .single-gallery-wrapper .caroussel .spaceholder {
+    width: 58vw;
+    height: 0px;
+    margin: 0;
+    padding: 0;
+  }
   main .right .single-gallery-wrapper .caroussel .single-img {
     max-width: 900px;
     max-height: calc(100vh - (140px));
-    width: 58vw;
   }
   main .right .single-gallery-wrapper .caroussel .iframe-title {
     position: absolute;

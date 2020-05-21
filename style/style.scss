@@ -81,7 +81,7 @@ main {
       flex-wrap: wrap;
       .gallery-element {
         position: relative;
-        width: 100vw;
+     
         img {
           width: 100%;
         }
@@ -353,6 +353,7 @@ margin: 1em auto;
       margin: 88px 0 0 0;
       width: 100%;
       max-height: 960px;
+      max-width: 1920px;
       overflow-y: auto;
       overflow-x: hidden;
 
@@ -522,10 +523,16 @@ margin: 1em auto;
         .caroussel {
           width: max-content;
           max-width: 900px;
+          .spaceholder{
+            width: 58vw;
+            height: 0px;
+            margin: 0;
+            padding: 0;
+          }
           .single-img {
             max-width: 900px;
             max-height: calc(100vh - (140px));
-            width: 58vw;
+            // width: 58vw;
             // height: 46.4vw;
           }
           .iframe-title {
