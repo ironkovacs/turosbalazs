@@ -365,6 +365,7 @@ main .right .gallery .gallery-title {
   }
   main .right .gallery-wrapper {
     height: 100%;
+    max-width: 1920px;
   }
   main .right .gallery-wrapper .gallery {
     display: grid;
@@ -376,7 +377,7 @@ main .right .gallery .gallery-title {
     gap: 1.5vw;
   }
   main .right .gallery-wrapper .gallery._3col {
-    grid-template-columns: repeat(3, 25vw);
+    grid-template-columns: repeat(3, minmax(480px, calc((100vw - 224px) / 4)));
     gap: 2.1vw;
   }
   main .right .gallery-wrapper .gallery._4col {

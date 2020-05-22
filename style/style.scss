@@ -103,7 +103,7 @@ main {
 $single-img-w: 62.5vw;
 $single-img-h: 50vw;
 
-$right-width: calc(100vw - 224px);
+$right-width-3: calc((100vw - 224px) / 4);
 /* fades  */
 .invisible {
   opacity: 0;
@@ -276,9 +276,8 @@ margin: 1em auto;
     }
     .left {
       padding: 88px 16px 0 56px;
-
       max-height: 1020px;
-  width: 224px;
+      width: 224px;
       position: relative;
       display: flex;
       flex-direction: column;
@@ -375,6 +374,7 @@ margin: 1em auto;
       }
       .gallery-wrapper {
         height: 100%;
+        max-width: 1920px;
         // margin: 0 100px 40px 0;
 
         .gallery {
@@ -386,7 +386,7 @@ margin: 1em auto;
             gap: 1.5vw;
           }
           &._3col {
-            grid-template-columns: repeat(3, 25vw);
+            grid-template-columns: repeat(3, minmax(480px, $right-width-3));
             gap: 2.1vw;
           }
           &._4col {
