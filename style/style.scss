@@ -157,6 +157,7 @@ $right-width-3: calc((100vw - 224px) / 4);
   .title-mobile{
     display:block;
     width: 90%;
+    svg{width: 60%;}
 margin: 1em auto;
   }
   .gallery-title {
@@ -233,6 +234,7 @@ margin: 1em auto;
   // TABLET PORTRAIT
   .title-mobile {
     display: none;
+  
   }
   .menu-mobile {
     text-transform: uppercase;
@@ -533,9 +535,9 @@ margin: 1em auto;
           }
           .single-img {
             max-width: 900px;
-            max-height: calc(100vh - (140px));
+            max-height: 720px;
             width: 58vw;
-            // height: 46.4vw;
+            height: 46.4vw;
           }
           .iframe-title {
             position: absolute;

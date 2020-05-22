@@ -164,6 +164,9 @@ main .right .gallery .gallery-title {
     width: 90%;
     margin: 1em auto;
   }
+  .title-mobile svg {
+    width: 60%;
+  }
   .gallery-title {
     font-family: AkzidenzGroteskPro;
   }
@@ -503,8 +506,9 @@ main .right .gallery .gallery-title {
   }
   main .right .single-gallery-wrapper .caroussel .single-img {
     max-width: 900px;
-    max-height: calc(100vh - (140px));
+    max-height: 720px;
     width: 58vw;
+    height: 46.4vw;
   }
   main .right .single-gallery-wrapper .caroussel .iframe-title {
     position: absolute;
