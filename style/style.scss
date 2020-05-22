@@ -103,6 +103,7 @@ main {
 $single-img-w: 62.5vw;
 $single-img-h: 50vw;
 
+$right-width: calc(100vw - 224px);
 /* fades  */
 .invisible {
   opacity: 0;
@@ -140,6 +141,7 @@ $single-img-h: 50vw;
   top: 0;
   left: 0;
 }
+
 @media only screen and (max-width: 500px) {
   main {
     font-family: "PlayfairDisplay";
@@ -274,9 +276,9 @@ margin: 1em auto;
     }
     .left {
       padding: 88px 16px 0 56px;
-      width: 14vw;
+
       max-height: 1020px;
-      min-width: 224px;
+  width: 224px;
       position: relative;
       display: flex;
       flex-direction: column;
@@ -525,14 +527,14 @@ margin: 1em auto;
           max-width: 900px;
           .spaceholder{
             width: 58vw;
-            height: 0px;
+            height: 1px;
             margin: 0;
             padding: 0;
           }
           .single-img {
             max-width: 900px;
             max-height: calc(100vh - (140px));
-            // width: 58vw;
+            width: 58vw;
             // height: 46.4vw;
           }
           .iframe-title {
@@ -578,6 +580,7 @@ margin: 1em auto;
           }
           .gallery-nav {
             fill: #828282;
+            min-width: 90px;
 
             .prev {
               margin: 0 5px;
