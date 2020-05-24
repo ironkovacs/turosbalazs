@@ -81,7 +81,7 @@ main {
       flex-wrap: wrap;
       .gallery-element {
         position: relative;
-     
+
         img {
           width: 100%;
         }
@@ -103,7 +103,6 @@ main {
 $single-img-w: 62.5vw;
 $single-img-h: 50vw;
 
-$right-width-3: calc((100vw - 224px) / 4);
 /* fades  */
 .invisible {
   opacity: 0;
@@ -141,7 +140,6 @@ $right-width-3: calc((100vw - 224px) / 4);
   top: 0;
   left: 0;
 }
-
 @media only screen and (max-width: 500px) {
   main {
     font-family: "PlayfairDisplay";
@@ -157,7 +155,6 @@ $right-width-3: calc((100vw - 224px) / 4);
   .title-mobile{
     display:block;
     width: 90%;
-    svg{width: 60%;}
 margin: 1em auto;
   }
   .gallery-title {
@@ -234,7 +231,6 @@ margin: 1em auto;
   // TABLET PORTRAIT
   .title-mobile {
     display: none;
-  
   }
   .menu-mobile {
     text-transform: uppercase;
@@ -278,8 +274,9 @@ margin: 1em auto;
     }
     .left {
       padding: 88px 16px 0 56px;
+      width: 14vw;
       max-height: 1020px;
-      width: 224px;
+      min-width: 224px;
       position: relative;
       display: flex;
       flex-direction: column;
@@ -376,7 +373,6 @@ margin: 1em auto;
       }
       .gallery-wrapper {
         height: 100%;
-        max-width: 1920px;
         // margin: 0 100px 40px 0;
 
         .gallery {
@@ -388,7 +384,7 @@ margin: 1em auto;
             gap: 1.5vw;
           }
           &._3col {
-            grid-template-columns: repeat(3, minmax(480px, $right-width-3));
+            grid-template-columns: repeat(3, 25vw);
             gap: 2.1vw;
           }
           &._4col {
@@ -529,15 +525,15 @@ margin: 1em auto;
           max-width: 900px;
           .spaceholder{
             width: 58vw;
-            height: 1px;
+            height: 0px;
             margin: 0;
             padding: 0;
           }
           .single-img {
             max-width: 900px;
-            max-height: 720px;
-            width: 58vw;
-            height: 46.4vw;
+            max-height: calc(100vh - (140px));
+            // width: 58vw;
+            // height: 46.4vw;
           }
           .iframe-title {
             position: absolute;
@@ -582,7 +578,6 @@ margin: 1em auto;
           }
           .gallery-nav {
             fill: #828282;
-            min-width: 90px;
 
             .prev {
               margin: 0 5px;
