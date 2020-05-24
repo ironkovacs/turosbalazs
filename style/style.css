@@ -373,7 +373,7 @@ main .right .gallery .gallery-title {
     gap: 2.1vw;
   }
   main .right .gallery-wrapper .gallery._2col {
-    grid-template-columns: repeat(3, minmax(min-content, max-content));
+    grid-template-columns: repeat(2, minmax(min-content, max-content));
     gap: 1.5vw;
   }
   main .right .gallery-wrapper .gallery._2col .gallery-element {
@@ -400,13 +400,13 @@ main .right .gallery .gallery-title {
     max-height: 276px;
   }
   main .right .gallery-wrapper .gallery._5col {
-    grid-template-columns: repeat(5, 14vw);
+    grid-template-columns: repeat(5, minmax(min-content, max-content));
     gap: 1.35vw;
   }
   main .right .gallery-wrapper .gallery._5col .gallery-element {
-    width: calc((100vw - 224px) / 4);
-    max-width: 480px;
-    max-height: 600px;
+    width: calc((100vw - 224px) * 0.14);
+    max-width: 268px;
+    max-height: 214px;
   }
   main .right .gallery-wrapper .gallery .gallery-element {
     cursor: pointer;
@@ -442,7 +442,7 @@ main .right .gallery .gallery-title {
     margin: 1.5vw 0;
   }
   main .right .gallery-wrapper .gallery-text._2col {
-    grid-template-columns: repeat(9, calc(26vw / 3));
+    grid-template-columns: repeat(9, calc(((100vw - 224px) * 0.26) / 3));
     grid-template-areas: "title title . text-en text-en text-en text-en text-en  ." ". . text-hu text-hu text-hu text-hu text-hu text-hu .";
     gap: 1.5vw 0.5vw;
   }
@@ -454,14 +454,14 @@ main .right .gallery .gallery-title {
   }
   main .right .gallery-wrapper .gallery-text._3col {
     grid-template-areas: "title title . text-en text-en text-en text-en text-en ." ". . text-hu text-hu text-hu text-hu text-hu text-hu .";
-    grid-template-columns: repeat(9, calc(25vw / 3));
+    grid-template-columns: repeat(9, calc(calc((100vw - 224px) / 4) / 3));
     gap: 2.1vw calc(2.1vw / 3);
   }
   main .right .gallery-wrapper .gallery-text._3col .text-en {
     margin-left: -2.1vw;
   }
   main .right .gallery-wrapper .gallery-text._4col {
-    grid-template-columns: repeat(12, 6vw);
+    grid-template-columns: repeat(12, calc((100vw - 224px) * 0.06));
     grid-template-areas: "title title title . text-en text-en text-en text-en text-en text-en text-en ." ". . . text-hu text-hu text-hu text-hu text-hu text-hu text-hu text-hu .";
     gap: 1.2vw 0.327vw;
   }
@@ -469,7 +469,7 @@ main .right .gallery .gallery-title {
     margin-left: -1.2vw;
   }
   main .right .gallery-wrapper .gallery-text._5col {
-    grid-template-columns: repeat(15, calc(14vw / 3));
+    grid-template-columns: repeat(15, calc(((100vw - 224px) * 0.14) / 3));
     grid-template-areas: "title title . . text-en text-en text-en text-en text-en text-en text-en text-en . . ." ". . . text-hu text-hu text-hu text-hu text-hu text-hu text-hu text-hu text-hu . . .";
     gap: 1.35vw calc(1.35vw / 3);
   }
@@ -486,6 +486,21 @@ main .right .gallery .gallery-title {
     color: #010101;
     text-transform: uppercase;
   }
+}
+
+@media only screen and (min-width: 769px) and (min-width: 1600px) {
+  main .right .gallery-wrapper .gallery-text .gallery-title {
+    font-size: 42px;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1599px) {
+  main .right .gallery-wrapper .gallery-text .gallery-title {
+    font-size: 2.6vw;
+  }
+}
+
+@media only screen and (min-width: 769px) {
   main .right .gallery-wrapper .gallery-text .text-en a {
     text-decoration: none;
     color: #828282;
@@ -501,6 +516,21 @@ main .right .gallery .gallery-title {
     color: #828282;
     font-size: 24px;
   }
+}
+
+@media only screen and (min-width: 769px) and (min-width: 1600px) {
+  main .right .gallery-wrapper .gallery-text .text-hu {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1599px) {
+  main .right .gallery-wrapper .gallery-text .text-hu {
+    font-size: 1.5vw;
+  }
+}
+
+@media only screen and (min-width: 769px) {
   main .right .gallery-wrapper .gallery-text .text-en {
     font-weight: bold;
     font-family: PlayfairDisplay;
@@ -508,6 +538,21 @@ main .right .gallery .gallery-title {
     color: #010101;
     font-size: 24px;
   }
+}
+
+@media only screen and (min-width: 769px) and (min-width: 1600px) {
+  main .right .gallery-wrapper .gallery-text .text-en {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1599px) {
+  main .right .gallery-wrapper .gallery-text .text-en {
+    font-size: 1.5vw;
+  }
+}
+
+@media only screen and (min-width: 769px) {
   main .right .single-gallery-wrapper {
     display: flex;
     flex-direction: row;

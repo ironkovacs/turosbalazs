@@ -382,7 +382,7 @@ margin: 1em auto;
           grid-template-columns: repeat(3, minmax(min-content, max-content));
           gap: 2.1vw;
           &._2col {
-            grid-template-columns: repeat(3, minmax(min-content, max-content));
+            grid-template-columns: repeat(2, minmax(min-content, max-content));
             gap: 1.5vw;
             .gallery-element{
               width: calc((100vw - 224px) * 0.26);
@@ -409,12 +409,12 @@ margin: 1em auto;
             }
           }
           &._5col {
-            grid-template-columns: repeat(5, 14vw);
+            grid-template-columns: repeat(5, minmax(min-content, max-content));
             gap: 1.35vw;
             .gallery-element{
-              width: calc((100vw - 224px) / 4);
-              max-width: 480px;
-              max-height: 600px;
+              width: calc((100vw - 224px) * 0.14);
+              max-width: 268px;
+              max-height: 214px;
             }
           }
 
@@ -456,7 +456,7 @@ margin: 1em auto;
           display: grid;
           margin: 1.5vw 0;
           &._2col {
-            grid-template-columns: repeat(9, calc(26vw / 3));
+            grid-template-columns: repeat(9, calc(((100vw - 224px) * 0.26) / 3));
             grid-template-areas:
               "title title . text-en text-en text-en text-en text-en  ."
               ". . text-hu text-hu text-hu text-hu text-hu text-hu .";
@@ -473,14 +473,14 @@ margin: 1em auto;
               "title title . text-en text-en text-en text-en text-en ."
               ". . text-hu text-hu text-hu text-hu text-hu text-hu .";
 
-            grid-template-columns: repeat(9, calc(25vw / 3));
+            grid-template-columns: repeat(9, calc(calc((100vw - 224px) / 4) / 3));
             gap: 2.1vw calc(2.1vw / 3);
             .text-en {
               margin-left: -2.1vw;
             }
           }
           &._4col {
-            grid-template-columns: repeat(12, 6vw);
+            grid-template-columns: repeat(12, calc((100vw - 224px) * 0.06));
             grid-template-areas:
               "title title title . text-en text-en text-en text-en text-en text-en text-en ."
               ". . . text-hu text-hu text-hu text-hu text-hu text-hu text-hu text-hu .";
@@ -490,7 +490,7 @@ margin: 1em auto;
             }
           }
           &._5col {
-            grid-template-columns: repeat(15, calc(14vw / 3));
+            grid-template-columns: repeat(15, calc(((100vw - 224px) * 0.14) / 3));
             grid-template-areas:
               "title title . . text-en text-en text-en text-en text-en text-en text-en text-en . . ."
               ". . . text-hu text-hu text-hu text-hu text-hu text-hu text-hu text-hu text-hu . . .";
@@ -508,6 +508,12 @@ margin: 1em auto;
             font-family: AkzidenzGroteskPro;
             color: #010101;
             text-transform: uppercase;
+            @media (min-width: 1600px) {
+              font-size: 42px;
+            }
+            @media (max-width: 1599px) {
+              font-size: 2.6vw;
+            }
           }
           .text-en {
             a {
@@ -525,6 +531,12 @@ margin: 1em auto;
             grid-area: text-hu;
             color: #828282;
             font-size: 24px;
+            @media (min-width: 1600px) {
+              font-size: 24px;
+            }
+            @media (max-width: 1599px) {
+              font-size: 1.5vw;
+            }
           }
 
           .text-en {
@@ -533,6 +545,12 @@ margin: 1em auto;
             grid-area: text-en;
             color: #010101;
             font-size: 24px;
+            @media (min-width: 1600px) {
+              font-size: 24px;
+            }
+            @media (max-width: 1599px) {
+              font-size: 1.5vw;
+            }
           }
         }
       }
