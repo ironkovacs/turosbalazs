@@ -142,7 +142,14 @@ $left-W: calc((100vw - 224px));
   top: 0;
   left: 0;
 }
-@media only screen and (max-width: 500px) {
+
+// MOBILE
+@media only screen 
+and (max-width: 767px),
+    (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait)
+ {
   main {
     font-family: "PlayfairDisplay";
   }
@@ -229,39 +236,10 @@ margin: 1em auto;
     }
   }
 }
-@media only screen and (min-width:501) and (max-width: 768px) {
-  // TABLET PORTRAIT
-  .title-mobile {
-    display: none;
-  }
-  .menu-mobile {
-    text-transform: uppercase;
-    display: flex;
-    justify-content: center;
-    align-content: space-between;
-    width: 100vw;
-    flex-direction: row;
-    span {
-      padding: 0 8%;
-    }
-  }
-  .right {
-    height: 100%;
-    .gallery {
-      display: grid;
-      grid-template-columns: 24vw 24vw;
-      gap: 20px;
-      .gallery-element {
-        cursor: pointer;
-        width: 100%;
-        .gallery-img {
-          width: 100%;
-        }
-      }
-    }
-  }
-}
-@media only screen and (min-width: 769px) {
+
+@media only screen 
+and (min-width: 1024px),
+(min-width: 768px)  and (orientation : landscape) {
   html {
     min-width: 768px;
   }
