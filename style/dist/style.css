@@ -164,6 +164,9 @@ main .right .gallery .gallery-title {
     width: 90%;
     margin: 1em auto;
   }
+  .title-mobile svg {
+    width: 60%;
+  }
   .gallery-title {
     font-family: AkzidenzGroteskPro;
   }
@@ -277,9 +280,8 @@ main .right .gallery .gallery-title {
   }
   main .left {
     padding: 88px 16px 0 56px;
-    width: 14vw;
     max-height: 1020px;
-    min-width: 224px;
+    width: 224px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -345,7 +347,8 @@ main .right .gallery .gallery-title {
   }
   main .right {
     margin: 88px 0 0 0;
-    width: 100%;
+    width: calc(100vw - 224px);
+    height: calc(100vh - 88px);
     max-height: 960px;
     max-width: 1920px;
     overflow-y: auto;
@@ -366,52 +369,36 @@ main .right .gallery .gallery-title {
   }
   main .right .gallery-wrapper {
     height: 100%;
+    max-width: 1920px;
+    width: calc(100vw - 224px);
+    height: calc(100vh - 88px);
+    max-height: 960px;
+    max-width: 1920px;
   }
   main .right .gallery-wrapper .gallery {
     display: grid;
-    grid-template-columns: repeat(3, minmax(min-content, max-content));
+    grid-template-columns: repeat(3, 25vw);
     gap: 2.1vw;
   }
   main .right .gallery-wrapper .gallery._2col {
-    grid-template-columns: repeat(3, minmax(min-content, max-content));
+    grid-template-columns: repeat(2, 26vw);
     gap: 1.5vw;
   }
-  main .right .gallery-wrapper .gallery._2col .gallery-element {
-    width: calc((100vw - 224px) * 0.26);
-    max-width: 480px;
-    max-height: 600px;
-  }
   main .right .gallery-wrapper .gallery._3col {
-    grid-template-columns: repeat(3, minmax(min-content, max-content));
-    gap: 2.1vw;
-  }
-  main .right .gallery-wrapper .gallery._3col .gallery-element {
-    width: calc((100vw - 224px) / 4);
-    max-width: 480px;
-    max-height: 600px;
+    grid-template-columns: repeat(3, minmax(25vw, 480px));
+    gap: 40px;
   }
   main .right .gallery-wrapper .gallery._4col {
-    grid-template-columns: repeat(4, minmax(min-content, max-content));
+    grid-template-columns: repeat(4, 18vw);
     gap: 1.2vw;
-  }
-  main .right .gallery-wrapper .gallery._4col .gallery-element {
-    width: calc((100vw - 224px) * 0.18);
-    max-width: 345px;
-    max-height: 276px;
   }
   main .right .gallery-wrapper .gallery._5col {
     grid-template-columns: repeat(5, 14vw);
     gap: 1.35vw;
   }
-  main .right .gallery-wrapper .gallery._5col .gallery-element {
-    width: calc((100vw - 224px) / 4);
-    max-width: 480px;
-    max-height: 600px;
-  }
   main .right .gallery-wrapper .gallery .gallery-element {
     cursor: pointer;
     width: 100%;
-    max-width: 480px;
     margin: 0;
     position: relative;
   }
@@ -518,19 +505,15 @@ main .right .gallery .gallery-title {
   }
   main .right .single-gallery-wrapper .caroussel .spaceholder {
     width: 58vw;
-    max-width: 900px;
     height: 1px;
     margin: 0;
     padding: 0;
   }
   main .right .single-gallery-wrapper .caroussel .single-img {
     max-width: 900px;
-    max-height: calc(100vh - (90px));
+    max-height: 720px;
     width: 58vw;
-    display: block;
-    object-fit: scale-down;
-    position: relative;
-    object-position: left;
+    height: 46.4vw;
   }
   main .right .single-gallery-wrapper .caroussel .iframe-title {
     position: absolute;
@@ -575,6 +558,7 @@ main .right .gallery .gallery-title {
   }
   main .right .single-gallery-wrapper .gallery-side .gallery-nav {
     fill: #828282;
+    min-width: 90px;
   }
   main .right .single-gallery-wrapper .gallery-side .gallery-nav .prev {
     margin: 0 5px;
@@ -625,6 +609,7 @@ main .right .gallery .gallery-title {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
   }
   main .right .bio-wrapper .bio-en {
     order: 1;

@@ -555,38 +555,35 @@ function hamburger() {
   }
 }
 
-function calculateImgW() {
+// function calculateImgW() {
 //   const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 //   const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
   
 //   const imgRatio = 0.8;
-//   const maxW = 1000;
+//   const maxW = 900;
 //   const maxH = 100 * vh - 140;
   
 //   const contW = document.querySelector('.caroussel').offsetWidth;
 //   const contH = document.querySelector('.caroussel').offsetHeight;
 
-// if(contW >= mainSet && contH >= maxH){
-//   return  maxW
-// }else if();
-}
 
-function getImgH() {
-  return document.querySelector('.single-img').offsetHeight;
-}
+
+// function getImgH() {
+//   return document.querySelector('.single-img').offsetHeight;
+// }
 
 // window.addEventListener('resize', setGalleryNavHeight)
 
-function setGalleryNavHeight() {
-  if (document.querySelector('.gallery-side')) {
-    setInterval(() => {
-      const _height = getImgH() / 2
-      document.querySelector('.gallery-side').style = `height:${_height}px`
-      console.log(_height)
-    }, 30);
+// function setGalleryNavHeight() {
+//   if (document.querySelector('.gallery-side')) {
+//     setInterval(() => {
+//       const _height = getImgH() / 2
+//       document.querySelector('.gallery-side').style = `height:${_height}px`
+//       console.log(_height)
+//     }, 30);
 
-  }
-}
+//   }
+// }
 
 window.addEventListener('hashchange', init);
 
