@@ -122,13 +122,19 @@ main .right .gallery .gallery-title {
 }
 
 .closed {
-  height: 0;
+  height: 0 !important;
   z-index: 0;
+  opacity: 0;
+  transition: linear 1s;
+  transition: height 1s;
 }
 
 .open {
   z-index: 99;
-  height: auto;
+  height: 100%;
+  opacity: 1;
+  transition: linear 1s;
+  transition: height 1s;
 }
 
 /* For mobile phones: */
@@ -161,8 +167,11 @@ main .right .gallery .gallery-title {
   }
   .title-mobile {
     display: block;
-    width: 90%;
-    margin: 1em auto;
+    width: 100%;
+    margin: 1em;
+  }
+  .title-mobile svg {
+    width: 60%;
   }
   .gallery-title {
     font-family: AkzidenzGroteskPro;
@@ -229,7 +238,127 @@ main .right .gallery .gallery-title {
   }
 }
 
-@media only screen and (min-width: 1024px), (min-width: 768px) and (orientation: landscape) {
+@media only screen and (max-width: 814px) and (orientation: landscape) {
+  main {
+    font-family: "PlayfairDisplay";
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  a {
+    text-decoration: none;
+    color: #010101;
+    text-transform: uppercase;
+  }
+  .left {
+    height: 3em;
+  }
+  .left .title {
+    display: none;
+  }
+  .left .title-mobile {
+    order: 1;
+    display: block;
+    width: 50vw;
+    margin: 0;
+  }
+  .left .title-mobile svg {
+    height: 1.5em;
+    padding: 0.5em 1em;
+  }
+  .menu {
+    display: none;
+  }
+  .menu-mobile {
+    order: 2;
+    transition: height 1s;
+  }
+  .menu-mobile .mobile-menu-wrapper {
+    width: 50vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-content: space-between;
+    justify-items: center;
+    flex-direction: row;
+    padding: 0.5em 0;
+  }
+  .menu-mobile span {
+    text-decoration: none;
+    color: #010101;
+  }
+  .menu-mobile span .active {
+    color: #828282;
+    font-weight: bold;
+  }
+  img {
+    max-width: 100%;
+  }
+  .right {
+    order: 3;
+    height: 100%;
+    overflow: scroll;
+  }
+  .right .gallery-wrapper .gallery {
+    display: flex;
+    flex-direction: column;
+  }
+  .right .gallery-wrapper .gallery .gallery-element {
+    height: calc(100vh - 2.5em);
+    display: inline-block;
+    margin: .5em auto;
+  }
+  .right .gallery-wrapper .gallery .gallery-element .gallery-img {
+    height: 100%;
+    width: auto;
+  }
+  .right .gallery-wrapper .gallery-title {
+    font-family: AkzidenzGroteskPro;
+  }
+  .right .gallery-wrapper .gallery-text {
+    margin: 0 1em;
+  }
+  .right .gallery-wrapper .gallery-text .gallery-title {
+    font-size: large;
+  }
+  .right .gallery-wrapper .gallery-text .gallery-title .title {
+    display: block;
+    font-size: larger;
+  }
+  .right .gallery-wrapper .gallery-text .text-en {
+    color: #010101;
+    margin: 1em 0;
+  }
+  .right .gallery-wrapper .gallery-text .text-hu {
+    color: #828282;
+  }
+  .right .contact {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 100%;
+    overflow: auto;
+  }
+  .right .contact .link {
+    margin: 1em;
+  }
+  .right .contact .link a {
+    text-transform: lowercase;
+  }
+  .right .contact img {
+    height: 100%;
+  }
+  .right .bio-wrapper .bio-en {
+    margin: 0 1em 0 1em;
+  }
+  .right .bio-wrapper .bio-hu {
+    margin: 1em;
+    color: #828282;
+  }
+  .right .bio-wrapper .bio-img {
+    height: 100vh;
+  }
+}
+
+@media only screen and (min-width: 1024px), (min-width: 768px) and (min-height: 400px) and (orientation: landscape) {
   html {
     min-width: 768px;
   }
@@ -338,7 +467,7 @@ main .right .gallery .gallery-title {
   main .right .gallery-wrapper .gallery {
     display: grid;
     grid-template-columns: repeat(3, minmax(min-content, max-content));
-    gap: 2.1vw;
+    gap: 1.8vw;
   }
   main .right .gallery-wrapper .gallery._2col {
     grid-template-columns: repeat(2, minmax(min-content, max-content));
@@ -351,10 +480,10 @@ main .right .gallery .gallery-title {
   }
   main .right .gallery-wrapper .gallery._3col {
     grid-template-columns: repeat(3, minmax(min-content, max-content));
-    gap: 2.1vw;
+    gap: 1.8vw;
   }
   main .right .gallery-wrapper .gallery._3col .gallery-element {
-    width: calc((100vw - 224px) / 4);
+    width: calc((100vw - 224px) / 3.8);
     max-width: 480px;
     max-height: 600px;
   }
@@ -422,7 +551,7 @@ main .right .gallery .gallery-title {
   }
   main .right .gallery-wrapper .gallery-text._3col {
     grid-template-areas: "title title . text-en text-en text-en text-en text-en ." ". . text-hu text-hu text-hu text-hu text-hu text-hu .";
-    grid-template-columns: repeat(9, calc(calc((100vw - 224px) / 4) / 3));
+    grid-template-columns: repeat(9, calc(calc((100vw - 224px) / 3.8) / 3));
     gap: 2.1vw calc(2.1vw / 3);
   }
   main .right .gallery-wrapper .gallery-text._3col .text-en {
@@ -456,19 +585,19 @@ main .right .gallery .gallery-title {
   }
 }
 
-@media only screen and (min-width: 1024px) and (min-width: 1600px), (min-width: 768px) and (orientation: landscape) and (min-width: 1600px) {
+@media only screen and (min-width: 1024px) and (min-width: 1600px), (min-width: 768px) and (min-height: 400px) and (orientation: landscape) and (min-width: 1600px) {
   main .right .gallery-wrapper .gallery-text .gallery-title {
     font-size: 42px;
   }
 }
 
-@media only screen and (min-width: 1024px) and (max-width: 1599px), (min-width: 768px) and (orientation: landscape) and (max-width: 1599px) {
+@media only screen and (min-width: 1024px) and (max-width: 1599px), (min-width: 768px) and (min-height: 400px) and (orientation: landscape) and (max-width: 1599px) {
   main .right .gallery-wrapper .gallery-text .gallery-title {
     font-size: 2.6vw;
   }
 }
 
-@media only screen and (min-width: 1024px), (min-width: 768px) and (orientation: landscape) {
+@media only screen and (min-width: 1024px), (min-width: 768px) and (min-height: 400px) and (orientation: landscape) {
   main .right .gallery-wrapper .gallery-text .text-en a {
     text-decoration: none;
     color: #828282;
@@ -486,19 +615,19 @@ main .right .gallery .gallery-title {
   }
 }
 
-@media only screen and (min-width: 1024px) and (min-width: 1600px), (min-width: 768px) and (orientation: landscape) and (min-width: 1600px) {
+@media only screen and (min-width: 1024px) and (min-width: 1600px), (min-width: 768px) and (min-height: 400px) and (orientation: landscape) and (min-width: 1600px) {
   main .right .gallery-wrapper .gallery-text .text-hu {
     font-size: 24px;
   }
 }
 
-@media only screen and (min-width: 1024px) and (max-width: 1599px), (min-width: 768px) and (orientation: landscape) and (max-width: 1599px) {
+@media only screen and (min-width: 1024px) and (max-width: 1599px), (min-width: 768px) and (min-height: 400px) and (orientation: landscape) and (max-width: 1599px) {
   main .right .gallery-wrapper .gallery-text .text-hu {
     font-size: 1.5vw;
   }
 }
 
-@media only screen and (min-width: 1024px), (min-width: 768px) and (orientation: landscape) {
+@media only screen and (min-width: 1024px), (min-width: 768px) and (min-height: 400px) and (orientation: landscape) {
   main .right .gallery-wrapper .gallery-text .text-en {
     font-weight: bold;
     font-family: PlayfairDisplay;
@@ -508,19 +637,19 @@ main .right .gallery .gallery-title {
   }
 }
 
-@media only screen and (min-width: 1024px) and (min-width: 1600px), (min-width: 768px) and (orientation: landscape) and (min-width: 1600px) {
+@media only screen and (min-width: 1024px) and (min-width: 1600px), (min-width: 768px) and (min-height: 400px) and (orientation: landscape) and (min-width: 1600px) {
   main .right .gallery-wrapper .gallery-text .text-en {
     font-size: 24px;
   }
 }
 
-@media only screen and (min-width: 1024px) and (max-width: 1599px), (min-width: 768px) and (orientation: landscape) and (max-width: 1599px) {
+@media only screen and (min-width: 1024px) and (max-width: 1599px), (min-width: 768px) and (min-height: 400px) and (orientation: landscape) and (max-width: 1599px) {
   main .right .gallery-wrapper .gallery-text .text-en {
     font-size: 1.5vw;
   }
 }
 
-@media only screen and (min-width: 1024px), (min-width: 768px) and (orientation: landscape) {
+@media only screen and (min-width: 1024px), (min-width: 768px) and (min-height: 400px) and (orientation: landscape) {
   main .right .single-gallery-wrapper {
     display: flex;
     flex-direction: row;
