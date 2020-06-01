@@ -305,7 +305,7 @@ main .right .gallery .gallery-title {
   .right .gallery-wrapper .gallery .gallery-element {
     height: calc(100vh - 2.5em);
     display: inline-block;
-    margin: .5em auto;
+    margin: 0.5em auto;
   }
   .right .gallery-wrapper .gallery .gallery-element .gallery-img {
     height: 100%;

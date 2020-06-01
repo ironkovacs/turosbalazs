@@ -265,18 +265,16 @@ function init() {
 
   };
   scrollDistance(function (distance) {
-    if (window.mobileCheck()) {
+    if (window.mobileCheck() && (window.orientation === 90 || window.orientation === -90)) {
       distance < 0 ? scrollUp(distance) : scrollDown(distance);
     }
   });
   function scrollDown(distance) {
-    console.log('up', distance)
     html.left.classList.add('closed')
     document.querySelector('.menu-mobile').classList.add('closed')
   }
 
   function scrollUp(distance) {
-    console.log('down', distance)
     html.left.classList.remove('closed')
     document.querySelector('.menu-mobile').classList.remove('closed')
 
@@ -587,7 +585,7 @@ function rngMinMax(min, max) {
 window.onorientationchange = function () {
   var orientation = window.orientation;
   switch (orientation) {
-    case 0:
+    case 0:window.location.reload()
     case 90: window.location.reload()
     case -90: window.location.reload();
       break;
