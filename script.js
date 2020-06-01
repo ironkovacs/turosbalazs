@@ -224,7 +224,7 @@ function init() {
   html.menu.contact.addEventListener('click', () => { setHash('contact') });
 
   if (currentHash !== newHashToSet) navigation(newHashToSet);
-
+  if(window.mobileCheck) document.querySelector('.menu-mobile').classList.remove('hidden')
 
   function scrollDistance(callback, refresh) {
     // Make sure a valid callback was provided
