@@ -490,7 +490,7 @@ $left-W: calc((100vw - 224px));
         .gallery {
           display: grid;
           grid-template-columns: repeat(3, minmax(min-content, max-content));
-          gap: 1.8vw;
+          gap: 1.7vw;
           &._2col {
             grid-template-columns: repeat(2, minmax(min-content, max-content));
             gap: 1.5vw;
@@ -502,9 +502,9 @@ $left-W: calc((100vw - 224px));
           }
           &._3col {
             grid-template-columns: repeat(3, minmax(min-content, max-content));
-            gap: 1.8vw;
+            gap: 1.7vw;
             .gallery-element {
-              width: calc((100vw - 224px) / 3.8);
+              width: calc((100vw - 224px) / 3.5);
               max-width: 480px;
               max-height: 600px;
             }
@@ -583,8 +583,8 @@ $left-W: calc((100vw - 224px));
               "title title . text-en text-en text-en text-en text-en ."
               ". . text-hu text-hu text-hu text-hu text-hu text-hu .";
 
-            grid-template-columns: repeat(9, calc(calc((100vw - 224px) / 3.8) / 3));
-            gap: 2.1vw calc(2.1vw / 3);
+            grid-template-columns: repeat(9, calc(calc((100vw - 224px) /3.5) / 3));
+            gap: 1.7vw calc(1.7vw / 3);
             .text-en {
               margin-left: -2.1vw;
             }
