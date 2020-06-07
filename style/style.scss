@@ -375,12 +375,12 @@ $left-W: calc((100vw - 224px));
 @media only screen and (min-width: 1024px), (min-width: 768px) and (min-height: 400px) and (orientation: landscape) {
   $col-w_2: calc((100vw - 224px) * 0.26);
   $col-w_3: calc((100vw - 224px) / 3.5);
-  $col-w_4: calc((100vw - 224px) * 0.18);
+  $col-w_4: calc((100vw - 224px) * 0.2);
   $col-w_5: calc((100vw - 224px) * 0.17);
 
   $col-w_2_text: calc((100vw - 224px) * 0.26 / 3);
   $col-w_3_text: calc((100vw - 224px) / 3.5 / 3);
-  $col-w_4_text: calc((100vw - 224px) * 0.18 / 3);
+  $col-w_4_text: calc((100vw - 224px) * 0.2 / 3);
   $col-w_5_text: calc((100vw - 224px) * 0.17 / 3);
 
   $col-w_2_gap: 1.5vw;
@@ -565,10 +565,10 @@ $left-W: calc((100vw - 224px));
               left: 6px;
               color: white;
               font-family: "AkzidenzGroteskPro";
-              @media only screen and (max-height: 1080px) {
+              @media only screen and (max-height: 1080px) and (min-width: 1299px){
                 font-size: 2.9vw;
               }
-              @media only screen and (min-height: 1080px) {
+              @media only screen and (min-height: 1081px) and (min-width: 1300px) {
                 font-size: 60px;
               }
 
@@ -592,7 +592,7 @@ $left-W: calc((100vw - 224px));
             grid-template-areas:
               "title title . text-en text-en text-en text-en text-en  ."
               ". . text-hu text-hu text-hu text-hu text-hu text-hu .";
-            gap: $col-w_2_gap calc($col-w_2_gap / 3);
+            gap: $col-w_2_gap ($col-w_2_gap / 3);
             .text-en {
               margin-left: -1.2vw;
             }
