@@ -54,7 +54,6 @@ main {
   flex-direction: column;
 
   .right {
-    overflow-y: auto;
     width: 100vw;
     .landing {
       position: absolute;
@@ -226,6 +225,7 @@ $left-W: calc((100vw - 224px));
     }
   }
   .right {
+    overflow-y: auto;
     height: 100%;
     .contact {
       .link {
@@ -249,6 +249,7 @@ $left-W: calc((100vw - 224px));
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    overflow: auto;
   }
   a {
     text-decoration: none;
@@ -304,7 +305,7 @@ $left-W: calc((100vw - 224px));
   .right {
     order: 3;
     height: 100%;
-    overflow: scroll;
+    overflow: unset;
     .gallery-wrapper {
       .gallery {
         display: flex;
@@ -570,6 +571,7 @@ $left-W: calc((100vw - 224px));
               @media only screen and (min-height: 1080px) {
                 font-size: 60px;
               }
+
               text-transform: uppercase;
               transition: opacity 2s ease-in-out;
               opacity: 0;

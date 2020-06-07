@@ -58,7 +58,6 @@ main {
 }
 
 main .right {
-  overflow-y: auto;
   width: 100vw;
 }
 
@@ -224,6 +223,7 @@ main .right .gallery .gallery-title {
     color: #828282;
   }
   .right {
+    overflow-y: auto;
     height: 100%;
   }
   .right .contact .link {
@@ -244,6 +244,7 @@ main .right .gallery .gallery-title {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    overflow: auto;
   }
   a {
     text-decoration: none;
@@ -296,7 +297,7 @@ main .right .gallery .gallery-title {
   .right {
     order: 3;
     height: 100%;
-    overflow: scroll;
+    overflow: unset;
   }
   .right .gallery-wrapper .gallery {
     display: flex;

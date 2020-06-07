@@ -270,13 +270,13 @@ function init() {
     }
   });
   function scrollDown(distance) {
-    html.left.classList.add('closed')
-    document.querySelector('.menu-mobile').classList.add('closed')
+    // html.left.classList.add('closed')
+    // document.querySelector('.menu-mobile').classList.add('closed')
   }
 
   function scrollUp(distance) {
-    html.left.classList.remove('closed')
-    document.querySelector('.menu-mobile').classList.remove('closed')
+    // html.left.classList.remove('closed')
+    // document.querySelector('.menu-mobile').classList.remove('closed')
 
   }
 }
@@ -582,6 +582,7 @@ function rngMinMax(min, max) {
     return 2;
   }
 }
+
 window.onorientationchange = function () {
   var orientation = window.orientation;
   switch (orientation) {
