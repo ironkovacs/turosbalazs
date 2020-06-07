@@ -374,19 +374,19 @@ $left-W: calc((100vw - 224px));
 
 @media only screen and (min-width: 1024px), (min-width: 768px) and (min-height: 400px) and (orientation: landscape) {
   $col-w_2: calc((100vw - 224px) * 0.26);
-  $col-w_3: calc((100vw - 224px) / 3.5);
+  $col-w_3: calc((100vw - 224px) / 3.7);
   $col-w_4: calc((100vw - 224px) * 0.2);
-  $col-w_5: calc((100vw - 224px) * 0.17);
+  $col-w_5: calc((100vw - 224px) * 0.11);
 
   $col-w_2_text: calc((100vw - 224px) * 0.26 / 3);
-  $col-w_3_text: calc((100vw - 224px) / 3.5 / 3);
+  $col-w_3_text: calc((100vw - 224px) / 3.7 / 3);
   $col-w_4_text: calc((100vw - 224px) * 0.2 / 3);
-  $col-w_5_text: calc((100vw - 224px) * 0.17 / 3);
+  $col-w_5_text: calc((100vw - 224px) * 0.11 / 3);
 
   $col-w_2_gap: 1.5vw;
   $col-w_3_gap: 1.7vw;
   $col-w_4_gap: 1.2vw;
-  $col-w_5_gap: 1.2vw;
+  $col-w_5_gap: 1.15vw;
 
   html {
     min-width: 768px;
