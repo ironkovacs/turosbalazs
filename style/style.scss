@@ -526,7 +526,7 @@ $left-W: calc((100vw - 224px));
           }
           &._4col {
             grid-template-columns: repeat(4, minmax(min-content, max-content));
-            gap:   $col-w_4_gap;
+            gap: $col-w_4_gap;
             .gallery-element {
               width: $col-w_4;
               max-width: 345px;
@@ -535,7 +535,7 @@ $left-W: calc((100vw - 224px));
           }
           &._5col {
             grid-template-columns: repeat(5, minmax(min-content, max-content));
-            gap:  $col-w_5_gap;
+            gap: $col-w_5_gap;
             .gallery-element {
               width: $col-w_5;
               max-width: 268px;
@@ -564,11 +564,12 @@ $left-W: calc((100vw - 224px));
               left: 6px;
               color: white;
               font-family: "AkzidenzGroteskPro";
-              
-              @media only screen and (max-height: 1080px){ font-size:2.9vw}; 
-              @media only screen and (min-height: 1080px){ font-size:60px}; 
-              
-             
+              @media only screen and (max-height: 1080px) {
+                font-size: 2.9vw;
+              }
+              @media only screen and (min-height: 1080px) {
+                font-size: 60px;
+              }
               text-transform: uppercase;
               transition: opacity 2s ease-in-out;
               opacity: 0;
