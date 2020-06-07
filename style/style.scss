@@ -372,6 +372,21 @@ $left-W: calc((100vw - 224px));
 }
 
 @media only screen and (min-width: 1024px), (min-width: 768px) and (min-height: 400px) and (orientation: landscape) {
+  $col-w_2: calc((100vw - 224px) * 0.26);
+  $col-w_3: calc((100vw - 224px) / 3.5);
+  $col-w_4: calc((100vw - 224px) * 0.18);
+  $col-w_5: calc((100vw - 224px) * 0.17);
+
+  $col-w_2_text: calc((100vw - 224px) * 0.26 / 3);
+  $col-w_3_text: calc((100vw - 224px) / 3.5 / 3);
+  $col-w_4_text: calc((100vw - 224px) * 0.18 / 3);
+  $col-w_5_text: calc((100vw - 224px) * 0.17 / 3);
+
+  $col-w_2_gap: 1.5vw;
+  $col-w_3_gap: 1.7vw;
+  $col-w_4_gap: 1.2vw;
+  $col-w_5_gap: 1.2vw;
+
   html {
     min-width: 768px;
   }
@@ -464,7 +479,7 @@ $left-W: calc((100vw - 224px));
     .right {
       margin: 88px 0 0 0;
       width: 100%;
-      max-height: 960px;
+      // max-height: 960px;
       max-width: 1920px;
       overflow-y: auto;
       overflow-x: hidden;
@@ -490,19 +505,19 @@ $left-W: calc((100vw - 224px));
         .gallery {
           display: grid;
           grid-template-columns: repeat(3, minmax(min-content, max-content));
-          gap: 1.7vw;
+          gap: $col-w_3_gap;
           &._2col {
             grid-template-columns: repeat(2, minmax(min-content, max-content));
-            gap: 1.5vw;
+            gap: $col-w_2_gap;
             .gallery-element {
-              width: calc((100vw - 224px) * 0.26);
+              width: $col-w_2;
               max-width: 480px;
               max-height: 600px;
             }
           }
           &._3col {
             grid-template-columns: repeat(3, minmax(min-content, max-content));
-            gap: 1.7vw;
+            gap: $col-w_3_gap;
             .gallery-element {
               width: calc((100vw - 224px) / 3.5);
               max-width: 480px;
@@ -511,18 +526,18 @@ $left-W: calc((100vw - 224px));
           }
           &._4col {
             grid-template-columns: repeat(4, minmax(min-content, max-content));
-            gap: 1.2vw;
+            gap:   $col-w_4_gap;
             .gallery-element {
-              width: calc((100vw - 224px) * 0.18);
+              width: $col-w_4;
               max-width: 345px;
               max-height: 276px;
             }
           }
           &._5col {
             grid-template-columns: repeat(5, minmax(min-content, max-content));
-            gap: 1.35vw;
+            gap:  $col-w_5_gap;
             .gallery-element {
-              width: calc((100vw - 224px) * 0.14);
+              width: $col-w_5;
               max-width: 268px;
               max-height: 214px;
             }
@@ -549,7 +564,11 @@ $left-W: calc((100vw - 224px));
               left: 6px;
               color: white;
               font-family: "AkzidenzGroteskPro";
-              font-size: 2.9vw;
+              
+              @media only screen and (max-height: 1080px){ font-size:2.9vw}; 
+              @media only screen and (min-height: 1080px){ font-size:60px}; 
+              
+             
               text-transform: uppercase;
               transition: opacity 2s ease-in-out;
               opacity: 0;
@@ -566,11 +585,11 @@ $left-W: calc((100vw - 224px));
           display: grid;
           margin: 1.5vw 0;
           &._2col {
-            grid-template-columns: repeat(9, calc(((100vw - 224px) * 0.26) / 3));
+            grid-template-columns: repeat(9, $col-w_2_text);
             grid-template-areas:
               "title title . text-en text-en text-en text-en text-en  ."
               ". . text-hu text-hu text-hu text-hu text-hu text-hu .";
-            gap: 1.5vw 0.5vw;
+            gap: $col-w_2_gap calc($col-w_2_gap / 3);
             .text-en {
               margin-left: -1.2vw;
             }
@@ -583,30 +602,30 @@ $left-W: calc((100vw - 224px));
               "title title . text-en text-en text-en text-en text-en ."
               ". . text-hu text-hu text-hu text-hu text-hu text-hu .";
 
-            grid-template-columns: repeat(9, calc(calc((100vw - 224px) /3.5) / 3));
+            grid-template-columns: repeat(9, $col-w_3_text);
             gap: 1.7vw calc(1.7vw / 3);
             .text-en {
               margin-left: -2.1vw;
             }
           }
           &._4col {
-            grid-template-columns: repeat(12, calc((100vw - 224px) * 0.06));
+            grid-template-columns: repeat(12, $col-w_4_text);
             grid-template-areas:
               "title title title . text-en text-en text-en text-en text-en text-en text-en ."
               ". . . text-hu text-hu text-hu text-hu text-hu text-hu text-hu text-hu .";
-            gap: 1.2vw 0.327vw;
+            gap: $col-w_4_gap ($col-w_4_gap / 3);
             .text-hu {
-              margin-left: -1.2vw;
+              margin-left: -($col-w_4_gap);
             }
           }
           &._5col {
-            grid-template-columns: repeat(15, calc(((100vw - 224px) * 0.14) / 3));
+            grid-template-columns: repeat(15, $col-w_5_text);
             grid-template-areas:
               "title title . . text-en text-en text-en text-en text-en text-en text-en text-en . . ."
               ". . . text-hu text-hu text-hu text-hu text-hu text-hu text-hu text-hu text-hu . . .";
-            gap: 1.35vw calc(1.35vw / 3);
+            gap: $col-w_5_gap ($col-w_5_gap / 3);
             .text-hu {
-              margin-left: -1.35vw;
+              margin-left: -($col-w_5_gap);
             }
           }
           .gallery-title {

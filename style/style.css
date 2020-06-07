@@ -443,7 +443,6 @@ main .right .gallery .gallery-title {
   main .right {
     margin: 88px 0 0 0;
     width: 100%;
-    max-height: 960px;
     max-width: 1920px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -498,10 +497,10 @@ main .right .gallery .gallery-title {
   }
   main .right .gallery-wrapper .gallery._5col {
     grid-template-columns: repeat(5, minmax(min-content, max-content));
-    gap: 1.35vw;
+    gap: 1.2vw;
   }
   main .right .gallery-wrapper .gallery._5col .gallery-element {
-    width: calc((100vw - 224px) * 0.14);
+    width: calc((100vw - 224px) * 0.17);
     max-width: 268px;
     max-height: 214px;
   }
@@ -525,12 +524,26 @@ main .right .gallery .gallery-title {
     left: 6px;
     color: white;
     font-family: "AkzidenzGroteskPro";
-    font-size: 2.9vw;
     text-transform: uppercase;
     transition: opacity 2s ease-in-out;
     opacity: 0;
     line-height: 1.1em;
   }
+}
+
+@media only screen and (min-width: 1024px) and (max-height: 1080px), only screen and (min-width: 768px) and (min-height: 400px) and (orientation: landscape) and (max-height: 1080px) {
+  main .right .gallery-wrapper .gallery .gallery-element .gallery-title {
+    font-size: 2.9vw;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (min-height: 1080px), only screen and (min-width: 768px) and (min-height: 400px) and (orientation: landscape) and (min-height: 1080px) {
+  main .right .gallery-wrapper .gallery .gallery-element .gallery-title {
+    font-size: 60px;
+  }
+}
+
+@media only screen and (min-width: 1024px), (min-width: 768px) and (min-height: 400px) and (orientation: landscape) {
   main .right .gallery-wrapper .gallery .gallery-element:hover .gallery-title {
     display: block;
   }
@@ -539,9 +552,9 @@ main .right .gallery .gallery-title {
     margin: 1.5vw 0;
   }
   main .right .gallery-wrapper .gallery-text._2col {
-    grid-template-columns: repeat(9, calc(((100vw - 224px) * 0.26) / 3));
+    grid-template-columns: repeat(9, calc((100vw - 224px) * 0.26 / 3));
     grid-template-areas: "title title . text-en text-en text-en text-en text-en  ." ". . text-hu text-hu text-hu text-hu text-hu text-hu .";
-    gap: 1.5vw 0.5vw;
+    gap: 1.5vw calc($col-w_2_gap / 3);
   }
   main .right .gallery-wrapper .gallery-text._2col .text-en {
     margin-left: -1.2vw;
@@ -551,27 +564,27 @@ main .right .gallery .gallery-title {
   }
   main .right .gallery-wrapper .gallery-text._3col {
     grid-template-areas: "title title . text-en text-en text-en text-en text-en ." ". . text-hu text-hu text-hu text-hu text-hu text-hu .";
-    grid-template-columns: repeat(9, calc(calc((100vw - 224px) /3.5) / 3));
+    grid-template-columns: repeat(9, calc((100vw - 224px) / 3.5 / 3));
     gap: 1.7vw calc(1.7vw / 3);
   }
   main .right .gallery-wrapper .gallery-text._3col .text-en {
     margin-left: -2.1vw;
   }
   main .right .gallery-wrapper .gallery-text._4col {
-    grid-template-columns: repeat(12, calc((100vw - 224px) * 0.06));
+    grid-template-columns: repeat(12, calc((100vw - 224px) * 0.18 / 3));
     grid-template-areas: "title title title . text-en text-en text-en text-en text-en text-en text-en ." ". . . text-hu text-hu text-hu text-hu text-hu text-hu text-hu text-hu .";
-    gap: 1.2vw 0.327vw;
+    gap: 1.2vw 0.4vw;
   }
   main .right .gallery-wrapper .gallery-text._4col .text-hu {
     margin-left: -1.2vw;
   }
   main .right .gallery-wrapper .gallery-text._5col {
-    grid-template-columns: repeat(15, calc(((100vw - 224px) * 0.14) / 3));
+    grid-template-columns: repeat(15, calc((100vw - 224px) * 0.17 / 3));
     grid-template-areas: "title title . . text-en text-en text-en text-en text-en text-en text-en text-en . . ." ". . . text-hu text-hu text-hu text-hu text-hu text-hu text-hu text-hu text-hu . . .";
-    gap: 1.35vw calc(1.35vw / 3);
+    gap: 1.2vw 0.4vw;
   }
   main .right .gallery-wrapper .gallery-text._5col .text-hu {
-    margin-left: -1.35vw;
+    margin-left: -1.2vw;
   }
   main .right .gallery-wrapper .gallery-text .gallery-title {
     grid-area: title;
