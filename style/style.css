@@ -819,6 +819,7 @@ main .right .gallery .gallery-title {
     padding-top: 0px;
   }
   main .right .bio-wrapper .bio-img img {
+    padding-top: 8px;
     width: 100%;
   }
   main .right .contact .link {
