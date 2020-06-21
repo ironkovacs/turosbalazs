@@ -376,12 +376,12 @@ $left-W: calc((100vw - 224px));
   $col-w_2: calc((100vw - 224px) * 0.26);
   $col-w_3: calc((100vw - 224px) / 3.7);
   $col-w_4: calc((100vw - 224px) * 0.215);
-  $col-w_5: calc((100vw - 224px) * 0.11);
+  $col-w_5: calc((100vw - 224px) * 0.16);
 
   $col-w_2_text: calc((100vw - 224px) * 0.26 / 3);
   $col-w_3_text: calc((100vw - 224px) / 3.7 / 3);
-  $col-w_4_text: calc((100vw - 224px) * 0.2 / 3);
-  $col-w_5_text: calc((100vw - 224px) * 0.11 / 3);
+  $col-w_4_text: calc((100vw - 224px) * 0.215 / 3);
+  $col-w_5_text: calc((100vw - 224px) * 0.16 / 3);
 
   $col-w_2_gap: 1.5vw;
   $col-w_3_gap: 1.7vw;
