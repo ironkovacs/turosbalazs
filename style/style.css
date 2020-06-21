@@ -492,7 +492,7 @@ main .right .gallery .gallery-title {
     gap: 1.2vw;
   }
   main .right .gallery-wrapper .gallery._4col .gallery-element {
-    width: calc((100vw - 224px) * 0.2);
+    width: calc((100vw - 224px) * 0.215);
     max-width: 345px;
     max-height: 276px;
   }
@@ -816,6 +816,7 @@ main .right .gallery .gallery-title {
     order: 2;
     width: 28.125vw;
     max-width: 540px;
+    padding-top: 0px;
   }
   main .right .bio-wrapper .bio-img img {
     width: 100%;

@@ -375,7 +375,7 @@ $left-W: calc((100vw - 224px));
 @media only screen and (min-width: 1024px), (min-width: 768px) and (min-height: 400px) and (orientation: landscape) {
   $col-w_2: calc((100vw - 224px) * 0.26);
   $col-w_3: calc((100vw - 224px) / 3.7);
-  $col-w_4: calc((100vw - 224px) * 0.2);
+  $col-w_4: calc((100vw - 224px) * 0.215);
   $col-w_5: calc((100vw - 224px) * 0.11);
 
   $col-w_2_text: calc((100vw - 224px) * 0.26 / 3);
@@ -847,6 +847,7 @@ $left-W: calc((100vw - 224px));
           order: 2;
           width: 28.125vw;
           max-width: 540px;
+          padding-top: 0px;
           img {
             width: 100%;
           }
