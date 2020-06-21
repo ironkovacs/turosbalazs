@@ -91,7 +91,6 @@ const epitomeSet = {
   img: [
     { img: './img/02/epitome_001', title: '', id: 1 },
     { img: './img/02/epitome_002', title: '', id: 2 },
-    { img: './img/02/epitome_003', title: '', id: 3 },
     { img: './img/02/epitome_004', title: '', id: 4 },
   ], text: {
     title: `EPITOME`,
@@ -117,7 +116,7 @@ const closerSet = {
     { img: './img/03/CLOSER_011', title: '', id: 11 },
     { img: './img/03/CLOSER_012', title: '', id: 12 },
     { img: './img/03/CLOSER_013', title: '', id: 13 },
-    { img: './img/03/CLOSER_014', title: '', id: 14 },
+    { img: './img/02/epitome_003', title: '', id: 14 },
     { img: './img/03/CLOSER_015', title: '', id: 15 },
   ], text: {
     title: `CLOSER`,
@@ -482,7 +481,7 @@ function navigation(hash) {
       break;
     case 'epitome':
       if (!galleryId) {
-        gallery(toPage, epitomeSet, 2)
+        gallery(toPage, epitomeSet, 3)
       } else {
         if (!window.mobileCheck()) {
           singleGallery(epitomeSet, galleryId)
