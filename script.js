@@ -59,7 +59,7 @@ const mainSet = {
 
     { img: './img/01/perceptions_001', title: 'perceptions', setName: 'perceptions', id: null },
     { img: './img/02/epitome_001', title: 'epitome', setName: 'epitome', id: null },
-    { img: './img/03/CLOSER_002', title: 'closer', setName: 'closer', id: null },
+    { img: './img/03/CLOSER_002', title: 'the nature<br>of things', setName: 'closer', id: null },
     { img: './img/04/roncs_001', title: 'ephemeral knot', setName: 'ephemeral-knot', id: null },
     { img: './img/05/oneness_003', title: 'oneness', setName: 'oneness', id: null },
     { img: './img/06/videk_001', title: 'ferry—land', setName: 'ferry-land', id: null },
@@ -119,7 +119,7 @@ const closerSet = {
     { img: './img/02/epitome_003', title: '', id: 14 },
     { img: './img/03/CLOSER_015', title: '', id: 15 },
   ], text: {
-    title: `CLOSER`,
+    title: `THE NATURE \n OF THINGS`,
     date: '2019',
     en: `I'm turning thirty. Time is accelerating. My father is now a grandfather. I'd like to ask my grandmother about things, but it's getting very difficult to talk to her. Apparently our sense of time is logarithmic, that's why we feel that time is passing faster. I'm looking for points of reference. As a child, it was hard to imagine what it was like to not be afraid in the dark. When we grow old, will death become less scary?`,
     hu: `Harminc leszek. Az idő egyre gyorsabban telik. Apám nagyapa lett. Nagymamámat szeretném megkérdezni dolgokról, de már nehéz vele beszélgetni. Azt mondják, az időérzékelésünk logaritmikus, ezért érezzük egyre gyorsabbnak az idő múlását. Támpontokat keresek. Gyerekként nehéz volt elképzelnem, milyen, ha valaki nem fél a sötétben. Ha megöregszünk, a halál sem olyan félelmetes már?`,
