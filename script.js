@@ -80,7 +80,7 @@ const reflectionSet = {
     { img: './img/01/perceptions_008', title: '', id: 8 },
   ], text: {
     title: `PERCEPTIONS`,
-    date: '2012-2014',
+    date: '2012 - 2014',
     en: `After the first three years of university, I moved from Budapest to South West England at the age of  22. It was an important time for me, and I regard Plymouth as a place where I entered adulthood.I  broke away from the life I had been accustomed to up until that time.I had to redefine lots of things  internally.In this unsteady state I was captivated by and wanted to experience the  existing order in the world.The work of these two years is a reflection of an alien, in which my  preconceived ideas of England meet reality.`,
     hu: `Az egyetem első három éve után, 22 évesen Dél-Nyugat Angliába költöztem. Fontos volt számomra ez az időszak, Plymouth-t tekintem felnőtté vállásom helyszínének. Kiszakadtam az addig megszokott életemből, sok dolgot kellett újra definiálnom magamban. Ebben a bizonytalan állapotban, a világban való rend megtapasztalása foglalkoztatott. A két évnyi munka egy idegen nézőpontjából való szemlélődés, az Angliáról előre kialakított képem találkozása a valósággal`,
     embeded: null
@@ -120,7 +120,7 @@ const closerSet = {
     { img: './img/03/CLOSER_015', title: '', id: 15 },
   ], text: {
     title: `THE NATURE <br>OF THINGS`,
-    date: '2019',
+    date: '2018 -',
     en: `I'm turning thirty. Time is accelerating. My father is now a grandfather. I'd like to ask my grandmother about things, but it's getting very difficult to talk to her. Apparently our sense of time is logarithmic, that's why we feel that time is passing faster. I'm looking for points of reference. As a child, it was hard to imagine what it was like to not be afraid in the dark. When we grow old, will death become less scary?`,
     hu: `Harminc leszek. Az idő egyre gyorsabban telik. Apám nagyapa lett. Nagymamámat szeretném megkérdezni dolgokról, de már nehéz vele beszélgetni. Azt mondják, az időérzékelésünk logaritmikus, ezért érezzük egyre gyorsabbnak az idő múlását. Támpontokat keresek. Gyerekként nehéz volt elképzelnem, milyen, ha valaki nem fél a sötétben. Ha megöregszünk, a halál sem olyan félelmetes már?`,
     embeded: null
@@ -137,7 +137,7 @@ const knotSet = {
     { img: './img/04/roncs_006', title: '', id: 6 },
   ], text: {
     title: `Ephemeral Knot`,
-    date: '2012-2014',
+    date: '2012 - 2014',
     en: `<a class="knot-vido-link" href="/#making-of-ephemeral-knot">MAKING-OF VIDEO / WERKFILM</a>`,
     hu: ``,
     // embeded: ``
