@@ -624,7 +624,7 @@ $left-W: calc((100vw - 224px));
           &._5col {
             grid-template-columns: repeat(15, $col-w_5_text);
             grid-template-areas:
-              "title title . . text-en text-en text-en text-en text-en text-en text-en text-en . . ."
+              "title title title title . text-en text-en text-en text-en text-en text-en text-en text-en . ."
               ". . . text-hu text-hu text-hu text-hu text-hu text-hu text-hu text-hu text-hu . . .";
             gap: $col-w_5_gap ($col-w_5_gap / 3);
             .text-hu {

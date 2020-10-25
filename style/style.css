@@ -4,35 +4,30 @@
   font-weight: 400;
   src: url("./../assets/fonts/AkzidenzGroteskPro-Regular.otf") format("opentype");
 }
-
 @font-face {
   font-family: "AkzidenzGroteskPro";
   font-style: italic;
   font-weight: 400;
   src: url("./../assets/fonts/AkzidenzGroteskPro-It.otf") format("opentype");
 }
-
 @font-face {
   font-family: "AkzidenzGroteskPro";
   font-style: normal;
   font-weight: 800;
   src: url("./../assets/fonts/AkzidenzGroteskPro-Super.otf") format("opentype");
 }
-
 @font-face {
   font-family: "AkzidenzGroteskPro";
   font-style: normal;
   font-weight: bold;
   src: url("./../assets/fonts/AkzidenzGroteskPro-Super.otf") format("opentype");
 }
-
 @font-face {
   font-family: "PlayfairDisplay";
   font-style: normal;
   font-weight: 400;
   src: url("./../assets/fonts/PlayfairDisplay-Regular.ttf") format("truetype");
 }
-
 * {
   padding: 0;
   margin: 0;
@@ -56,11 +51,9 @@ main {
   display: flex;
   flex-direction: column;
 }
-
 main .right {
   width: 100vw;
 }
-
 main .right .landing {
   position: absolute;
   top: 0;
@@ -75,26 +68,21 @@ main .right .landing {
   transition: opacity 1s ease-out;
   cursor: pointer;
 }
-
 main .right .landing.fade {
   opacity: 0;
 }
-
 main .right .gallery {
   width: 100vw;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
-
 main .right .gallery .gallery-element {
   position: relative;
 }
-
 main .right .gallery .gallery-element img {
   width: 100%;
 }
-
 main .right .gallery .gallery-title {
   position: absolute;
   bottom: 1em;
@@ -137,7 +125,7 @@ main .right .gallery .gallery-title {
 }
 
 /* For mobile phones: */
-[class*="col-"] {
+[class*=col-] {
   width: 100%;
 }
 
@@ -156,14 +144,17 @@ main .right .gallery .gallery-title {
   main {
     font-family: "PlayfairDisplay";
   }
+
   a {
     text-decoration: none;
     color: #010101;
     text-transform: uppercase;
   }
+
   .title {
     display: none;
   }
+
   .title-mobile {
     display: block;
     width: 100%;
@@ -172,12 +163,15 @@ main .right .gallery .gallery-title {
   .title-mobile svg {
     width: 60%;
   }
+
   .gallery-title {
     font-family: AkzidenzGroteskPro;
   }
+
   .menu {
     display: none;
   }
+
   .menu-mobile .mobile-menu-wrapper {
     width: 100vw;
     display: flex;
@@ -195,9 +189,11 @@ main .right .gallery .gallery-title {
     color: #828282;
     font-weight: bold;
   }
+
   img {
     max-width: 100%;
   }
+
   .gallery-text {
     margin: 0 1em;
   }
@@ -215,6 +211,7 @@ main .right .gallery .gallery-title {
   .gallery-text .text-hu {
     color: #828282;
   }
+
   .bio-wrapper .bio-en {
     margin: 0 1em 0 1em;
   }
@@ -222,6 +219,7 @@ main .right .gallery .gallery-title {
     margin: 1em;
     color: #828282;
   }
+
   .right {
     overflow-y: auto;
     height: 100%;
@@ -237,7 +235,6 @@ main .right .gallery .gallery-title {
     bottom: 3em;
   }
 }
-
 @media only screen and (max-width: 814px) and (orientation: landscape) {
   main {
     font-family: "PlayfairDisplay";
@@ -246,11 +243,13 @@ main .right .gallery .gallery-title {
     flex-wrap: wrap;
     overflow: auto;
   }
+
   a {
     text-decoration: none;
     color: #010101;
     text-transform: uppercase;
   }
+
   .left {
     height: 3em;
   }
@@ -267,9 +266,11 @@ main .right .gallery .gallery-title {
     height: 1.5em;
     padding: 0.5em 1em;
   }
+
   .menu {
     display: none;
   }
+
   .menu-mobile {
     order: 2;
     transition: height 1s;
@@ -291,9 +292,11 @@ main .right .gallery .gallery-title {
     color: #828282;
     font-weight: bold;
   }
+
   img {
     max-width: 100%;
   }
+
   .right {
     order: 3;
     height: 100%;
@@ -358,11 +361,11 @@ main .right .gallery .gallery-title {
     height: 100vh;
   }
 }
-
 @media only screen and (min-width: 1024px), (min-width: 768px) and (min-height: 400px) and (orientation: landscape) {
   html {
     min-width: 768px;
   }
+
   main {
     margin: 0;
     height: 100vh;
@@ -411,7 +414,7 @@ main .right .gallery .gallery-title {
     width: max-content;
   }
   main .left .menu ul:hover,
-  main .left .menu li:hover {
+main .left .menu li:hover {
     cursor: pointer;
     color: #000;
     transition: all 0.2s linear;
@@ -531,31 +534,29 @@ main .right .gallery .gallery-title {
     line-height: 1.1em;
   }
 }
-
 @media only screen and (min-width: 1024px) and (max-height: 1080px) and (min-width: 1299px), only screen and (min-width: 768px) and (min-height: 400px) and (orientation: landscape) and (max-height: 1080px) and (min-width: 1299px) {
   main .right .gallery-wrapper .gallery .gallery-element .gallery-title {
     font-size: 2.9vw;
   }
 }
-
 @media only screen and (min-width: 1024px) and (min-height: 1081px) and (min-width: 1300px), only screen and (min-width: 768px) and (min-height: 400px) and (orientation: landscape) and (min-height: 1081px) and (min-width: 1300px) {
   main .right .gallery-wrapper .gallery .gallery-element .gallery-title {
     font-size: 60px;
   }
 }
-
 @media only screen and (min-width: 1024px), (min-width: 768px) and (min-height: 400px) and (orientation: landscape) {
   main .right .gallery-wrapper .gallery .gallery-element:hover .gallery-title {
     display: block;
   }
+}
+@media only screen and (min-width: 1024px), (min-width: 768px) and (min-height: 400px) and (orientation: landscape) {
   main .right .gallery-wrapper .gallery-text {
     display: grid;
     margin: 1.5vw 0;
   }
   main .right .gallery-wrapper .gallery-text._2col {
     grid-template-columns: repeat(9, calc((100vw - 224px) * 0.26 / 3));
-    grid-template-areas: "title title . text-en text-en text-en text-en text-en  ."
- ". . text-hu text-hu text-hu text-hu text-hu text-hu .";
+    grid-template-areas: "title title . text-en text-en text-en text-en text-en  ." ". . text-hu text-hu text-hu text-hu text-hu text-hu .";
     gap: 1.5vw 0.5vw;
   }
   main .right .gallery-wrapper .gallery-text._2col .text-en {
@@ -565,8 +566,7 @@ main .right .gallery .gallery-title {
     margin-left: -1.2vw;
   }
   main .right .gallery-wrapper .gallery-text._3col {
-    grid-template-areas: "title title . text-en text-en text-en text-en text-en ."
- ". . text-hu text-hu text-hu text-hu text-hu text-hu .";
+    grid-template-areas: "title title . text-en text-en text-en text-en text-en ." ". . text-hu text-hu text-hu text-hu text-hu text-hu .";
     grid-template-columns: repeat(9, calc((100vw - 224px) / 3.7 / 3));
     gap: 1.7vw calc(1.7vw / 3);
   }
@@ -575,8 +575,7 @@ main .right .gallery .gallery-title {
   }
   main .right .gallery-wrapper .gallery-text._4col {
     grid-template-columns: repeat(12, calc((100vw - 224px) * 0.215 / 3));
-    grid-template-areas: "title title title . text-en text-en text-en text-en text-en text-en text-en ."
- ". . . text-hu text-hu text-hu text-hu text-hu text-hu text-hu text-hu .";
+    grid-template-areas: "title title title . text-en text-en text-en text-en text-en text-en text-en ." ". . . text-hu text-hu text-hu text-hu text-hu text-hu text-hu text-hu .";
     gap: 1.2vw 0.4vw;
   }
   main .right .gallery-wrapper .gallery-text._4col .text-hu {
@@ -584,9 +583,8 @@ main .right .gallery .gallery-title {
   }
   main .right .gallery-wrapper .gallery-text._5col {
     grid-template-columns: repeat(15, calc((100vw - 224px) * 0.16 / 3));
-    grid-template-areas: "title title . . text-en text-en text-en text-en text-en text-en text-en text-en . . ."
- ". . . text-hu text-hu text-hu text-hu text-hu text-hu text-hu text-hu text-hu . . .";
-    gap: 1.15vw 0.38333vw;
+    grid-template-areas: "title title title title . text-en text-en text-en text-en text-en text-en text-en text-en . ." ". . . text-hu text-hu text-hu text-hu text-hu text-hu text-hu text-hu text-hu . . .";
+    gap: 1.15vw 0.3833333333vw;
   }
   main .right .gallery-wrapper .gallery-text._5col .text-hu {
     margin-left: -1.15vw;
@@ -602,19 +600,16 @@ main .right .gallery .gallery-title {
     text-transform: uppercase;
   }
 }
-
 @media only screen and (min-width: 1024px) and (min-width: 1600px), (min-width: 768px) and (min-height: 400px) and (orientation: landscape) and (min-width: 1600px) {
   main .right .gallery-wrapper .gallery-text .gallery-title {
     font-size: 42px;
   }
 }
-
 @media only screen and (min-width: 1024px) and (max-width: 1599px), (min-width: 768px) and (min-height: 400px) and (orientation: landscape) and (max-width: 1599px) {
   main .right .gallery-wrapper .gallery-text .gallery-title {
     font-size: 2.6vw;
   }
 }
-
 @media only screen and (min-width: 1024px), (min-width: 768px) and (min-height: 400px) and (orientation: landscape) {
   main .right .gallery-wrapper .gallery-text .text-en a {
     text-decoration: none;
@@ -625,6 +620,8 @@ main .right .gallery .gallery-title {
     color: #010101;
     cursor: pointer;
   }
+}
+@media only screen and (min-width: 1024px), (min-width: 768px) and (min-height: 400px) and (orientation: landscape) {
   main .right .gallery-wrapper .gallery-text .text-hu {
     font-family: PlayfairDisplay;
     grid-area: text-hu;
@@ -632,19 +629,16 @@ main .right .gallery .gallery-title {
     font-size: 24px;
   }
 }
-
 @media only screen and (min-width: 1024px) and (min-width: 1600px), (min-width: 768px) and (min-height: 400px) and (orientation: landscape) and (min-width: 1600px) {
   main .right .gallery-wrapper .gallery-text .text-hu {
     font-size: 24px;
   }
 }
-
 @media only screen and (min-width: 1024px) and (max-width: 1599px), (min-width: 768px) and (min-height: 400px) and (orientation: landscape) and (max-width: 1599px) {
   main .right .gallery-wrapper .gallery-text .text-hu {
     font-size: 1.5vw;
   }
 }
-
 @media only screen and (min-width: 1024px), (min-width: 768px) and (min-height: 400px) and (orientation: landscape) {
   main .right .gallery-wrapper .gallery-text .text-en {
     font-weight: bold;
@@ -654,19 +648,16 @@ main .right .gallery .gallery-title {
     font-size: 24px;
   }
 }
-
 @media only screen and (min-width: 1024px) and (min-width: 1600px), (min-width: 768px) and (min-height: 400px) and (orientation: landscape) and (min-width: 1600px) {
   main .right .gallery-wrapper .gallery-text .text-en {
     font-size: 24px;
   }
 }
-
 @media only screen and (min-width: 1024px) and (max-width: 1599px), (min-width: 768px) and (min-height: 400px) and (orientation: landscape) and (max-width: 1599px) {
   main .right .gallery-wrapper .gallery-text .text-en {
     font-size: 1.5vw;
   }
 }
-
 @media only screen and (min-width: 1024px), (min-width: 768px) and (min-height: 400px) and (orientation: landscape) {
   main .right .single-gallery-wrapper {
     display: flex;
@@ -778,6 +769,8 @@ main .right .gallery .gallery-title {
     cursor: pointer;
     fill: #010101;
   }
+}
+@media only screen and (min-width: 1024px), (min-width: 768px) and (min-height: 400px) and (orientation: landscape) {
   main .right .bio-wrapper {
     width: 69.8vw;
     max-width: 1340px;
@@ -826,6 +819,8 @@ main .right .gallery .gallery-title {
     padding-top: 8px;
     width: 100%;
   }
+}
+@media only screen and (min-width: 1024px), (min-width: 768px) and (min-height: 400px) and (orientation: landscape) {
   main .right .contact .link {
     display: flex;
     flex-direction: column;
@@ -847,7 +842,6 @@ main .right .gallery .gallery-title {
     max-height: 727px;
   }
 }
-
 .hidden {
   display: none;
 }
