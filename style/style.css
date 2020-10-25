@@ -583,7 +583,7 @@ main .left .menu li:hover {
   }
   main .right .gallery-wrapper .gallery-text._5col {
     grid-template-columns: repeat(15, calc((100vw - 224px) * 0.16 / 3));
-    grid-template-areas: "title title title title . text-en text-en text-en text-en text-en text-en text-en text-en . ." ". . . text-hu text-hu text-hu text-hu text-hu text-hu text-hu text-hu text-hu . . .";
+    grid-template-areas: "title title title title . . text-en text-en text-en text-en text-en text-en text-en text-en ." ". . . text-hu text-hu text-hu text-hu text-hu text-hu text-hu text-hu text-hu . . .";
     gap: 1.15vw 0.3833333333vw;
   }
   main .right .gallery-wrapper .gallery-text._5col .text-hu {
