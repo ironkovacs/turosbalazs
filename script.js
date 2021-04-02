@@ -91,7 +91,7 @@ const epitomeSet = {
   img: [
     { img: './img/02/epitome_001', title: '', id: 1 },
     { img: './img/02/epitome_002', title: '', id: 2 },
-    { img: './img/02/epitome_004', title: '', id: 4 },
+    { img: './img/02/epitome_003', title: '', id: 3 },
   ], text: {
     title: `EPITOME`,
     date: ' 2018 - ',
