@@ -1,8 +1,26 @@
+//
 
+window.mobileCheck = function () {
+  let check = false;
+  const width = (window.innerWidth > 0) ? window.innerWidth : screen.width
+  const height = (window.innerHeight > 0) ? window.innerHeight : screen.height
+  if (width >= 1024 && height >= 768) {
+    check = false
+  }
+  else {
+    (function (a) {
+      if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4)))
+        check = true;
+    })(navigator.userAgent || navigator.vendor || window.opera);
+  }
+  console.log('Mobile view: ', check)
+  return check;
+};
 // elements
 let html = {}
-
+let isHamburgerOpen = false;
 let currentHash = '';
+
 
 const components = {
   landing: './components/landing/landing.html',
@@ -10,25 +28,27 @@ const components = {
   gallery: './components/gallery/gallery.html',
   makingOf: './components/makingOf/making-of.html',
   singleGallery: `
- <div class="single-gallery-wrapper">
-   <div class="caroussel">
+  <div class="single-gallery-wrapper">
+    <div class="caroussel">
+      <div class="spaceholder">
+      <img src="./assets/elements/color-dot-#FCFBF9.png" width="100%" height="1px"></div>
+      <div class="img-holder"></div>
+    </div>
+    <div class="gallery-side">
  
-   </div>
-   <div class="gallery-side">
- <div class="pager"></div>
- <div class="gallery-nav">
-   <svg xmlns="http://www.w3.org/2000/svg" class="prev">
- <path d="M1.878 8.71v-.382l5.387-5.893L6.576.409.467 7.78v1.445l6.109 7.371.689-2.059L1.878 8.71z" />
-   </svg>
-   <svg xmlns="http://www.w3.org/2000/svg" class="next">
- <path d="M7.363 7.78L1.254.409.565 2.435l5.404 5.86v.382l-5.404 5.86.689 2.059 6.109-7.371V7.78z" />
-   </svg>
-   <svg xmlns="http://www.w3.org/2000/svg" class="gallery-btn">
- <path d="M22 17v-7h8v7h-8zm0-17h8v7h-8V0zM11 10h8v7h-8v-7zm0-10h8v7h-8V0zM0 10h8v7H0v-7zM0 0h8v7H0V0z" />
-   </svg>
- </div>
-   </div>
- </div>
+      <div class="gallery-nav">
+        <svg xmlns="http://www.w3.org/2000/svg" class="prev">
+          <path d="M1.878 8.71v-.382l5.387-5.893L6.576.409.467 7.78v1.445l6.109 7.371.689-2.059L1.878 8.71z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="next">
+          <path d="M7.363 7.78L1.254.409.565 2.435l5.404 5.86v.382l-5.404 5.86.689 2.059 6.109-7.371V7.78z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="gallery-btn">
+          <path d="M22 17v-7h8v7h-8zm0-17h8v7h-8V0zM11 10h8v7h-8v-7zm0-10h8v7h-8V0zM0 10h8v7H0v-7zM0 0h8v7H0V0z" />
+        </svg>
+      </div>
+    </div>
+  </div>
   `,
   contact: './components/contact/contact.html',
   bio: './components/bio/bio.html'
@@ -39,7 +59,7 @@ const mainSet = {
 
     { img: './img/01/perceptions_001', title: 'perceptions', setName: 'perceptions', id: null },
     { img: './img/02/epitome_001', title: 'epitome', setName: 'epitome', id: null },
-    { img: './img/03/CLOSER_002', title: 'closer', setName: 'closer', id: null },
+    { img: './img/03/CLOSER_002', title: 'the nature<br>of things', setName: 'closer', id: null },
     { img: './img/04/roncs_001', title: 'ephemeral knot', setName: 'ephemeral-knot', id: null },
     { img: './img/05/oneness_003', title: 'oneness', setName: 'oneness', id: null },
     { img: './img/06/videk_001', title: 'ferry—land', setName: 'ferry-land', id: null },
@@ -48,7 +68,7 @@ const mainSet = {
   ], text: null
 }
 const reflectionSet = {
-  setName:'perceptions',
+  setName: 'perceptions',
   img: [
     { img: './img/01/perceptions_001', title: '', id: 1 },
     { img: './img/01/perceptions_002', title: '', id: 2 },
@@ -60,7 +80,7 @@ const reflectionSet = {
     { img: './img/01/perceptions_008', title: '', id: 8 },
   ], text: {
     title: `PERCEPTIONS`,
-    date: '2012-2014',
+    date: '2012 - 2014',
     en: `After the first three years of university, I moved from Budapest to South West England at the age of  22. It was an important time for me, and I regard Plymouth as a place where I entered adulthood.I  broke away from the life I had been accustomed to up until that time.I had to redefine lots of things  internally.In this unsteady state I was captivated by and wanted to experience the  existing order in the world.The work of these two years is a reflection of an alien, in which my  preconceived ideas of England meet reality.`,
     hu: `Az egyetem első három éve után, 22 évesen Dél-Nyugat Angliába költöztem. Fontos volt számomra ez az időszak, Plymouth-t tekintem felnőtté vállásom helyszínének. Kiszakadtam az addig megszokott életemből, sok dolgot kellett újra definiálnom magamban. Ebben a bizonytalan állapotban, a világban való rend megtapasztalása foglalkoztatott. A két évnyi munka egy idegen nézőpontjából való szemlélődés, az Angliáról előre kialakított képem találkozása a valósággal`,
     embeded: null
@@ -72,7 +92,6 @@ const epitomeSet = {
     { img: './img/02/epitome_001', title: '', id: 1 },
     { img: './img/02/epitome_002', title: '', id: 2 },
     { img: './img/02/epitome_003', title: '', id: 3 },
-    { img: './img/02/epitome_004', title: '', id: 4 },
   ], text: {
     title: `EPITOME`,
     date: ' 2018 - ',
@@ -97,30 +116,30 @@ const closerSet = {
     { img: './img/03/CLOSER_011', title: '', id: 11 },
     { img: './img/03/CLOSER_012', title: '', id: 12 },
     { img: './img/03/CLOSER_013', title: '', id: 13 },
-    { img: './img/03/CLOSER_014', title: '', id: 14 },
+    { img: './img/02/epitome_003', title: '', id: 14 },
     { img: './img/03/CLOSER_015', title: '', id: 15 },
   ], text: {
-    title: `CLOSER`,
-    date: '2019',
+    title: `THE NATURE <br>OF THINGS`,
+    date: '2018 -',
     en: `I'm turning thirty. Time is accelerating. My father is now a grandfather. I'd like to ask my grandmother about things, but it's getting very difficult to talk to her. Apparently our sense of time is logarithmic, that's why we feel that time is passing faster. I'm looking for points of reference. As a child, it was hard to imagine what it was like to not be afraid in the dark. When we grow old, will death become less scary?`,
     hu: `Harminc leszek. Az idő egyre gyorsabban telik. Apám nagyapa lett. Nagymamámat szeretném megkérdezni dolgokról, de már nehéz vele beszélgetni. Azt mondják, az időérzékelésünk logaritmikus, ezért érezzük egyre gyorsabbnak az idő múlását. Támpontokat keresek. Gyerekként nehéz volt elképzelnem, milyen, ha valaki nem fél a sötétben. Ha megöregszünk, a halál sem olyan félelmetes már?`,
     embeded: null
   }
 };
 const knotSet = {
-  setName:'ephemeral-knot',
+  setName: 'ephemeral-knot',
   img: [
     { img: './img/04/roncs_001', title: '', id: 1 },
     { img: './img/04/roncs_002', title: '', id: 2 },
-    { img: './img/04/roncs_004', title: '', id: 4 },
-    { img: './img/04/roncs_003', title: '', id: 3 },
+    { img: './img/04/roncs_004', title: '', id: 3 },
+    { img: './img/04/roncs_003', title: '', id: 4 },
     { img: './img/04/roncs_005', title: '', id: 5 },
     { img: './img/04/roncs_006', title: '', id: 6 },
   ], text: {
     title: `Ephemeral Knot`,
-    date: '2012-2014',
-    // en: `<iframe src="https://player.vimeo.com/video/81264915" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`,
-    // hu: `<a href="https://vimeo.com/81264915">MAKING OF</a> Ephemeral Knot from <a href="https://vimeo.com/user23286965">Balazs Turos</a>.`,
+    date: '2012 - 2014',
+    en: `<a class="knot-vido-link" href="/#making-of-ephemeral-knot">MAKING-OF VIDEO / WERKFILM</a>`,
+    hu: ``,
     // embeded: ``
   }
 };
@@ -142,7 +161,7 @@ const onenessSet = {
   }
 };
 const ferryLandSet = {
-  setName: 'ferry—land',
+  setName: 'ferry-land',
   img: [
     { img: './img/06/videk_001', title: '', id: 1 },
     { img: './img/06/videk_002', title: '', id: 2 },
@@ -161,29 +180,6 @@ const ferryLandSet = {
   }
 }
 
-// const testSet = {
-//   img: [
-//     {img: './img/test/01_01', title:'', id: 1},
-//     {img: './img/test/01_02', title:'', id: 2},
-//     {img: './img/test/01_03', title:'', id: 3},
-//     {img: './img/test/02_01', title:'', id: 4},
-//     {img: './img/test/02_02', title:'', id: 5},
-//     {img: './img/test/02_03', title:'', id: 6},
-//     {img: './img/test/03_01', title:'', id: 7},
-//     {img: './img/test/03_02', title:'', id: 8},
-//     {img: './img/test/03_03', title:'', id: 9},
-//     {img: './img/test/04_01', title:'', id: 10},
-//     {img: './img/test/04_02', title:'', id: 11},
-//     {img: './img/test/04_03', title:'', id: 12},
-//     {img: './img/test/04_04', title:'', id: 13},
-//   ],
-//   text:{title: `Test`,
-//   date: '2012-2014',
-//   en: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, vero aspernatur? Enim, assumenda! Eius pariatur optio ullam asperiores dignissimos. Voluptates, libero est provident veniam ut corrupti et ab repellat magni!',
-//   hu: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, vero aspernatur? Enim, assumenda! Eius pariatur optio ullam asperiores dignissimos. Voluptates, libero est provident veniam ut corrupti et ab repellat magnit',
-//   embeded: ``}
-// }
-
 const currentNavPaths = {
   title: '',
   id: 0
@@ -195,8 +191,10 @@ function init() {
   html.main = document.querySelector('main');
   html.left = document.querySelector('.left');
   html.title = document.querySelector('.title');
+  html.titleMobile = document.querySelector('.title-mobile');
   html.menu = document.querySelector('.menu');
   html.menu.works = {};
+  html.mobileMenu = {};
   html.menu.works.main = document.querySelector('.nav--works');
   html.menu.works.reflection = document.querySelector('.nav-reflection');
   html.menu.works.epitome = document.querySelector('.nav-epitome');
@@ -204,10 +202,12 @@ function init() {
   html.menu.works.knot = document.querySelector('.nav-knot');
   html.menu.works.oneness = document.querySelector('.nav-oneness');
   html.menu.works.ferryLand = document.querySelector('.nav-ferry—land');
-  // html.menu.works.test = document.querySelector('.nav-test')
 
   html.menu.about = document.querySelector('.nav-about');
   html.menu.contact = document.querySelector('.nav-contact');
+  html.mobileMenu.wrapper = document.querySelector('.mobile-menu-wrapper');
+
+
   html.right = document.querySelector('.right');
 
   html.title.addEventListener('click', () => { setHash('works') });
@@ -217,12 +217,67 @@ function init() {
   html.menu.works.closer.addEventListener('click', () => { setHash('closer') });
   html.menu.works.knot.addEventListener('click', () => { setHash('ephemeral-knot') });
   html.menu.works.oneness.addEventListener('click', () => { setHash('oneness') });
-  html.menu.works.ferryLand.addEventListener('click', () => { setHash('ferry—land') });
-  // html.menu.works.test.addEventListener('click', () => { setHash('test') });
+  html.menu.works.ferryLand.addEventListener('click', () => { setHash('ferry-land') });
+
   html.menu.about.addEventListener('click', () => { setHash('about') });
   html.menu.contact.addEventListener('click', () => { setHash('contact') });
 
   if (currentHash !== newHashToSet) navigation(newHashToSet);
+  if(window.mobileCheck) document.querySelector('.menu-mobile').classList.remove('hidden')
+
+  function scrollDistance(callback, refresh) {
+    // Make sure a valid callback was provided
+    if (!callback || typeof callback !== 'function') return;
+
+    // Variables
+    var isScrolling, start, end, distance;
+
+    // Listen for scroll events
+    html.right.addEventListener('scroll', function (event) {
+
+      // Set starting position
+      if (!start) {
+        start = html.right.scrollTop;
+      }
+
+      // Clear our timeout throughout the scroll
+      window.clearTimeout(isScrolling);
+
+      // Set a timeout to run after scrolling ends
+      isScrolling = setTimeout(function () {
+
+        // Calculate distance
+        end = html.right.scrollTop;
+        distance = end - start;
+
+        // Run the callback
+        callback(distance, start, end);
+
+        // Reset calculations
+        start = null;
+        end = null;
+        distance = null;
+
+      }, refresh || 66);
+
+    }, false);
+
+  };
+  scrollDistance(function (distance) {
+    if (window.mobileCheck() && (window.orientation === 90 || window.orientation === -90)) {
+      distance < 0 ? scrollUp(distance) : scrollDown(distance);
+    }
+  });
+  function scrollDown(distance) {
+    // html.left.classList.add('closed')
+    // document.querySelector('.menu-mobile').classList.add('closed')
+  }
+
+  function scrollUp(distance) {
+    // html.left.classList.remove('closed')
+    // document.querySelector('.menu-mobile').classList.remove('closed')
+
+  }
 }
 
 function landing() {
@@ -261,14 +316,24 @@ function contact() {
 function generateGalleryElements(set) {
   let gallery = '';
   set.img.map(e => {
-    gallery += `
+
+    gallery += window.mobileCheck()
+      ? `
       <div class="gallery-element" id="${e.title ? e.title : e.id}">
-        <img src="${e.img}_index.jpg" alt="${e.title ? e.title : e.id}" class="gallery-img">
+        <img src="${e.img}_mobil.jpg" alt="${e.title ? e.title : e.id}" class="gallery-img">
         <div class="gallery-title">
-        ${e.title ? '<span>' + e.title + '</span>' : ''}
+          ${e.title ? '<span>' + e.title + '</span>' : ''}
         </div>
       </div>
   `
+      : `
+    <div class="gallery-element" id="${e.title ? e.title : e.id}">
+      <img src="${e.img}_index.jpg" alt="${e.title ? e.title : e.id}" class="gallery-img">
+      <div class="gallery-title">
+        ${e.title ? '<span>' + e.title + '</span>' : ''}
+      </div>
+    </div>`
+
   })
 
   return gallery;
@@ -297,15 +362,6 @@ function grnerateGalleryTextElements(set, col) {
   `
 }
 
-// function generatePath(input) {
-//   if (isNaN(input)) {
-//     currentNavPaths.title = input;
-//     delete currentNavPaths.id;
-//   } else {
-//     currentNavPaths.id = input;
-//   }
-//   console.log(currentNavPaths)
-// }
 
 function generateNavToSet(toPage, set) {
   set.img.map(e => {
@@ -337,58 +393,74 @@ function loadHTMLtoDOM(html, toDOMelement) {
 
 function singleGallery(set, id) {
   html.right.innerHTML = components.singleGallery;
-  html.right.caroussel = document.querySelector('.caroussel');
-  html.right.pager = document.querySelector('.pager');
+  html.right.caroussel = document.querySelector('.caroussel>.img-holder');
+  // html.right.pager = document.querySelector('.pager');
   html.right.galleryNavNext = document.querySelector('svg.next');
   html.right.galleryNavPrev = document.querySelector('svg.prev');
   html.right.galleryView = document.querySelector('svg.gallery-btn');
   let element = set.img[id - 1];
 
-
   html.right.caroussel.innerHTML = showGalleryElement(element);
-  html.right.pager.innerHTML = `${id}/${set.img.length}`
+  // html.right.pager.innerHTML = `${id}/${set.img.length}`
 
-  html.right.galleryView.addEventListener('click', () => { gallery(set) })
+  html.right.galleryView.addEventListener('click', () => setHash(set.setName))
+  html.right.galleryNavPrev.addEventListener('click', () => galleryPrev(set));
+  html.right.galleryNavNext.addEventListener('click', () => galleryNext(set));
 
-  const navHelper = this.location.hash.substr(1).split('/');
-
-  if (id > 1) {
-    html.right.galleryNavPrev.addEventListener('click', () => { setHash(navHelper[0], Number(navHelper[1]) - 1) })
-  } else {
-    html.right.galleryNavPrev.classList.add('disabled');
-  }
-
-  if (id < set.img.length) {
-    html.right.galleryNavNext.addEventListener('click', () => { setHash(navHelper[0], Number(navHelper[1]) + 1) })
-  } else {
-    html.right.galleryNavNext.classList.add('disabled');
-  }
 
   document.onkeydown = function (e) {
     switch (e.key) {
       case 'ArrowLeft':
-        if (id > 1) { singleGallery(set, id - 1) }
+        galleryPrev(set)
         break;
       case 'ArrowRight':
-        if (id < set.img.length) { singleGallery(set, id + 1) }
+        galleryNext(set)
     }
   };
+  // setGalleryNavHeight();
 }
-0
+
+function galleryPrev(set) {
+  const navHelper = this.location.hash.substr(1).split('/');
+  const id = navHelper[1];
+  if (id == 1) {
+    setHash(navHelper[0], set.img.length)
+  } else {
+    setHash(navHelper[0], Number(navHelper[1]) - 1)
+  }
+}
+function galleryNext(set) {
+  const navHelper = this.location.hash.substr(1).split('/');
+  const id = navHelper[1]
+  if (id == set.img.length) {
+    setHash(navHelper[0], 1)
+  } else {
+    setHash(navHelper[0], Number(navHelper[1]) + 1)
+  }
+}
+
 function showGalleryElement(element) {
-  return `<img class="single-img" src="${element.img}_nagy.jpg">`
+  return `
+  <img class="single-img" src="${element.img}_nagy.jpg">
+  `
 }
 
 function navigation(hash) {
   const toPage = hash[0] ? hash[0] : 'landing';
   // generatePath(toPage)
-  const galleryId = hash[1] ? hash[1] : null;
+  let galleryId = hash[1] ? hash[1] : null;
+  if (window.mobileCheck()) galleryId = null;
   if (document.querySelector('.active')) document.querySelector('.active').classList.remove('active')
   console.log('navigation(hash) toPage: ', toPage);
 
+
   switch (toPage) {
     case 'landing':
-      landing();
+      if (window.mobileCheck()) {
+        gallery(toPage, mainSet, 1, false);
+      } else {
+        landing();
+      }
       break;
     case 'works':
       gallery(toPage, mainSet, 3, false);
@@ -399,52 +471,72 @@ function navigation(hash) {
     case 'perceptions':
       if (!galleryId) {
         gallery(toPage, reflectionSet, 4)
-        html.menu.works.reflection.classList.add('active')
       } else {
-        singleGallery(reflectionSet, galleryId)
+        if (!window.mobileCheck()) {
+          singleGallery(reflectionSet, galleryId)
+        }
       }
+      html.menu.classList.remove('hidden');
+      html.menu.works.reflection.classList.add('active')
       break;
     case 'epitome':
-      if (galleryId) {
-        gallery(toPage, epitomeSet, 2)
-        html.menu.works.epitome.classList.add('active')
+      if (!galleryId) {
+        gallery(toPage, epitomeSet, 3)
+      } else {
+        if (!window.mobileCheck()) {
+          singleGallery(epitomeSet, galleryId)
+        }
       }
+      html.menu.classList.remove('hidden');
+      html.menu.works.epitome.classList.add('active')
       break;
     case 'closer':
       if (!galleryId) {
         gallery(toPage, closerSet, 5)
-        html.menu.works.closer.classList.add('active')
+
       } else {
         singleGallery(closerSet, galleryId)
       }
+      html.menu.classList.remove('hidden');
+      html.menu.works.closer.classList.add('active')
       break;
     case 'ephemeral-knot':
       if (!galleryId) {
         gallery(toPage, knotSet, 3)
-        html.menu.works.knot.classList.add('active')
       } else {
-        singleGallery(knotSet, galleryId)
+        if (!window.mobileCheck()) {
+          singleGallery(knotSet, galleryId)
+        }
       }
+      html.menu.classList.remove('hidden');
+      html.menu.works.knot.classList.add('active')
       break;
     case 'oneness':
       if (!galleryId) {
         gallery(toPage, onenessSet, 3)
-        html.menu.works.oneness.classList.add('active')
       } else {
-        singleGallery(onenessSet, galleryId)
+        if (!window.mobileCheck()) {
+          singleGallery(onenessSet, galleryId)
+        }
       }
+      html.menu.classList.remove('hidden');
+      html.menu.works.oneness.classList.add('active')
       break;
     case 'ferry-land':
       if (!galleryId) {
         gallery(toPage, ferryLandSet, 4)
-        html.menu.works.ferryLand.classList.add('active')
       } else {
-        singleGallery(ferryLandSet, galleryId)
+        if (!window.mobileCheck()) {
+          singleGallery(ferryLandSet, galleryId)
+        }
       }
+      html.menu.classList.remove('hidden');
+      html.menu.works.ferryLand.classList.add('active')
       break;
-      case 'making-of-ephemeral-knot':
-        loadHTMLtoDOM(components.makingOf, html.right);
-        html.menu.classList.remove('hidden');
+    case 'making-of-ephemeral-knot':
+      loadHTMLtoDOM(components.makingOf, html.right);
+      html.menu.works.knot.classList.add('active')
+      html.menu.classList.remove('hidden');
       break
     // case 'test':
     //   gallery(toPage, testSet, 3)
@@ -452,19 +544,27 @@ function navigation(hash) {
     //   break;
     case 'about':
       about()
+      html.menu.classList.remove('hidden');
+      // html.mobileMenu.about.classList.add('active')
       html.menu.about.classList.add('active')
       break;
     case 'contact':
       contact()
+      html.menu.classList.remove('hidden');
       html.menu.contact.classList.add('active')
+      // html.mobileMenu.contact.classList.add('active')
       break;
+  }
+  if (window.mobileCheck()) {
+    html.menu.style = "display:none"
+  } else {
+    html.mobileMenu.wrapper.style = "display:none"
   }
 }
 
 function setHash(page, galleryId) {
   const newHash = galleryId ? page + '/' + galleryId : page;
   this.location.hash = newHash;
-  // navigation(newHash);
 }
 
 function removeHidden() {
@@ -482,6 +582,16 @@ function rngMinMax(min, max) {
   }
 }
 
-window.addEventListener('hashchange', init);
+window.onorientationchange = function () {
+  var orientation = window.orientation;
+  switch (orientation) {
+    case 0:window.location.reload()
+    case 90: window.location.reload()
+    case -90: window.location.reload();
+      break;
+  }
+};
 
+window.addEventListener('hashchange', init);
 window.onload = () => { init() };
+
