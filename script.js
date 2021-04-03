@@ -116,7 +116,7 @@ const closerSet = {
     { img: './img/03/CLOSER_011', title: '', id: 11 },
     { img: './img/03/CLOSER_012', title: '', id: 12 },
     { img: './img/03/CLOSER_013', title: '', id: 13 },
-    { img: './img/02/epitome_003', title: '', id: 14 },
+    { img: './img/03/CLOSER_014', title: '', id: 14 },
     { img: './img/03/CLOSER_015', title: '', id: 15 },
   ], text: {
     title: `THE NATURE <br>OF THINGS`,
