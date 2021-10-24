@@ -27,6 +27,7 @@ const components = {
   sidenav: './components/sidenav/sidenav.html',
   gallery: './components/gallery/gallery.html',
   makingOf: './components/makingOf/making-of.html',
+  makingOfNature: './components/makingOfnature/making-of-nature.html',
   singleGallery: `
   <div class="single-gallery-wrapper">
     <div class="caroussel">
@@ -59,7 +60,7 @@ const mainSet = {
 
     { img: './img/01/perceptions_001', title: 'perceptions', setName: 'perceptions', id: null },
     { img: './img/02/epitome_001', title: 'epitome', setName: 'epitome', id: null },
-    { img: './img/03/CLOSER_002', title: 'the nature<br>of things', setName: 'closer', id: null },
+    { img: './img/03/NATURE_002', title: 'the nature<br>of things', setName: 'nature', id: null },
     { img: './img/04/roncs_001', title: 'ephemeral knot', setName: 'ephemeral-knot', id: null },
     { img: './img/05/oneness_003', title: 'oneness', setName: 'oneness', id: null },
     { img: './img/06/videk_001', title: 'ferry—land', setName: 'ferry-land', id: null },
@@ -100,29 +101,46 @@ const epitomeSet = {
     embeded: null
   }
 };
-const closerSet = {
-  setName: 'closer',
+const natureSet = {
+  setName: 'nature',
   img: [
-    { img: './img/03/CLOSER_001', title: '', id: 1 },
-    { img: './img/03/CLOSER_002', title: '', id: 2 },
-    { img: './img/03/CLOSER_003', title: '', id: 3 },
-    { img: './img/03/CLOSER_004', title: '', id: 4 },
-    { img: './img/03/CLOSER_005', title: '', id: 5 },
-    { img: './img/03/CLOSER_006', title: '', id: 6 },
-    { img: './img/03/CLOSER_007', title: '', id: 7 },
-    { img: './img/03/CLOSER_008', title: '', id: 8 },
-    { img: './img/03/CLOSER_009', title: '', id: 9 },
-    { img: './img/03/CLOSER_010', title: '', id: 10 },
-    { img: './img/03/CLOSER_011', title: '', id: 11 },
-    { img: './img/03/CLOSER_012', title: '', id: 12 },
-    { img: './img/03/CLOSER_013', title: '', id: 13 },
-    { img: './img/02/epitome_003', title: '', id: 14 },
-    { img: './img/03/CLOSER_015', title: '', id: 15 },
+    { img: './img/03/NATURE_001', title: '', id: 1 },
+    { img: './img/03/NATURE_002', title: '', id: 2 },
+    { img: './img/03/NATURE_003', title: '', id: 3 },
+    { img: './img/03/NATURE_004', title: '', id: 4 },
+    { img: './img/03/NATURE_005', title: '', id: 5 },
+    { img: './img/03/NATURE_006', title: '', id: 6 },
+    { img: './img/03/NATURE_007', title: '', id: 7 },
+    { img: './img/03/NATURE_008', title: '', id: 8 },
+    { img: './img/03/NATURE_009', title: '', id: 9 },
+    { img: './img/03/NATURE_010', title: '', id: 10 },
+    { img: './img/03/NATURE_011', title: '', id: 11 },
+    { img: './img/03/NATURE_012', title: '', id: 12 },
+    { img: './img/03/NATURE_013', title: '', id: 13 },
+    { img: './img/03/NATURE_014', title: '', id: 14 },
+    { img: './img/03/NATURE_015', title: '', id: 15 },
+    { img: './img/03/NATURE_016', title: '', id: 16 },
+    { img: './img/03/NATURE_017', title: '', id: 17 },
+    { img: './img/03/NATURE_018', title: '', id: 18 },
+    { img: './img/03/NATURE_019', title: '', id: 19 },
+    { img: './img/03/NATURE_020', title: '', id: 20 },
+    { img: './img/03/NATURE_021', title: '', id: 21 },
+    { img: './img/03/NATURE_022', title: '', id: 22 },
+    { img: './img/03/NATURE_023', title: '', id: 23 },
+    { img: './img/03/NATURE_024', title: '', id: 24 },
+    { img: './img/03/NATURE_025', title: '', id: 25 },
+    { img: './img/03/NATURE_026', title: '', id: 26 },
+    { img: './img/03/NATURE_027', title: '', id: 27 },
+    { img: './img/03/NATURE_028', title: '', id: 28 },
+    { img: './img/03/NATURE_029', title: '', id: 29 },
+    { img: './img/03/NATURE_030', title: '', id: 30 },
   ], text: {
     title: `THE NATURE <br>OF THINGS`,
     date: '2018 -',
-    en: `I'm turning thirty. Time is accelerating. My father is now a grandfather. I'd like to ask my grandmother about things, but it's getting very difficult to talk to her. Apparently our sense of time is logarithmic, that's why we feel that time is passing faster. I'm looking for points of reference. As a child, it was hard to imagine what it was like to not be afraid in the dark. When we grow old, will death become less scary?`,
-    hu: `Harminc leszek. Az idő egyre gyorsabban telik. Apám nagyapa lett. Nagymamámat szeretném megkérdezni dolgokról, de már nehéz vele beszélgetni. Azt mondják, az időérzékelésünk logaritmikus, ezért érezzük egyre gyorsabbnak az idő múlását. Támpontokat keresek. Gyerekként nehéz volt elképzelnem, milyen, ha valaki nem fél a sötétben. Ha megöregszünk, a halál sem olyan félelmetes már?`,
+    en: `As a child, it was hard for me to imagine what it is like for someone who isn’t afraid of the dark. Will death seem less scary when we grow old? At a certain point, we’ll have to confront the idea that life is finite. For a child, time could seem infinite - the older we get, the faster time seems to pass.
+    How can the transient nature of our personality be accepted in an individualistic society? Three years ago I set out to find an answer to this question in my photo series, which first bore the title “One step closer”. However, in the meantime, my grandmother was diagnosed with dementia and ever so slowly the original project has turned into a collaborative effort. Her disease carries within the starting point of my own fears. If our personality completely disappears in the moment of our death, then we can think of dementia as that frozen moment in which, day after day, we slowly drift away from ourselves. While I’m watching my grandmother change both mentally and physically, I’m aiming to embrace acceptance; striving to experience the existing order in the world, in which the transience of life also plays a part.<br>
+    <br><a class="knot-vido-link" href="/#making-of-nature-of-things">VIDEO ABOUT THE PROJECT</a>`,
+    hu: `Gyerekként nehéz volt elképzelnem, milyen, ha valaki nem fél a sötétben. Ha megöregszünk, a halál sem olyan félelmetes már? Egy ponton kénytelenek vagyunk szembesülni az élet végességének gondolatával. Egy kisgyerek számára az idő végtelennek tűnhet, de ahogy öregszünk, úgy érezzük egyre gyorsabbnak az idő múlását. Egy individualista társadalomban hogyan lehet elfogadni a személyiségünk múlandóságát? Erre a kérdésre próbáltam választ találni három évvel ezelőtt, akkor még "Eggyel közelebb" címmel elkezdett sorozatomban. Időközben a nagymamámat demenciával diagnosztizálták, és lassan egy közös munkává alakult át az eredeti projekt. Betegsége magában hordozza saját félelmeim kiindulópontját. Ha a halálunk pillanata személyiségünk teljes eltűnését jelenti, akkor a demenciára tekinthetünk ennek a pillanatnak a kimerevített állapotaként, amelyben nagyon lassan, napról napra távolodunk el önmagunktól. Nagymamám szellemi és fizikai változását szemlélve próbálok közelebb kerülni az elfogadáshoz, a világban való rend megtapasztalására törekedve, amelynek ugyanúgy része az elmúlás is.`,
     embeded: null
   }
 };
@@ -198,7 +216,7 @@ function init() {
   html.menu.works.main = document.querySelector('.nav--works');
   html.menu.works.reflection = document.querySelector('.nav-reflection');
   html.menu.works.epitome = document.querySelector('.nav-epitome');
-  html.menu.works.closer = document.querySelector('.nav-closer');
+  html.menu.works.nature = document.querySelector('.nav-nature');
   html.menu.works.knot = document.querySelector('.nav-knot');
   html.menu.works.oneness = document.querySelector('.nav-oneness');
   html.menu.works.ferryLand = document.querySelector('.nav-ferry—land');
@@ -214,7 +232,7 @@ function init() {
   html.menu.works.main.addEventListener('click', () => { setHash('works') });
   html.menu.works.reflection.addEventListener('click', () => { setHash('perceptions') });
   html.menu.works.epitome.addEventListener('click', () => { setHash('epitome') });
-  html.menu.works.closer.addEventListener('click', () => { setHash('closer') });
+  html.menu.works.nature.addEventListener('click', () => { setHash('nature') });
   html.menu.works.knot.addEventListener('click', () => { setHash('ephemeral-knot') });
   html.menu.works.oneness.addEventListener('click', () => { setHash('oneness') });
   html.menu.works.ferryLand.addEventListener('click', () => { setHash('ferry-land') });
@@ -223,7 +241,7 @@ function init() {
   html.menu.contact.addEventListener('click', () => { setHash('contact') });
 
   if (currentHash !== newHashToSet) navigation(newHashToSet);
-  if(window.mobileCheck) document.querySelector('.menu-mobile').classList.remove('hidden')
+  if (window.mobileCheck) document.querySelector('.menu-mobile').classList.remove('hidden')
 
   function scrollDistance(callback, refresh) {
     // Make sure a valid callback was provided
@@ -490,15 +508,15 @@ function navigation(hash) {
       html.menu.classList.remove('hidden');
       html.menu.works.epitome.classList.add('active')
       break;
-    case 'closer':
+    case 'nature':
       if (!galleryId) {
-        gallery(toPage, closerSet, 5)
+        gallery(toPage, natureSet, 5)
 
       } else {
-        singleGallery(closerSet, galleryId)
+        singleGallery(natureSet, galleryId)
       }
       html.menu.classList.remove('hidden');
-      html.menu.works.closer.classList.add('active')
+      html.menu.works.nature.classList.add('active')
       break;
     case 'ephemeral-knot':
       if (!galleryId) {
@@ -536,6 +554,11 @@ function navigation(hash) {
     case 'making-of-ephemeral-knot':
       loadHTMLtoDOM(components.makingOf, html.right);
       html.menu.works.knot.classList.add('active')
+      html.menu.classList.remove('hidden');
+      break
+    case 'making-of-nature-of-things':
+      loadHTMLtoDOM(components.makingOfNature, html.right);
+      html.menu.works.nature.classList.add('active')
       html.menu.classList.remove('hidden');
       break
     // case 'test':
@@ -585,7 +608,7 @@ function rngMinMax(min, max) {
 window.onorientationchange = function () {
   var orientation = window.orientation;
   switch (orientation) {
-    case 0:window.location.reload()
+    case 0: window.location.reload()
     case 90: window.location.reload()
     case -90: window.location.reload();
       break;
