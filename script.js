@@ -104,7 +104,6 @@ const epitomeSet = {
 const natureSet = {
   setName: 'nature',
   img: [
-<<<<<<< HEAD
     { img: './img/03/NATURE_001', title: '', id: 1 },
     { img: './img/03/NATURE_002', title: '', id: 2 },
     { img: './img/03/NATURE_003', title: '', id: 3 },
@@ -134,24 +133,7 @@ const natureSet = {
     { img: './img/03/NATURE_027', title: '', id: 27 },
     { img: './img/03/NATURE_028', title: '', id: 28 },
     { img: './img/03/NATURE_029', title: '', id: 29 },
-    { img: './img/03/NATURE_030', title: '', id: 30 },
-=======
-    { img: './img/03/CLOSER_001', title: '', id: 1 },
-    { img: './img/03/CLOSER_002', title: '', id: 2 },
-    { img: './img/03/CLOSER_003', title: '', id: 3 },
-    { img: './img/03/CLOSER_004', title: '', id: 4 },
-    { img: './img/03/CLOSER_005', title: '', id: 5 },
-    { img: './img/03/CLOSER_006', title: '', id: 6 },
-    { img: './img/03/CLOSER_007', title: '', id: 7 },
-    { img: './img/03/CLOSER_008', title: '', id: 8 },
-    { img: './img/03/CLOSER_009', title: '', id: 9 },
-    { img: './img/03/CLOSER_010', title: '', id: 10 },
-    { img: './img/03/CLOSER_011', title: '', id: 11 },
-    { img: './img/03/CLOSER_012', title: '', id: 12 },
-    { img: './img/03/CLOSER_013', title: '', id: 13 },
-    { img: './img/02/_epitome_003', title: '', id: 14 },
-    { img: './img/03/CLOSER_015', title: '', id: 15 },
->>>>>>> 1c45393c2546c3eb79572ba5f16b610bfeb6ec7c
+    { img: './img/03/NATURE_030', title: '', id: 30 }
   ], text: {
     title: `THE NATURE <br>OF THINGS`,
     date: '2018 -',
