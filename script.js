@@ -133,7 +133,7 @@ const natureSet = {
     { img: './img/03/NATURE_027', title: '', id: 27 },
     { img: './img/03/NATURE_028', title: '', id: 28 },
     { img: './img/03/NATURE_029', title: '', id: 29 },
-    { img: './img/03/NATURE_030', title: '', id: 30 },
+    { img: './img/03/NATURE_030', title: '', id: 30 }
   ], text: {
     title: `THE NATURE <br>OF THINGS`,
     date: '2018 -',
