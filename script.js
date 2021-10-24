@@ -82,8 +82,8 @@ const reflectionSet = {
   ], text: {
     title: `PERCEPTIONS`,
     date: '2012 - 2014',
-    en: `After the first three years of university, I moved from Budapest to South West England at the age of  22. It was an important time for me, and I regard Plymouth as a place where I entered adulthood.I  broke away from the life I had been accustomed to up until that time.I had to redefine lots of things  internally.In this unsteady state I was captivated by and wanted to experience the  existing order in the world.The work of these two years is a reflection of an alien, in which my  preconceived ideas of England meet reality.`,
-    hu: `Az egyetem első három éve után, 22 évesen Dél-Nyugat Angliába költöztem. Fontos volt számomra ez az időszak, Plymouth-t tekintem felnőtté vállásom helyszínének. Kiszakadtam az addig megszokott életemből, sok dolgot kellett újra definiálnom magamban. Ebben a bizonytalan állapotban, a világban való rend megtapasztalása foglalkoztatott. A két évnyi munka egy idegen nézőpontjából való szemlélődés, az Angliáról előre kialakított képem találkozása a valósággal`,
+    en: `After the first three years of university, I moved from Budapest to South West England at the age of  22. It was an important time for me, and I regard Plymouth as a place where I entered adulthood. I  broke away from the life I had been accustomed to up until that time.I had to redefine lots of things  internally.In this unsteady state I was captivated by and wanted to experience the  existing order in the world.The work of these two years is a reflection of an alien, in which my  preconceived ideas of England meet reality.`,
+    hu: `Az egyetem első három éve után, 22 évesen Dél-Nyugat Angliába költöztem. Fontos volt számomra ez az időszak, Plymouth-t tekintem felnőtté vállásom helyszínének. Kiszakadtam az addig megszokott életemből, sok dolgot kellett újra definiálnom magamban. Ebben a bizonytalan állapotban, a világban való rend megtapasztalása foglalkoztatott. A két évnyi munka egy idegen nézőpontjából való szemlélődés, az Angliáról előre kialakított képem találkozása a valósággal.`,
     embeded: null
   }
 };
@@ -104,6 +104,7 @@ const epitomeSet = {
 const natureSet = {
   setName: 'nature',
   img: [
+<<<<<<< HEAD
     { img: './img/03/NATURE_001', title: '', id: 1 },
     { img: './img/03/NATURE_002', title: '', id: 2 },
     { img: './img/03/NATURE_003', title: '', id: 3 },
@@ -134,6 +135,23 @@ const natureSet = {
     { img: './img/03/NATURE_028', title: '', id: 28 },
     { img: './img/03/NATURE_029', title: '', id: 29 },
     { img: './img/03/NATURE_030', title: '', id: 30 },
+=======
+    { img: './img/03/CLOSER_001', title: '', id: 1 },
+    { img: './img/03/CLOSER_002', title: '', id: 2 },
+    { img: './img/03/CLOSER_003', title: '', id: 3 },
+    { img: './img/03/CLOSER_004', title: '', id: 4 },
+    { img: './img/03/CLOSER_005', title: '', id: 5 },
+    { img: './img/03/CLOSER_006', title: '', id: 6 },
+    { img: './img/03/CLOSER_007', title: '', id: 7 },
+    { img: './img/03/CLOSER_008', title: '', id: 8 },
+    { img: './img/03/CLOSER_009', title: '', id: 9 },
+    { img: './img/03/CLOSER_010', title: '', id: 10 },
+    { img: './img/03/CLOSER_011', title: '', id: 11 },
+    { img: './img/03/CLOSER_012', title: '', id: 12 },
+    { img: './img/03/CLOSER_013', title: '', id: 13 },
+    { img: './img/02/_epitome_003', title: '', id: 14 },
+    { img: './img/03/CLOSER_015', title: '', id: 15 },
+>>>>>>> 1c45393c2546c3eb79572ba5f16b610bfeb6ec7c
   ], text: {
     title: `THE NATURE <br>OF THINGS`,
     date: '2018 -',
