@@ -659,6 +659,13 @@ main .left .menu li:hover {
   }
 }
 @media only screen and (min-width: 1024px), (min-width: 768px) and (min-height: 400px) and (orientation: landscape) {
+  main .right .gallery-wrapper .gallery-text .text-en .nature-vido-link {
+    margin-top: 0.3em;
+    margin-bottom: 0.8em;
+    display: block;
+  }
+}
+@media only screen and (min-width: 1024px), (min-width: 768px) and (min-height: 400px) and (orientation: landscape) {
   main .right .single-gallery-wrapper {
     display: flex;
     flex-direction: row;

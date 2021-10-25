@@ -60,7 +60,7 @@ const mainSet = {
 
     { img: './img/01/perceptions_001', title: 'perceptions', setName: 'perceptions', id: null },
     { img: './img/02/epitome_001', title: 'epitome', setName: 'epitome', id: null },
-    { img: './img/03/NATURE_002', title: 'the nature<br>of things', setName: 'nature', id: null },
+    { img: './img/03/NATURE_001', title: 'the nature<br>of things', setName: 'nature', id: null },
     { img: './img/04/roncs_001', title: 'ephemeral knot', setName: 'ephemeral-knot', id: null },
     { img: './img/05/oneness_003', title: 'oneness', setName: 'oneness', id: null },
     { img: './img/06/videk_001', title: 'ferry—land', setName: 'ferry-land', id: null },
@@ -139,7 +139,7 @@ const natureSet = {
     date: '2018 -',
     en: `As a child, it was hard for me to imagine what it is like for someone who isn’t afraid of the dark. Will death seem less scary when we grow old? At a certain point, we’ll have to confront the idea that life is finite. For a child, time could seem infinite - the older we get, the faster time seems to pass.
     How can the transient nature of our personality be accepted in an individualistic society? Three years ago I set out to find an answer to this question in my photo series, which first bore the title “One step closer”. However, in the meantime, my grandmother was diagnosed with dementia and ever so slowly the original project has turned into a collaborative effort. Her disease carries within the starting point of my own fears. If our personality completely disappears in the moment of our death, then we can think of dementia as that frozen moment in which, day after day, we slowly drift away from ourselves. While I’m watching my grandmother change both mentally and physically, I’m aiming to embrace acceptance; striving to experience the existing order in the world, in which the transience of life also plays a part.<br>
-    <br><a class="knot-vido-link" href="/#making-of-nature-of-things">VIDEO ABOUT THE PROJECT</a>`,
+    <a class="nature-vido-link" href="/#making-of-nature-of-things">VIDEO ABOUT THE PROJECT</a>`,
     hu: `Gyerekként nehéz volt elképzelnem, milyen, ha valaki nem fél a sötétben. Ha megöregszünk, a halál sem olyan félelmetes már? Egy ponton kénytelenek vagyunk szembesülni az élet végességének gondolatával. Egy kisgyerek számára az idő végtelennek tűnhet, de ahogy öregszünk, úgy érezzük egyre gyorsabbnak az idő múlását. Egy individualista társadalomban hogyan lehet elfogadni a személyiségünk múlandóságát? Erre a kérdésre próbáltam választ találni három évvel ezelőtt, akkor még "Eggyel közelebb" címmel elkezdett sorozatomban. Időközben a nagymamámat demenciával diagnosztizálták, és lassan egy közös munkává alakult át az eredeti projekt. Betegsége magában hordozza saját félelmeim kiindulópontját. Ha a halálunk pillanata személyiségünk teljes eltűnését jelenti, akkor a demenciára tekinthetünk ennek a pillanatnak a kimerevített állapotaként, amelyben nagyon lassan, napról napra távolodunk el önmagunktól. Nagymamám szellemi és fizikai változását szemlélve próbálok közelebb kerülni az elfogadáshoz, a világban való rend megtapasztalására törekedve, amelynek ugyanúgy része az elmúlás is.`,
     embeded: null
   }
