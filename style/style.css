@@ -445,7 +445,7 @@ main .left .menu li:hover {
     display: none;
   }
   main .right {
-    margin: 88px 0 0 0;
+    margin: 88px 0 2em 0;
     width: 100%;
     max-width: 1920px;
     overflow-y: auto;
@@ -661,7 +661,7 @@ main .left .menu li:hover {
 @media only screen and (min-width: 1024px), (min-width: 768px) and (min-height: 400px) and (orientation: landscape) {
   main .right .gallery-wrapper .gallery-text .text-en .nature-vido-link {
     margin-top: 0.3em;
-    margin-bottom: 0.8em;
+    margin-bottom: 0.5em;
     display: block;
   }
 }

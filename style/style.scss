@@ -478,7 +478,7 @@ $left-W: calc((100vw - 224px));
     }
 
     .right {
-      margin: 88px 0 0 0;
+      margin: 88px 0 2em 0;
       width: 100%;
       // max-height: 960px;
       max-width: 1920px;
@@ -685,7 +685,7 @@ $left-W: calc((100vw - 224px));
             }
             .nature-vido-link {
               margin-top: .3em;
-              margin-bottom: .8em;
+              margin-bottom: .5em;
               display: block;
             }
           }

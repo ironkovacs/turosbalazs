@@ -27,7 +27,7 @@ const components = {
   sidenav: './components/sidenav/sidenav.html',
   gallery: './components/gallery/gallery.html',
   makingOf: './components/makingOf/making-of.html',
-  makingOfNature: './components/makingOfnature/making-of-nature.html',
+  makingOfNature: './components/making-of-nature/making-of-nature.html',
   singleGallery: `
   <div class="single-gallery-wrapper">
     <div class="caroussel">
